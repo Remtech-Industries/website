@@ -15,3 +15,56 @@ html {
   font-weight: 600;
   font-style: normal;
 }
+
+.bg-part-array-red {
+  background: url('/images/part-array-red.jpg') no-repeat center center / cover;
+}
+
+.bg-thermal-spray-gun-yellow {
+  background: url('/images/thermal-spray-gun-yellow.jpg') no-repeat center center / cover;
+}
+
+.bg-materials-blue {
+  background: url('/images/materials-blue.jpg') no-repeat center center / cover;
+}
+
+.bg-community {
+  background: url('/images/community.jpg') no-repeat center center / cover;
+}
+
+@media screen(sm) {
+  .bg-drawing-1 {
+    background: url('/images/drawing-1.svg') no-repeat -330% 100% / 120%;
+  }
+
+  .bg-drawing-2 {
+    background: url('/images/drawing-2.svg') no-repeat -330% 100% / 120%;
+  }
+}
+
+@media screen(md) {
+  .bg-drawing-1, .bg-drawing-2 {
+    background-position: 260% 100%;
+    background-size: 70%;
+  }
+}
+
+.border-color-unset {
+  border-color: unset;
+}
+
+.form-red .form-bg {
+  @apply bg-red-800;
+}
+
+.form-yellow .form-bg {
+  @apply bg-yellow-400;
+}
+
+.text-gray-50 .menu-button div {
+  @apply bg-gray-50;
+}
+
+.table-row-alternate tr:nth-child(2n) td {
+  @apply bg-gray-100;
+}
