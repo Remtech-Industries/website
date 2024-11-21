@@ -1,6 +1,10 @@
 <template>
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
         <div class="relative h-svh">
+            <video autoplay muted loop playsinline class="absolute w-full h-full top-0 left-0 object-cover opacity-50">
+                <source src="/video.webm" type="video/webm">
+                <source src="/video.mp4" type="video/mp4">
+            </video>
             <Header @open="menuIsOpen = true" @close="menuIsOpen = false" menuclass="bg-red-700 text-gray-50" />
             <h1 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <span class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl block sora mb-2 lg:mb-4 xl:mb-6">

@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav class="relative">
         <div class="flex justify-between items-center p-4 md:p-5 lg:p-6 xl:p-8 2xl:p-10">
             <NuxtLink to="/alloys" v-if="alloys">
                 <img src="/images/alloys-logo.png" alt="The RemTech Industries Logo" class="h-10 md:h-12 lg:h-14 xl:h-16 2xl:h-20 mr-4 w-auto">
