@@ -24,7 +24,7 @@
                 <p class="mb-8 lg:mb-12 xl:mb-16">All coatings adhere to ISO 9001:2015 and CSA N299.3 (for nuclear) standards, ensuring top-tier performance and safety.</p>
                 <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Certified Quality</h3>
                 <p class="mb-8 lg:mb-12 xl:mb-16">Our lapping services provide ultra-flat and highly polished surfaces for components that require extreme precision and smoothness, ensuring the highest quality finish.</p>
-                <a class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-yellow-700 underline">View Our Thermal Spray Capabilities Datasheet</a>
+                <NuxtLink to="/thermal-spray-line-card" class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-yellow-700 underline">View Our Thermal Spray Line Card</NuxtLink>
             </div>
         </div>
         <div class="bg-yellow-300 flex justify-center">
@@ -41,13 +41,16 @@
                 <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">How It Works</h3>
                 <p class="mb-4 lg:mb-6 xl:mb-8">Our HVOF (High Velocity Oxygen Fuel) system delivers particles at high-velocity, low-temperature to produce coatings that form ultra-hard surfaces, shielding your components from wear and corrosion for longer-lasting performance.</p>
                 <p class="mb-8 lg:mb-12 xl:mb-16">The APS Plasma process utilizes the heat of an inert ionized gas to create thermal energy to melt and propel ceramic powder onto surfaces, creating exceptionally hard, dense, and corrosion-resistant protective coatings that extend the life of your critical components.</p>
-                <a class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-yellow-700 underline">View Our Thermal Spray Capabilities Datasheet</a>
+                <NuxtLink to="/thermal-spray-line-card" class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-yellow-700 underline">View Our Thermal Spray Line Card</NuxtLink>
             </div>
         </div>
         <div class="bg-yellow-300 text-gray-950 flex justify-center">
             <Carousel header="Coated Parts" :images="galleryImages" />
         </div>
-        <CoatingList />
+        <div class="pt-12 md:pt-20 lg:pt-24 xl:pt-28 2xl:pt-40">
+            <CoatingList />
+            <p class="text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold px-4 md:px-8 lg:px-12 xl:px-16 mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24">Looking for something else? <NuxtLink to="/contact" class="underline">Give us a call</NuxtLink> and let us help you find the solution you need.</p>
+        </div>
         <div class="relative">
             <div class="md:w-3/5 min-h-dvh flex flex-col justify-center items-stretch py-16 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12 xl:px-16">
                 <h2 class="text-3xl/tight md:text-4xl/tight lg:text-5xl/tight xl:text-6xl/tight 2xl:text-7xl/tight sora mb-8 lg:mb-12 xl:mb-16">Thermal Spray Frequently Asked Questions</h2>
@@ -154,7 +157,7 @@ const faqs = [
     },
     {
         q: 'How can I determine which coating is right for my application?',
-        a: 'Our experts are here to help! Reach out for a consultation, and we’ll recommend the best coating solution based on your specific industry needs, operating environment, and equipment requirements.'
+        a: 'Our experts are here to help! Reach out for a consultation, and we\'ll recommend the best coating solution based on your specific industry needs, operating environment, and equipment requirements.'
     },
     {
         q: 'How quickly can you apply thermal spray coatings?',

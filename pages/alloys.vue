@@ -1,7 +1,7 @@
 <template>
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
         <div class="relative h-svh bg-materials-blue text-gray-50">
-            <Header @open="menuIsOpen = true" @close="menuIsOpen = false" menuclass="bg-blue-900 text-gray-50" />
+            <Header @open="menuIsOpen = true" @close="menuIsOpen = false" :alloys="true" menuclass="bg-blue-900 text-gray-50" />
             <span class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl block sora mb-2 lg:mb-4 xl:mb-6">
                     High-Quality Steels and Alloys for All Your Industrial Needs
@@ -9,7 +9,7 @@
                 <p class="mx-4 md:mx-5 lg:mx-6 xl:mx-8 2xl:mx-10">Source custom-sized, hard-to-find materials with full traceability from Rem-Tech Industries - Your trusted specialty alloys provider. <NuxtLink to="/contact" class="underline">Get a Quote Today for Your Alloy Needs.</NuxtLink></p>
             </span>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center bg-drawing-3">
             <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
                 <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-8 lg:mb-12 xl:mb-16">Find the Perfect Alloy for Your Next Project</h2>
                 <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Superior Stainless Steels and Specialty Alloys for Demanding Applications</h3>
@@ -69,8 +69,8 @@
                         <a href="https://maps.app.goo.gl/NqjaYQquZcUZ1Vp29" target="_blank" rel="nofollow" class="mr-20 2xl:mr-32 text-nowrap inline-block">Located in Ontario, Canada</a>
                     </div>
                 </div>
-                <div class="bg-blue-700 md:w-2/5 flex flex-col justify-center items-stretch text-gray-50 py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
-                    <ContactForm class="form-red" />
+                <div class="bg-blue-900 md:w-2/5 flex flex-col justify-center items-stretch text-gray-50 py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
+                    <ContactForm class="form-blue" />
                 </div>
             </div>
             <Footer />
@@ -107,11 +107,11 @@ const faqs = [
     },
     {
         q: 'Do you offer support for special projects or custom requirements?',
-        a: 'Absolutely. We work closely with our clients to meet the needs of custom and specialized projects. Contact us to discuss your specific requirements, and we’ll find the best solution for you.'
+        a: 'Absolutely. We work closely with our clients to meet the needs of custom and specialized projects. Contact us to discuss your specific requirements, and we\'ll find the best solution for you.'
     },
     {
         q: 'Can I place a small order, or do you have minimum order quantities?',
-        a: 'We offer flexibility in order quantities, whether you need a small batch or a large supply. Reach out to us to discuss your project’s specific needs.'
+        a: 'We offer flexibility in order quantities, whether you need a small batch or a large supply. Reach out to us to discuss your project\'s specific needs.'
     },
 ]
 const selectedFaqIndex = ref(0)

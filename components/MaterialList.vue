@@ -29,14 +29,26 @@
                 <th :id="materialGroup.headingId + 'largestdiam'" class="p-2">Largest Diam (Inches)</th>
                 <th :id="materialGroup.headingId + 'viewstock'" class="p-2">View Stock</th>
               </tr>
-              <tr v-for="material in materialGroup.materials">
-                <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'materialgrade'" class="p-2">{{ material.materialgrade }}</td>
-                <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'category'" class="p-2">{{ material.category }}</td>
-                <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'unsno'" class="p-2">{{ material.unsNo }}</td>
-                <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'dinenno'" class="p-2">{{ material.dinEnNo }}</td>
-                <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'largestdiam'" class="p-2">{{ material.largestDiam }}</td>
-                <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'viewstock'" class="p-2 underline">View Stock</td>
-              </tr>
+              <template v-for="material in materialGroup.materials">
+                <tr>
+                  <td :id="material.materialgrade.replaceAll(' ', '_')" :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'materialgrade'" class="p-2">{{ material.materialgrade }}</td>
+                  <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'category'" class="p-2">{{ material.category }}</td>
+                  <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'unsno'" class="p-2">{{ material.unsNo }}</td>
+                  <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'dinenno'" class="p-2">{{ material.dinEnNo }}</td>
+                  <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'largestdiam'" class="p-2">{{ material.largestDiam }}</td>
+                  <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'viewstock'" class="p-2"><button @click="selectedMaterial = material.materialgrade" v-if="material.products.length > 0" class="underline">View Stock</button></td>
+                </tr>
+                <template v-if="selectedMaterial === material.materialgrade">
+                  <tr class="bg-blue-900 text-gray-50">
+                    <th :id="material.materialgrade.replaceAll(' ', '_') + 'size'" colspan="4" class="py-2 px-4 border-blue-900 border-l-2">Size</th>
+                    <th :id="material.materialgrade.replaceAll(' ', '_') + 'stock'" colspan="2" class="py-2 px-4 border-blue-900 border-r-2">Stock</th>
+                  </tr>
+                  <tr v-for="(product, i) in material.products">
+                    <td :headers="material.materialgrade.replaceAll(' ', '_') + ' ' + material.materialgrade.replaceAll(' ', '_') + 'size'" colspan="4" class="py-2 px-4 border-blue-900 border-l-2" :class="i + 1 === material.products.length ? 'border-b-2' : ''">{{ product.partno }}</td>
+                    <td :headers="material.materialgrade.replaceAll(' ', '_') + ' ' + material.materialgrade.replaceAll(' ', '_') + 'stock'" colspan="2" class="py-2 px-4 border-blue-900 border-r-2" :class="i + 1 === material.products.length ? 'border-b-2' : ''">{{ product.qtyonhand }}" in stock</td>
+                  </tr>
+                </template>
+              </template>
             </template>
           </tbody>
         </table>
@@ -50,6 +62,7 @@
 <script setup>
 const table = useTemplateRef('table')
 const hasScroll = ref(false)
+const selectedMaterial = ref('')
 
 function scroll(el, distance, left = false, time = 100) {
   if (distance > 0) {
@@ -83,7 +96,7 @@ function showHideArrows() {
 window.setTimeout(showHideArrows, 1)
 window.addEventListener('resize', showHideArrows)
 
-const materialGroups = [
+const materialGroups = ref([
   {
     heading: 'Nickel and Nickel-Based Alloys (High Nickel Alloys)',
     headingId: 'nickelalloys',
@@ -93,6 +106,8 @@ const materialGroups = [
         category: 'Superalloy',
         unsNo: 'N10276',
         dinEnNo: '2.4819',
+        productCode: 'ALLOY C-276',
+        products: [],
         largestDiam: '12.2'
       },
       {
@@ -100,6 +115,7 @@ const materialGroups = [
         category: 'Superalloy',
         unsNo: 'N06455',
         dinEnNo: '2.461',
+        products: [],
         largestDiam: '4.33'
       },
       {
@@ -107,6 +123,7 @@ const materialGroups = [
         category: 'Superalloy',
         unsNo: 'N10665',
         dinEnNo: '2.4617',
+        products: [],
         largestDiam: '4'
       },
       {
@@ -114,6 +131,8 @@ const materialGroups = [
         category: 'Superalloy',
         unsNo: 'N04400',
         dinEnNo: '2.4360/2.4361',
+        productCode: 'ALLOY 400',
+        products: [],
         largestDiam: '12.2'
       },
       {
@@ -121,6 +140,7 @@ const materialGroups = [
         category: 'Superalloy',
         unsNo: 'N05500',
         dinEnNo: '2.4375',
+        products: [],
         largestDiam: '7.87'
       },
       {
@@ -128,6 +148,8 @@ const materialGroups = [
         category: 'Superalloy',
         unsNo: 'N06022',
         dinEnNo: '2.4602',
+        productCode: 'ALLOY C-22',
+        products: [],
         largestDiam: '2'
       },
       {
@@ -135,6 +157,8 @@ const materialGroups = [
         category: 'Superalloy',
         unsNo: 'N06600',
         dinEnNo: '2.4816',
+        productCode: 'ALLOY 600',
+        products: [],
         largestDiam: '3.5'
       },
       {
@@ -142,6 +166,7 @@ const materialGroups = [
         category: 'Superalloy',
         unsNo: 'N06625',
         dinEnNo: '2.4856',
+        products: [],
         largestDiam: '6.5'
       },
       {
@@ -149,6 +174,7 @@ const materialGroups = [
         category: 'Superalloy',
         unsNo: 'N08825',
         dinEnNo: '2.4858',
+        products: [],
         largestDiam: '4.5'
       },
       {
@@ -156,6 +182,7 @@ const materialGroups = [
         category: 'Low Alloy Nickel',
         unsNo: 'N02200/N02201',
         dinEnNo: '2.4066/2.4068',
+        products: [],
         largestDiam: '2.5'
       }
     ]
@@ -169,6 +196,8 @@ const materialGroups = [
         category: '(Hollow = Rolled Ring Forging)',
         unsNo: 'S31803/S32205',
         dinEnNo: '1.4462',
+        productCode: 'DUPLEX 2205',
+        products: [],
         largestDiam: '17.63'
       },
       {
@@ -176,6 +205,8 @@ const materialGroups = [
         category: 'Centrifugal Casting',
         unsNo: 'J93372',
         dinEnNo: '1.4517',
+        productCode: 'CD4MCUN',
+        products: [],
         largestDiam: '19.25'
       },
       {
@@ -183,6 +214,8 @@ const materialGroups = [
         category: 'Super Duplex',
         unsNo: 'S32750',
         dinEnNo: '1.441',
+        productCode: 'DUPLEX 2507',
+        products: [],
         largestDiam: '14'
       },
       {
@@ -190,6 +223,8 @@ const materialGroups = [
         category: 'Super Duplex',
         unsNo: 'S32550',
         dinEnNo: '1.4507',
+        productCode: 'DUPLEX 255',
+        products: [],
         largestDiam: '12'
       },
       {
@@ -197,6 +232,8 @@ const materialGroups = [
         category: 'Super Duplex',
         unsNo: 'S32760',
         dinEnNo: '1.4501',
+        productCode: 'ZERON 100',
+        products: [],
         largestDiam: '18'
       }
     ]
@@ -210,6 +247,7 @@ const materialGroups = [
         category: '-',
         unsNo: 'S30400/S30403',
         dinEnNo: '1.4301/1.4307',
+        products: [],
         largestDiam: '5'
       },
       {
@@ -217,6 +255,7 @@ const materialGroups = [
         category: '(Hollow = Rolled Ring Forging)',
         unsNo: 'S31600/S31603',
         dinEnNo: '1.4401/1.4404',
+        products: [],
         largestDiam: '20'
       },
       {
@@ -224,6 +263,8 @@ const materialGroups = [
         category: '-',
         unsNo: 'S31635',
         dinEnNo: '1.4571',
+        productCode: '316TI SS',
+        products: [],
         largestDiam: '9.84'
       },
       {
@@ -231,6 +272,8 @@ const materialGroups = [
         category: '(Hollow = Centrifugal Casting)',
         unsNo: 'S31700/S31703',
         dinEnNo: '1.4438',
+        productCode: '317 SS',
+        products: [],
         largestDiam: '14.25'
       },
       {
@@ -238,6 +281,7 @@ const materialGroups = [
         category: 'Super Austenitic',
         unsNo: 'N08904',
         dinEnNo: '1.4539',
+        products: [],
         largestDiam: '11.81'
       },
       {
@@ -245,6 +289,8 @@ const materialGroups = [
         category: 'Super Austenitic',
         unsNo: 'N08020',
         dinEnNo: '2.466',
+        productCode: 'ALLOY 20',
+        products: [],
         largestDiam: '11.02'
       },
       {
@@ -252,6 +298,7 @@ const materialGroups = [
         category: '-',
         unsNo: 'S20910',
         dinEnNo: '1.3964',
+        products: [],
         largestDiam: '5'
       },
       {
@@ -259,6 +306,8 @@ const materialGroups = [
         category: '-',
         unsNo: 'S21800',
         dinEnNo: '-',
+        productCode: 'NIT 60',
+        products: [],
         largestDiam: '7'
       }
     ]
@@ -272,6 +321,8 @@ const materialGroups = [
         category: 'Precipitation Hardening',
         unsNo: 'S17400',
         dinEnNo: '1.4542',
+        productCode: '17-4 COND A',
+        products: [],
         largestDiam: '16'
       },
       {
@@ -279,6 +330,7 @@ const materialGroups = [
         category: 'Precipitation Hardening',
         unsNo: 'S17400',
         dinEnNo: '1.4548',
+        products: [],
         largestDiam: '13'
       },
       {
@@ -286,6 +338,7 @@ const materialGroups = [
         category: '-',
         unsNo: 'S41000',
         dinEnNo: '1.4006',
+        products: [],
         largestDiam: '17'
       },
       {
@@ -293,6 +346,8 @@ const materialGroups = [
         category: '-',
         unsNo: 'S41600',
         dinEnNo: '1.4005',
+        productCode: '416 SS',
+        products: [],
         largestDiam: '14'
       },
       {
@@ -300,6 +355,8 @@ const materialGroups = [
         category: '-',
         unsNo: 'S42000',
         dinEnNo: '1.4021/1.4031',
+        productCode: '420 SS',
+        products: [],
         largestDiam: '12.2'
       },
       {
@@ -307,6 +364,8 @@ const materialGroups = [
         category: '-',
         unsNo: 'S43100',
         dinEnNo: '1.4057',
+        productCode: '431 SS',
+        products: [],
         largestDiam: '8.5'
       },
       {
@@ -314,6 +373,7 @@ const materialGroups = [
         category: 'Centrifugal Casting',
         unsNo: 'S44002',
         dinEnNo: '1.411',
+        products: [],
         largestDiam: '15'
       },
       {
@@ -321,6 +381,7 @@ const materialGroups = [
         category: '-',
         unsNo: 'S44004',
         dinEnNo: '1.4125',
+        products: [],
         largestDiam: '5.5'
       },
       {
@@ -328,6 +389,8 @@ const materialGroups = [
         category: 'Centrifugal Casting',
         unsNo: 'J91153/J91154',
         dinEnNo: '1.4028/1.4029',
+        productCode: 'CA40',
+        products: [],
         largestDiam: '17.25'
       }
     ]
@@ -341,6 +404,8 @@ const materialGroups = [
         category: 'Aluminum Alloys',
         unsNo: 'A96061',
         dinEnNo: '3.3211',
+        productCode: 'ALUM 6061 T651',
+        products: [],
         largestDiam: '17'
       },
       {
@@ -348,6 +413,8 @@ const materialGroups = [
         category: 'Copper Alloys',
         unsNo: 'C93200',
         dinEnNo: '2.1090.04',
+        productCode: '660 BRONZE',
+        products: [],
         largestDiam: '16'
       },
       {
@@ -355,6 +422,7 @@ const materialGroups = [
         category: 'Copper Alloys',
         unsNo: '-',
         dinEnNo: '-',
+        products: [],
         largestDiam: '4'
       },
       {
@@ -362,6 +430,7 @@ const materialGroups = [
         category: 'Titanium Alloys',
         unsNo: 'R50400',
         dinEnNo: '3.7035',
+        products: [],
         largestDiam: '12.2'
       },
       {
@@ -369,6 +438,8 @@ const materialGroups = [
         category: 'Titanium Alloys',
         unsNo: 'R52400',
         dinEnNo: '3.7235',
+        productCode: 'TITAN GR7',
+        products: [],
         largestDiam: '6.5'
       },
       {
@@ -376,6 +447,8 @@ const materialGroups = [
         category: 'Zirconium Alloys',
         unsNo: 'R60702',
         dinEnNo: 'Zirkonium',
+        productCode: 'ZIRCONIUM 702',
+        products: [],
         largestDiam: '8'
       },
       {
@@ -383,6 +456,7 @@ const materialGroups = [
         category: 'Carbon Graphite Composites',
         unsNo: '-',
         dinEnNo: '-',
+        products: [],
         largestDiam: '10.94'
       },
       {
@@ -390,6 +464,7 @@ const materialGroups = [
         category: 'Carbon Graphite Composites',
         unsNo: '-',
         dinEnNo: '-',
+        products: [],
         largestDiam: '2'
       }
     ]
@@ -403,6 +478,7 @@ const materialGroups = [
         category: 'Continuous Casting',
         unsNo: 'F12801',
         dinEnNo: '0.6025',
+        products: [],
         largestDiam: '18'
       },
       {
@@ -410,6 +486,7 @@ const materialGroups = [
         category: 'Centrifugal Casting (Ductile)',
         unsNo: 'F43000',
         dinEnNo: '0.766',
+        products: [],
         largestDiam: '15'
       },
       {
@@ -417,6 +494,7 @@ const materialGroups = [
         category: 'Centrifugal Casting',
         unsNo: 'F12801',
         dinEnNo: '0.6025',
+        products: [],
         largestDiam: '18'
       }
     ]
@@ -430,6 +508,7 @@ const materialGroups = [
         category: 'Alloy Steel',
         unsNo: 'G41400',
         dinEnNo: '1.7225',
+        products: [],
         largestDiam: '16'
       },
       {
@@ -437,6 +516,7 @@ const materialGroups = [
         category: 'Alloy Steel',
         unsNo: 'G43400',
         dinEnNo: '1.6565',
+        products: [],
         largestDiam: '5'
       },
       {
@@ -444,6 +524,7 @@ const materialGroups = [
         category: 'Alloy Steel',
         unsNo: 'G86200',
         dinEnNo: '1.6523',
+        products: [],
         largestDiam: '4'
       },
       {
@@ -451,6 +532,7 @@ const materialGroups = [
         category: 'Low Carbon Steel',
         unsNo: 'G10180',
         dinEnNo: '1.0453',
+        products: [],
         largestDiam: '18'
       },
       {
@@ -458,6 +540,8 @@ const materialGroups = [
         category: 'Medium Carbon Steel',
         unsNo: 'G10450',
         dinEnNo: '1.1191/1.1730',
+        productCode: '1045 HRS',
+        products: [],
         largestDiam: '16'
       },
       {
@@ -465,6 +549,7 @@ const materialGroups = [
         category: 'Tool Steel',
         unsNo: 'T40302',
         dinEnNo: '1.2379',
+        products: [],
         largestDiam: '4'
       }
     ]
@@ -478,6 +563,7 @@ const materialGroups = [
         category: 'Polyoxymethylene',
         unsNo: '(POM)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '5'
       },
       {
@@ -485,6 +571,7 @@ const materialGroups = [
         category: 'Polyamides',
         unsNo: '(PA)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '13.5'
       },
       {
@@ -492,6 +579,7 @@ const materialGroups = [
         category: 'Polyamides',
         unsNo: '(PA)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '7'
       },
       {
@@ -499,6 +587,7 @@ const materialGroups = [
         category: 'Polyamides',
         unsNo: '(PA)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '3.5'
       },
       {
@@ -506,6 +595,7 @@ const materialGroups = [
         category: 'Polytetrafluoroethylene',
         unsNo: '(PTFE)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '8'
       },
       {
@@ -513,6 +603,7 @@ const materialGroups = [
         category: 'PTFE Composite',
         unsNo: '(PTFE)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '10'
       },
       {
@@ -520,6 +611,7 @@ const materialGroups = [
         category: 'PTFE Composite',
         unsNo: '(PTFE)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '7.75'
       },
       {
@@ -527,6 +619,7 @@ const materialGroups = [
         category: 'PTFE Composite',
         unsNo: '(PTFE)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '2.13'
       },
       {
@@ -534,6 +627,7 @@ const materialGroups = [
         category: 'Polycarbonate',
         unsNo: '(PC)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '2'
       },
       {
@@ -541,6 +635,7 @@ const materialGroups = [
         category: 'Polyethylene',
         unsNo: '(HMPE, HPPE)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '7'
       },
       {
@@ -548,6 +643,7 @@ const materialGroups = [
         category: 'Polyvinyl Chloride',
         unsNo: '(PVC)',
         dinEnNo: '-',
+        products: [],
         largestDiam: '6'
       },
       {
@@ -555,6 +651,7 @@ const materialGroups = [
         category: 'Phenolics',
         unsNo: '-',
         dinEnNo: '-',
+        products: [],
         largestDiam: '4'
       },
       {
@@ -562,9 +659,41 @@ const materialGroups = [
         category: 'Phenolics',
         unsNo: '-',
         dinEnNo: '-',
+        products: [],
         largestDiam: '3'
       }
     ]
   }
-]
+])
+
+$fetch('https://data.remtechalloys.com/remtech_alloys_inventory_levels.json').then(res => {
+  res.products.forEach(product => {
+    materialGroups.value.forEach((materialGroup, i) => {
+      materialGroup.materials.forEach((material, j) => {
+        if (material.productCode === product.partno.split(' - ')[0]) {
+          materialGroups.value[i].materials[j].products.push(product)
+        }
+      });
+    })
+  });
+  console.log(materialGroups.value)
+})
+        //productCode: '316 SS',
+        //productCode: '304 SS',
+        //productCode: '316 SS TGP',
+        //productCode: '17-4 H1150',
+        //productCode: 'ALLOY 718',
+        //productCode: '17-4 H1150D',
+        //productCode: '316LD2 SS',
+        //productCode: '410 SS COND A',
+        //productCode: 'CL40 CAST',
+        //productCode: '410 SS QDT',
+        //productCode: '410 SS 28-32 HRC',
+        //productCode: '1018 CRS',
+        //productCode: '4140 PRE HARD',
+        //productCode: 'NI-RESIST TYPE 1',
+        //productCode: 'ALLOY 59',
+        //productCode: '1018 HRS',
+        //productCode: 'CA15',
+        //productCode: '304SS',
 </script>

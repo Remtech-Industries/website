@@ -32,6 +32,14 @@ html {
   background: url('/images/community.jpg') no-repeat center center / cover;
 }
 
+.bg-remtech-red {
+  background: url('/images/remtech-red.jpg') no-repeat center center / cover;
+}
+
+.bg-measuing-blue {
+  background: url('/images/measuring-blue.jpg') no-repeat center center / cover;
+}
+
 @media screen(sm) {
   .bg-drawing-1 {
     background: url('/images/drawing-1.svg') no-repeat -330% 100% / 120%;
@@ -40,11 +48,39 @@ html {
   .bg-drawing-2 {
     background: url('/images/drawing-2.svg') no-repeat -330% 100% / 120%;
   }
+
+  .bg-drawing-3 {
+    background: url('/images/drawing-3.svg') no-repeat 120% 50% / 200%;
+  }
+
+  .bg-drawing-4 {
+    background: url('/images/drawing-4.svg') no-repeat -60% 50% / 200%;
+    @apply bg-red-700;
+  }
+
+  .bg-drawing-5 {
+    background: url('/images/drawing-5.svg') no-repeat -160% 140% / 120%;
+  }
 }
 
 @media screen(md) {
   .bg-drawing-1, .bg-drawing-2 {
     background-position: 260% 100%;
+    background-size: 70%;
+  }
+
+  .bg-drawing-3 {
+    background-position: 350% 50%;
+    background-size: 120%;
+  }
+
+  .bg-drawing-4 {
+    background-position: -140% 50%;
+    background-size: 150%;
+  }
+
+  .bg-drawing-5 {
+    background-position: 160% 140%;
     background-size: 70%;
   }
 }
@@ -61,10 +97,28 @@ html {
   @apply bg-yellow-400;
 }
 
-.text-gray-50 .menu-button div {
-  @apply bg-gray-50;
+.form-blue .form-bg {
+  @apply bg-blue-950;
+}
+
+.form-gray .form-bg {
+  @apply bg-gray-200;
 }
 
 .table-row-alternate tr:nth-child(2n) td {
   @apply bg-gray-100;
+}
+
+.bullet-list li {
+  @apply relative pl-4;
+}
+
+.bullet-list li::before {
+  @apply w-1 h-1 rounded bg-gray-950 absolute -translate-y-1/2 left-0;
+  top: .7em;
+  content: '';
+}
+
+.page-break-after {
+  page-break-after: always;
 }

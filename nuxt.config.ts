@@ -3,11 +3,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+
   // TODO enable ssr and route rules before launch
   ssr: false,
+
   //routeRules: {
-    //'/': { static: true },
-    //'/**': { static: true }
+  //'/': { static: true },
+  //'/**': { static: true }
   //},
   postcss: {
     plugins: {
@@ -15,6 +17,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     }
   },
+
   app: {
     head: {
       link: [
@@ -33,5 +36,20 @@ export default defineNuxtConfig({
         }
       ]
     }
+  },
+
+  modules: ['nuxt-gtag', '@nuxtjs/seo'],
+
+  gtag: {
+    id: 'G-KNCDT92Y34',
+    initCommands: [
+      ['consent', 'default', {
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      }]
+    ]
   }
 })

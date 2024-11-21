@@ -1,5 +1,5 @@
 <template>
-  <div class="relative pt-12 md:pt-20 lg:pt-24 xl:pt-28 2xl:pt-40">
+  <div class="relative">
     <div class="flex sticky lg:relative z-10 top-0 justify-between items-center bg-gray-50 py-2 md:py-4 lg:py-6 xl:py-8 px-4 md:px-8 lg:px-12 xl:px-16">
       <h3 class="text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora">Thermal Spray Coating List</h3>
       <div class="flex justify-end flex-wrap sm:flex-nowrap" v-if="hasScroll">
@@ -15,34 +15,33 @@
     </div>
     <div class="w-full">
       <div class="overflow-x-auto mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24 px-4 md:px-8 lg:px-12 xl:px-16" ref="table">
-        <table class="min-w-full text-nowrap text-left text-xs xl:text-sm 2xl:text-base table-row-alternate mb-2 md:mb-4 lg:mb-6 xl:mb-8">
+        <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base table-row-alternate mb-2 md:mb-4 lg:mb-6 xl:mb-8">
           <tbody>
             <template v-for="coatingGroup in coatingGroups">
               <tr class="bg-yellow-300">
-                <th colspan="6" :id="coatingGroup.headingId" class="pb-1 lg:pb-2 pt-3 lg:pt-4"><span class="sticky left-0 text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl px-2">{{ coatingGroup.heading }}</span></th>
+                <th colspan="6" :id="coatingGroup.headingId" class="pb-1 lg:pb-2 pt-3 lg:pt-4 print:border-2 border-gray-950"><span class="sticky left-0 text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl px-2">{{ coatingGroup.heading }}</span></th>
               </tr>
               <tr class="bg-yellow-300">
-                <th :id="coatingGroup.headingId + 'composition'" class="p-2">Composition</th>
-                <th :id="coatingGroup.headingId + 'tradename'" class="p-2">Trade Name</th>
-                <th :id="coatingGroup.headingId + 'description'" class="p-2">Description</th>
-                <th :id="coatingGroup.headingId + 'manufacturer'" class="p-2">Manufacturer</th>
-                <th :id="coatingGroup.headingId + 'hardness'" class="p-2">Hardness</th>
-                <th :id="coatingGroup.headingId + 'remtechnumber'" class="p-2">RemTech #</th>
+                <th :id="coatingGroup.headingId + 'composition'" class="p-2 print:border-2 border-gray-950">Composition</th>
+                <th :id="coatingGroup.headingId + 'tradename'" class="p-2 print:border-2 border-gray-950">Trade Name</th>
+                <th :id="coatingGroup.headingId + 'description'" class="p-2 print:border-2 border-gray-950">Description</th>
+                <th :id="coatingGroup.headingId + 'manufacturer'" class="p-2 print:border-2 border-gray-950">Manufacturer</th>
+                <th :id="coatingGroup.headingId + 'hardness'" class="p-2 print:border-2 border-gray-950">Hardness</th>
+                <th :id="coatingGroup.headingId + 'remtechnumber'" class="p-2 print:border-2 border-gray-950">RemTech #</th>
               </tr>
               <tr v-for="coating in coatingGroup.coatings">
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'composition'" class="p-2">{{ coating.composition }}</td>
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'tradename'" class="p-2">{{ coating.tradeName }}</td>
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'description'" class="p-2">{{ coating.description }}</td>
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'manufacturer'" class="p-2">{{ coating.manufacturer }}</td>
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'hardness'" class="p-2">{{ coating.hardness }}</td>
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'remtechnumber'" class="p-2">{{ coating.remtechNumber }}</td>
+                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'composition'" class="p-2 print:border-2 border-gray-950">{{ coating.composition }}</td>
+                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'tradename'" class="p-2 print:border-2 border-gray-950">{{ coating.tradeName }}</td>
+                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'description'" class="p-2 print:border-2 border-gray-950">{{ coating.description }}</td>
+                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'manufacturer'" class="p-2 print:border-2 border-gray-950">{{ coating.manufacturer }}</td>
+                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'hardness'" class="p-2 print:border-2 border-gray-950">{{ coating.hardness }}</td>
+                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'remtechnumber'" class="p-2 print:border-2 border-gray-950">{{ coating.remtechNumber }}</td>
               </tr>
             </template>
           </tbody>
         </table>
       </div>
     </div>
-    <p class="text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold px-4 md:px-8 lg:px-12 xl:px-16 mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24">Looking for something else? <NuxtLink to="/contact" class="underline">Give us a call</NuxtLink> and let us help you find the solution you need.</p>
   </div>
 </template>
 

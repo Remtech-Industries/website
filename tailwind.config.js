@@ -63,6 +63,10 @@ export default {
         950: '#000000',
       }
     },
+    borderWidth: {
+      '2': '2px',
+      '3': '3px'
+    },
     extend: {
       spacing: {
         '0.75': '.1875rem',

@@ -25,7 +25,7 @@
                 <p class="mb-8 lg:mb-12 xl:mb-16">We offer high-precision grinding services to achieve smooth finishes and exact dimensions for parts requiring tight tolerances and superior surface quality.</p>
                 <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Lapping</h3>
                 <p class="mb-8 lg:mb-12 xl:mb-16">Our lapping services provide ultra-flat and highly polished surfaces for components that require extreme precision and smoothness, ensuring the highest quality finish.</p>
-                <a class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-red-700 underline">View Our Machinery Capabilities Datasheet</a>
+                <NuxtLink to="/machinery-capabilities-datasheet" class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-red-700 underline">View Our Machinery Capabilities Datasheet</NuxtLink>
             </div>
         </div>
         <div class="bg-red-700 flex justify-center">
@@ -242,7 +242,7 @@ const faqs = [
         a: 'We use industry-standard CAD/CAM software such as SolidWorks, AutoCAD, and Mastercam to ensure precision and efficiency in our processes.'
     },
     {
-        q: 'What’s the maximum part size you can handle?',
+        q: 'What\'s the maximum part size you can handle?',
         a: 'We can machine parts up to [insert dimensions], ensuring that both small and large components can be accommodated.'
     },
     {
