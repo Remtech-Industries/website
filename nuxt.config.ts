@@ -49,8 +49,7 @@ export default defineNuxtConfig({
     // }
   },
 
-  modules: ['nuxt-gtag'],
-  // modules: ['nuxt-gtag', '@nuxtjs/seo'],
+  modules: ['nuxt-gtag', '@nuxtjs/seo'],
 
   gtag: {
     id: 'G-KNCDT92Y34',
