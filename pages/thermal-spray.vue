@@ -6,7 +6,7 @@
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl block sora mb-2 lg:mb-4 xl:mb-6">
                     Thermal Spray Coatings for Superior Durability
                 </h1>
-                <p class="mx-4 md:mx-5 lg:mx-6 xl:mx-8 2xl:mx-10">Enhance your critical components with advanced thermal spray coatings from Rem-Tech Industries. <NuxtLink to="/contact" class="underline">Call Us Today</NuxtLink> for a free quote today.</p>
+                <p class="mx-4 md:mx-5 lg:mx-6 xl:mx-8 2xl:mx-10">Enhance your critical components with advanced thermal spray coatings from Rem-Tech Industries. <NuxtLink to="/contact" class="underline">Call Us Today</NuxtLink> for a free quote.</p>
             </span>
         </div>
         <div class="flex justify-center">
@@ -29,8 +29,8 @@
         </div>
         <div class="bg-yellow-300 flex justify-center">
             <div class="flex flex-col py-16 xl:py-24 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
-                <span class="text-xl/tight md:text-2xl/tight lg:text-3xl/tight xl:text-4xl/tight 2xl:text-5xl/tight sora mb-4 lg:mb-8">"I have not come across any of our suppliers that gives us the quality and service that RemTech provides us. RemTech raises the bar on anyone else when it comes to customer service and the absolute friendliest atmosphere which makes it a pleasure to work with."</span>
-                <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Brian Gallen</span>
+                <span class="text-xl/tight md:text-2xl/tight lg:text-3xl/tight xl:text-4xl/tight 2xl:text-5xl/tight sora mb-4 lg:mb-8">"RemTech is our best supplier, meeting and exceeding all of our expectations - immediate response to all of our enquiries, and same day shipping for our emergency orders - you help us keep our customers up and running."</span>
+                <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Carole Fitzgerald</span>
                 <span>(Flowserve)</span>
             </div>
         </div>

@@ -33,7 +33,7 @@
         <textarea name="Project Details" v-model="details" class="w-full form-bg px-4 py-3 block" maxlength="65535" required></textarea>
       </label>
       <label>
-        <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Project Files</span>
+        <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Project Files <span class="text-xs">(20mb max.)</span></span>
         <span class="block relative">
           <input @change="handleFileUpload" type="file" class="w-full form-bg px-4 py-3 h-24" name="FileUpload" multiple />
           <span class="flex justify-center items-center text-center absolute top-0 left-0 w-full h-full form-bg p-4 pointer-events-none cursor-pointer">{{ fileUploadLabel }}</span>

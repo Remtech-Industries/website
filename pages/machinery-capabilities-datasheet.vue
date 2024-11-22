@@ -5,7 +5,7 @@
       <button @click="print" class="underline font-bold">Print Datasheet</button>
     </div>
     <div class="relative">
-      <div class="flex sticky lg:relative z-10 top-0 justify-between items-center bg-gray-50 py-2 md:py-4 lg:py-6 xl:py-8 md:px-8 lg:px-12 xl:px-16">
+      <div class="flex sticky lg:relative z-10 top-0 justify-between items-center bg-gray-50 py-2 md:py-4 lg:py-6 xl:py-8 px-4 md:px-8 lg:px-12 xl:px-16">
         <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-4 lg:mb-6 xl:mb-8">Machinery Capabilities Datasheet</h1>
         <div class="flex justify-end flex-wrap sm:flex-nowrap" v-if="hasScroll">
           <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="left">
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="w-full">
-        <div class="overflow-x-auto md:px-8 lg:px-12 xl:px-16 mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24" ref="table">
+        <div class="overflow-x-auto px-4 md:px-8 lg:px-12 xl:px-16 mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24" ref="table">
           <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base table-row-alternate mb-2 md:mb-4 lg:mb-6 xl:mb-8">
             <tbody>
               <template v-for="(machineGroup, i) in machineGroups">
@@ -71,14 +71,19 @@ function right() {
 }
 
 function showHideArrows() {
-  if (table.value.scrollWidth - table.value.clientWidth > 50) {
-    hasScroll.value = true
-  } else {
-    hasScroll.value = false
+  if (table.value) {
+    if (table.value.scrollWidth - table.value.clientWidth > 50) {
+      hasScroll.value = true
+    } else {
+      hasScroll.value = false
+    }
   }
 }
-window.setTimeout(showHideArrows, 1)
-window.addEventListener('resize', showHideArrows)
+
+onMounted(() => {
+  window.setTimeout(showHideArrows, 1)
+  window.addEventListener('resize', showHideArrows)
+})
 
 const machineGroups = [
   {

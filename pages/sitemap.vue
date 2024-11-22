@@ -7,7 +7,9 @@
                 <ul class="mb-8 lg:mb-12 xl:mb-16 bullet-list">
                     <li><NuxtLink to="/" class="underline">Home</NuxtLink></li>
                     <li><NuxtLink to="/machining" class="underline">Machining</NuxtLink></li>
+                    <li><NuxtLink to="/machinery-capabilities-datasheet" class="underline">Machinery Capabilities Datasheet</NuxtLink></li>
                     <li><NuxtLink to="/thermal-spray" class="underline">Thermal Spray</NuxtLink></li>
+                    <li><NuxtLink to="/thermal-spray-line-card" class="underline">Thermal Spray Line Card</NuxtLink></li>
                     <li><NuxtLink to="/alloys" class="underline">Alloys</NuxtLink></li>
                     <li><NuxtLink to="/quality" class="underline">Quality</NuxtLink></li>
                     <li><NuxtLink to="/about" class="underline">About</NuxtLink></li>

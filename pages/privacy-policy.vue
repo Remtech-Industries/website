@@ -56,7 +56,7 @@
                 <p class="mb-4 lg:mb-6 xl:mb-8">If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal information, please contact us at:</p>
                 <p class="mb-4 lg:mb-6 xl:mb-8">RemTech Industries<br>69 White Street,<br>Aylmer,<br>ON N5H 2R9</p>
                 <p class="mb-4 lg:mb-6 xl:mb-8">Phone: <a href="tel:+15197733459" class="underline">+1 (519) 773-3459</a><br>Email: <a href="mailto:rfq@remtechindustries.com" class="underline">rfq@remtechindustries.com</a></p>
-                <p class="mb-8 lg:mb-12 xl:mb-16">This Privacy Policy was last updated on October 11, 2024.</p>
+                <p class="mb-8 lg:mb-12 xl:mb-16">This Privacy Policy was last updated on October 22, 2024.</p>
             </div>
         </div>
         <Footer />

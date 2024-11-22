@@ -4,13 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
 
-  // TODO enable ssr and route rules before launch
-  ssr: false,
-
-  //routeRules: {
-  //'/': { static: true },
-  //'/**': { static: true }
-  //},
+  routeRules: {
+    '/': { static: true },
+    '/**': { static: true }
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -34,11 +31,26 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Sora:wght@600&family=Space+Grotesk:wght@700&family=Space+Grotesk&display=swap'
         }
-      ]
+      ],
+      // script: [
+      //   {
+      //     src: 'https://www.google.com/recaptcha/api.js',
+      //     async: '',
+      //     defer: ''
+      //   }
+      // ]
     }
   },
 
-  modules: ['nuxt-gtag', '@nuxtjs/seo'],
+  runtimeConfig: {
+    // googleRecaptchaSecretKey: '',
+    // public: {
+    //   googleRecaptchaSiteKey: ''
+    // }
+  },
+
+  modules: ['nuxt-gtag'],
+  // modules: ['nuxt-gtag', '@nuxtjs/seo'],
 
   gtag: {
     id: 'G-KNCDT92Y34',

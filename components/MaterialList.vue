@@ -87,14 +87,18 @@ function right() {
 }
 
 function showHideArrows() {
-  if (table.value.scrollWidth - table.value.clientWidth > 50) {
-    hasScroll.value = true
-  } else {
-    hasScroll.value = false
+  if (table.value) {
+    if (table.value.scrollWidth - table.value.clientWidth > 50) {
+      hasScroll.value = true
+    } else {
+      hasScroll.value = false
+    }
   }
 }
-window.setTimeout(showHideArrows, 1)
-window.addEventListener('resize', showHideArrows)
+onMounted(() => {
+  window.setTimeout(showHideArrows, 1)
+  window.addEventListener('resize', showHideArrows)
+})
 
 const materialGroups = ref([
   {
@@ -676,24 +680,5 @@ $fetch('https://data.remtechalloys.com/remtech_alloys_inventory_levels.json').th
       });
     })
   });
-  console.log(materialGroups.value)
 })
-        //productCode: '316 SS',
-        //productCode: '304 SS',
-        //productCode: '316 SS TGP',
-        //productCode: '17-4 H1150',
-        //productCode: 'ALLOY 718',
-        //productCode: '17-4 H1150D',
-        //productCode: '316LD2 SS',
-        //productCode: '410 SS COND A',
-        //productCode: 'CL40 CAST',
-        //productCode: '410 SS QDT',
-        //productCode: '410 SS 28-32 HRC',
-        //productCode: '1018 CRS',
-        //productCode: '4140 PRE HARD',
-        //productCode: 'NI-RESIST TYPE 1',
-        //productCode: 'ALLOY 59',
-        //productCode: '1018 HRS',
-        //productCode: 'CA15',
-        //productCode: '304SS',
 </script>

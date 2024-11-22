@@ -14,7 +14,6 @@
                 <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-8 lg:mb-12 xl:mb-16">Key Machining Capabilities</h2>
                 <p class="mb-4 lg:mb-6 xl:mb-8">For over 25 years, RemTech has delivered fast, high-precision machining to industries like manufacturing, pharmaceutical, oil & gas, nuclear, and more. Our expertise spans components like sleeves, shafts, pump rings, and seal faces.</p>
                 <p class="mb-4 lg:mb-6 xl:mb-8">We specialize in rapid-turnaround CNC and manual machining of super alloys and hard-to-machine materials like Stainless Steel, Super Duplex, Titanium, Inconel, and Hastelloy.</p>
-                <p class="mb-8 lg:mb-12 xl:mb-16">Our efficient workflow enables us to deliver fast response times, with eight-hour turnarounds for low-volume jobs being a standard at our facility.</p>
                 <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">CNC Turning</h3>
                 <p class="mb-8 lg:mb-12 xl:mb-16">Our advanced CNC lathes deliver precision cylindrical parts with tight tolerances. Specializing in low-volume production, we handle complex geometries and materials with ease.</p>
                 <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">CNC Milling</h3>
@@ -80,6 +79,7 @@
                                 <div class="max-h-full overflow-y-auto md:py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
                                     <h3 class="hidden md:block text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-6 2xl:mb-10">{{ faq.q }}</h3>
                                     <p class="md:text-lg lg:text-xl 2xl:text-2xl mb-6 2xl:mb-10">{{ faq.a }}</p>
+                                    <NuxtLink v-if="faq.link && faq.linkText" :to="faq.link" class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl underline font-bold mb-6 2xl:mb-10 block">{{ faq.linkText }}</NuxtLink>
                                     <NuxtLink to="/contact" class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl underline font-bold">Request a Free Quote Today.</NuxtLink>
                                 </div>
                             </div>
@@ -116,63 +116,63 @@ const galleryImages = [
         desc: 'Precision-machined Zirconium 702 component, highlighting exceptional corrosion resistance in demanding environments.'
     },
     {
-        src: '/images/gallery-machining/316ss-circulating-feature.jpg',
+        src: '/images/gallery-machining/titanium-impeller.jpg',
         desc: 'Titanium impeller with finely crafted blades, optimized for high-performance fluid movement.'
     },
     {
-        src: '/images/gallery-machining/super-duplex-255.jpg',
+        src: '/images/gallery-machining/high-pressure-monel-400-separator.jpg',
         desc: 'Durable Monel 400 separator, ideal for chemical and marine applications needing corrosion resistance.'
     },
     {
-        src: '/images/gallery-machining/super-duplex-sleeve.jpg',
+        src: '/images/gallery-machining/cooling-jacket-gland.jpg',
         desc: 'Stainless steel cooling jacket gland with precise tolerances, essential for secure cooling system performance.'
     },
     {
-        src: '/images/gallery-machining/water-pump-part.jpg',
+        src: '/images/gallery-machining/316ss-circulating-feature.jpg',
         desc: 'Machined component with intricate grooves, enhancing fluid dynamics in complex systems.'
     },
     {
-        src: '/images/gallery-machining/16-316ss-circulating-feature-no-2.jpg',
+        src: '/images/gallery-machining/316ss-double-flange.jpg',
         desc: 'Robust 316 stainless steel double flange, built for secure, leak-proof piping connections.'
     },
     {
-        src: '/images/gallery-machining/cast-iron-cover.jpg',
+        src: '/images/gallery-machining/split-part.jpg',
         desc: 'Stainless steel split part designed for seamless assembly with adjacent components.'
     },
     {
-        src: '/images/gallery-machining/cast-iron.jpg',
+        src: '/images/gallery-machining/steel-tube-sheet.jpg',
         desc: 'Precisely drilled steel tube sheet for supporting heat exchanger tubes in high-accuracy applications.'
     },
     {
-        src: '/images/gallery-machining/cast-iron-chamber.jpg',
+        src: '/images/gallery-machining/1045-steel-wire-roll-chuck-body.jpg',
         desc: 'Strong steel chuck body with precise surfaces for secure industrial clamping.'
     },
     {
-        src: '/images/gallery-machining/1045-steel-wire-roll-chuck-body.jpg',
+        src: '/images/gallery-machining/super-duplex-255.jpg',
         desc: 'Super Duplex 255 stainless steel part, combining corrosion resistance with high strength.'
     },
     {
-        src: '/images/gallery-machining/steel-tube-sheet.jpg',
+        src: '/images/gallery-machining/cast-iron-chamber.jpg',
         desc: 'Heavy-duty cast iron chamber, suited for high-pressure, high-temperature environments.'
     },
     {
-        src: '/images/gallery-machining/split-part.jpg',
+        src: '/images/gallery-machining/super-duplex-sleeve.jpg',
         desc: 'Polished super duplex sleeve for harsh conditions, resistant to corrosion and wear.'
     },
     {
-        src: '/images/gallery-machining/316ss-double-flange.jpg',
+        src: '/images/gallery-machining/water-pump-part.jpg',
         desc: 'Helical water pump component, optimizing fluid flow with a complex shape.'
     },
     {
-        src: '/images/gallery-machining/cooling-jacket-gland.jpg',
+        src: '/images/gallery-machining/cast-iron.jpg',
         desc: 'Sturdy cast iron part with a smooth finish for industrial machinery applications.'
     },
     {
-        src: '/images/gallery-machining/high-pressure-monel-400-separator.jpg',
+        src: '/images/gallery-machining/cast-iron-cover.jpg',
         desc: 'Cast iron cover with fastener holes, providing robust sealing for heavy-duty use.'
     },
     {
-        src: '/images/gallery-machining/titanium-impeller.jpg',
+        src: '/images/gallery-machining/16-316ss-circulating-feature-no-2.jpg',
         desc: '316 stainless steel circulating component with grooves, enhancing fluid movement efficiency.'
     }
 ]
@@ -183,23 +183,19 @@ const faqs = [
     },
     {
         q: 'What are your tolerances for precision machining?',
-        a: 'Our machining services can achieve tolerances as tight as +/- 0.001 inches, depending on the material and project requirements.'
-    },
-    {
-        q: 'Do you offer prototype machining services?',
-        a: 'Yes, we provide both prototyping and full-scale production machining to meet your needs.'
+        a: 'Our machining services can achieve tolerances as tight as +/- 0.0001 inches or tighter, depending on the material and project requirements.'
     },
     {
         q: 'How fast can you turn around custom machining projects?',
-        a: 'Lead times vary by project complexity and material availability, but we aim to deliver within [specific timeframe] based on customer requirements.'
+        a: 'Lead times vary by project complexity and material availability, and we work with our customers to meet their deadlines.'
     },
     {
         q: 'What certifications do you hold?',
-        a: 'We are ISO 9001 certified and comply with AS9100 standards, ensuring high quality and reliability in all projects.'
+        a: 'We are ISO 9001 certified and comply with CSA N299 for nuclear work, ensuring high quality and reliability in all projects.'
     },
     {
         q: 'What industries do you specialize in?',
-        a: 'We serve multiple industries including aerospace, automotive, oil and gas, pharmaceuticals, and more.'
+        a: 'We serve multiple industries including manufacturing, pharmaceutical, oil & gas, nuclear, and more.'
     },
     {
         q: 'Do you offer design assistance or CAD support?',
@@ -207,43 +203,37 @@ const faqs = [
     },
     {
         q: 'What types of machining services do you offer?',
-        a: 'We offer CNC milling, turning, drilling, grinding, and multi-axis machining to meet complex specifications.'
+        a: 'We offer CNC milling, CNC turning, CNC EDMing, grinding, and multi-axis machining to meet complex specifications.'
     },
     {
         q: 'Do you handle high-volume production runs?',
-        a: 'Absolutely. We have the capacity to manage both low-volume prototypes and high-volume production orders.'
+        a: 'Absolutely. We have the capacity to manage both low-volume and high-volume orders.'
     },
     {
-        q: 'Can you handle large parts and assemblies?',
-        a: 'Yes, we specialize in machining both small precision components and larger complex assemblies.'
+        q: 'Can you handle large parts?',
+        a: 'Yes, we specialize in machining both small precision components and larger complex parts.'
     },
     {
         q: 'Do you offer finishing services such as heat treatment or surface coating?',
-        a: 'Yes, we offer post-machining services like heat treatment, surface coating, and finishing as needed.'
+        a: 'Yes, we offer post-machining thermal spray surface coating, and have strategic partnerships for heat treatment and other services.'
     },
     {
         q: 'How do you ensure quality control?',
-        a: 'Our comprehensive quality assurance process includes in-process inspections, final inspections, and the use of precision measuring tools like CMM machines.'
+        a: 'Our comprehensive quality assurance program includes in-process inspections, final inspections, and the use of precision measuring tools like CMM machines.'
     },
     {
         q: 'Can you machine complex geometries?',
         a: 'Yes, our advanced CNC equipment and experienced machinists allow us to machine highly complex and intricate parts.'
     },
     {
-        q: 'What are your payment terms?',
-        a: 'Our payment terms depend on the scope of the project. Contact our team to discuss terms for your specific order.'
-    },
-    {
         q: 'How can I get a quote for my project?',
         a: 'Simply fill out our online request form or give us a call. Provide your project details and our team will get back to you promptly with a quote.'
     },
     {
-        q: 'What software do you use for CAD and CAM?',
-        a: 'We use industry-standard CAD/CAM software such as SolidWorks, AutoCAD, and Mastercam to ensure precision and efficiency in our processes.'
-    },
-    {
         q: 'What\'s the maximum part size you can handle?',
-        a: 'We can machine parts up to [insert dimensions], ensuring that both small and large components can be accommodated.'
+        a: 'Please review our machinery capabilities datasheet to view the maximum sizes our various processes can handle.',
+        link: '/machinery-capabilities-datasheet',
+        linkText: 'Machinery Capabilities Datasheet'
     },
     {
         q: 'Do you offer repair or rework services for existing components?',
@@ -254,20 +244,12 @@ const faqs = [
         a: 'Yes, we can machine customer-supplied materials, as long as they meet the required specifications for machining.'
     },
     {
-        q: 'How do you handle custom part tolerances?',
-        a: 'We ensure that every part is machined to meet your specific tolerance requirements through rigorous quality control.'
-    },
-    {
         q: 'Do you provide material certification or traceability?',
-        a: 'Yes, we provide full material certification and traceability for all materials used in production.'
+        a: 'Yes, we can provide full material certification and traceability to the mill for all materials upon request.'
     },
     {
         q: 'What type of inspection equipment do you use?',
         a: 'We utilize a variety of precision inspection tools including CMM (Coordinate Measuring Machines), calipers, micrometers, and optical comparators.'
-    },
-    {
-        q: 'What is your typical lead time?',
-        a: 'Lead times depend on project complexity, material availability, and current workload. For a more accurate timeframe, contact us with your project details.'
     }
 ]
 const selectedFaqIndex = ref(0)

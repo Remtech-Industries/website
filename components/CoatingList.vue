@@ -1,48 +1,48 @@
 <template>
-  <div class="relative">
-    <div class="flex sticky lg:relative z-10 top-0 justify-between items-center bg-gray-50 py-2 md:py-4 lg:py-6 xl:py-8 px-4 md:px-8 lg:px-12 xl:px-16">
-      <h3 class="text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora">Thermal Spray Coating List</h3>
-      <div class="flex justify-end flex-wrap sm:flex-nowrap" v-if="hasScroll">
-        <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="left">
-          <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>
-          <span class="block w-4 lg:w-6 2xl:w-8 h-4 lg:h-6 2xl:h-8 border-color-unset border-b-2 border-l-2 rotate-45 absolute top-1/2 left-0.5 lg:left-1 -translate-y-1/2"></span>
-        </button>
-        <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="right">
-          <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>
-          <span class="block w-4 lg:w-6 2xl:w-8 h-4 lg:h-6 2xl:h-8 border-color-unset border-t-2 border-r-2 rotate-45 absolute top-1/2 right-0.5 lg:right-1 -translate-y-1/2"></span>
-        </button>
-      </div>
+    <div class="relative">
+        <div class="flex sticky lg:relative z-10 top-0 justify-between items-center bg-gray-50 py-2 md:py-4 lg:py-6 xl:py-8 px-4 md:px-8 lg:px-12 xl:px-16">
+            <h3 class="text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora">Thermal Spray Coating List</h3>
+            <div class="flex justify-end flex-wrap sm:flex-nowrap" v-if="hasScroll">
+                <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="left">
+                    <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>
+                    <span class="block w-4 lg:w-6 2xl:w-8 h-4 lg:h-6 2xl:h-8 border-color-unset border-b-2 border-l-2 rotate-45 absolute top-1/2 left-0.5 lg:left-1 -translate-y-1/2"></span>
+                </button>
+                <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="right">
+                    <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>
+                    <span class="block w-4 lg:w-6 2xl:w-8 h-4 lg:h-6 2xl:h-8 border-color-unset border-t-2 border-r-2 rotate-45 absolute top-1/2 right-0.5 lg:right-1 -translate-y-1/2"></span>
+                </button>
+            </div>
+        </div>
+        <div class="w-full">
+            <div class="overflow-x-auto mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24 px-4 md:px-8 lg:px-12 xl:px-16" ref="table">
+                <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base table-row-alternate mb-2 md:mb-4 lg:mb-6 xl:mb-8">
+                    <tbody>
+                        <template v-for="coatingGroup in coatingGroups">
+                            <tr class="bg-yellow-300">
+                                <th colspan="6" :id="coatingGroup.headingId" class="pb-1 lg:pb-2 pt-3 lg:pt-4 print:border-2 border-gray-950"><span class="sticky left-0 text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl px-2">{{ coatingGroup.heading }}</span></th>
+                            </tr>
+                            <tr class="bg-yellow-300">
+                                <th :id="coatingGroup.headingId + 'composition'" class="p-2 print:border-2 border-gray-950">Composition</th>
+                                <th :id="coatingGroup.headingId + 'tradename'" class="p-2 print:border-2 border-gray-950">Trade Name</th>
+                                <th :id="coatingGroup.headingId + 'description'" class="p-2 print:border-2 border-gray-950">Description</th>
+                                <th :id="coatingGroup.headingId + 'manufacturer'" class="p-2 print:border-2 border-gray-950">Manufacturer</th>
+                                <th :id="coatingGroup.headingId + 'hardness'" class="p-2 print:border-2 border-gray-950">Hardness</th>
+                                <th :id="coatingGroup.headingId + 'remtechnumber'" class="p-2 print:border-2 border-gray-950">RemTech #</th>
+                            </tr>
+                            <tr v-for="coating in coatingGroup.coatings">
+                                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'composition'" class="p-2 print:border-2 border-gray-950">{{ coating.composition }}</td>
+                                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'tradename'" class="p-2 print:border-2 border-gray-950">{{ coating.tradeName }}</td>
+                                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'description'" class="p-2 print:border-2 border-gray-950">{{ coating.description }}</td>
+                                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'manufacturer'" class="p-2 print:border-2 border-gray-950">{{ coating.manufacturer }}</td>
+                                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'hardness'" class="p-2 print:border-2 border-gray-950">{{ coating.hardness }}</td>
+                                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'remtechnumber'" class="p-2 print:border-2 border-gray-950">{{ coating.remtechNumber }}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="w-full">
-      <div class="overflow-x-auto mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24 px-4 md:px-8 lg:px-12 xl:px-16" ref="table">
-        <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base table-row-alternate mb-2 md:mb-4 lg:mb-6 xl:mb-8">
-          <tbody>
-            <template v-for="coatingGroup in coatingGroups">
-              <tr class="bg-yellow-300">
-                <th colspan="6" :id="coatingGroup.headingId" class="pb-1 lg:pb-2 pt-3 lg:pt-4 print:border-2 border-gray-950"><span class="sticky left-0 text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl px-2">{{ coatingGroup.heading }}</span></th>
-              </tr>
-              <tr class="bg-yellow-300">
-                <th :id="coatingGroup.headingId + 'composition'" class="p-2 print:border-2 border-gray-950">Composition</th>
-                <th :id="coatingGroup.headingId + 'tradename'" class="p-2 print:border-2 border-gray-950">Trade Name</th>
-                <th :id="coatingGroup.headingId + 'description'" class="p-2 print:border-2 border-gray-950">Description</th>
-                <th :id="coatingGroup.headingId + 'manufacturer'" class="p-2 print:border-2 border-gray-950">Manufacturer</th>
-                <th :id="coatingGroup.headingId + 'hardness'" class="p-2 print:border-2 border-gray-950">Hardness</th>
-                <th :id="coatingGroup.headingId + 'remtechnumber'" class="p-2 print:border-2 border-gray-950">RemTech #</th>
-              </tr>
-              <tr v-for="coating in coatingGroup.coatings">
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'composition'" class="p-2 print:border-2 border-gray-950">{{ coating.composition }}</td>
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'tradename'" class="p-2 print:border-2 border-gray-950">{{ coating.tradeName }}</td>
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'description'" class="p-2 print:border-2 border-gray-950">{{ coating.description }}</td>
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'manufacturer'" class="p-2 print:border-2 border-gray-950">{{ coating.manufacturer }}</td>
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'hardness'" class="p-2 print:border-2 border-gray-950">{{ coating.hardness }}</td>
-                <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'remtechnumber'" class="p-2 print:border-2 border-gray-950">{{ coating.remtechNumber }}</td>
-              </tr>
-            </template>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script setup>
@@ -50,36 +50,40 @@ const table = useTemplateRef('table')
 const hasScroll = ref(false)
 
 function scroll(el, distance, left = false, time = 100) {
-  if (distance > 0) {
-    const tickTime = 10
-    const tickCount = (time / tickTime)
-    const scrollPerTick = distance / tickCount
-    el.scrollBy({
-      left: left ? -scrollPerTick : scrollPerTick
-    })
-    window.setTimeout(() => {
-      scroll(el, distance - scrollPerTick, left, time - tickTime)
-    }, tickTime)
-  }
+    if (distance > 0) {
+        const tickTime = 10
+        const tickCount = (time / tickTime)
+        const scrollPerTick = distance / tickCount
+        el.scrollBy({
+            left: left ? -scrollPerTick : scrollPerTick
+        })
+        window.setTimeout(() => {
+            scroll(el, distance - scrollPerTick, left, time - tickTime)
+        }, tickTime)
+    }
 }
 
 function left() {
-  scroll(table.value, table.value.clientWidth * 3 / 4, true)
+    scroll(table.value, table.value.clientWidth * 3 / 4, true)
 }
 
 function right() {
-  scroll(table.value, table.value.clientWidth * 3 / 4)
+    scroll(table.value, table.value.clientWidth * 3 / 4)
 }
 
 function showHideArrows() {
-  if (table.value.scrollWidth - table.value.clientWidth > 50) {
-    hasScroll.value = true
-  } else {
-    hasScroll.value = false
-  }
+    if (table.value) {
+        if (table.value.scrollWidth - table.value.clientWidth > 50) {
+            hasScroll.value = true
+        } else {
+            hasScroll.value = false
+        }
+    }
 }
-window.setTimeout(showHideArrows, 1)
-window.addEventListener('resize', showHideArrows)
+onMounted(() => {
+    window.setTimeout(showHideArrows, 1)
+    window.addEventListener('resize', showHideArrows)
+})
 
 const coatingGroups = [
     {

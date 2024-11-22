@@ -15,7 +15,7 @@
                 <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Superior Stainless Steels and Specialty Alloys for Demanding Applications</h3>
                 <p class="mb-8 lg:mb-12 xl:mb-16">Rem-Tech Industries offers a wide range of stainless steels and specialty alloys tailored to your specifications, with full traceability. Our materials are designed for industries requiring top-tier durability, corrosion resistance, and heat tolerance.</p>
                 <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Engineered for Performance</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">From aerospace to energy, our high-performance alloys thrive in challenging conditions, extending component lifespan and ensuring reliability. We source hard-to-find alloys, cut to your needs and deliver quickly, ensuring the right material for every project.</p>
+                <p class="mb-8 lg:mb-12 xl:mb-16">From naval to energy, our high-performance alloys thrive in challenging conditions, extending component lifespan and ensuring reliability. We source hard-to-find alloys, cut to your needs and deliver quickly, ensuring the right material for every project.</p>
                 <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Why Rem-Tech Industries?</h3>
                 <p class="mb-4 lg:mb-6 xl:mb-8">Our extensive inventory and expert team provide custom-sized, fully traceable alloys for your critical applications. We ensure seamless service and fast delivery to keep your projects on track.</p>
                 <h4 class="font-bold">Custom-Sized Materials</h4>
@@ -83,7 +83,7 @@ let menuIsOpen = ref(false)
 const faqs = [
     {
         q: 'What types of stainless steels and specialty alloys do you offer?',
-        a: 'We offer a wide range of stainless steels and specialty alloys, including heat-resistant, corrosion-resistant, and high-strength grades. Our inventory includes alloys for aerospace, energy, chemical processing, and other demanding industries.'
+        a: 'We offer a wide range of stainless steels and specialty alloys, including heat-resistant, corrosion-resistant, and high-strength grades. Our inventory includes alloys for nuclear, energy, chemical processing, and other demanding industries.'
     },
     {
         q: 'Can you provide custom-sized materials?',
@@ -95,7 +95,7 @@ const faqs = [
     },
     {
         q: 'What industries do you serve?',
-        a: 'We serve a wide range of industries, including aerospace, energy, marine, automotive, and chemical processing. Our materials are engineered to perform in the most demanding environments.'
+        a: 'We serve a wide range of industries, including nuclear, energy, marine, automotive, and chemical processing. Our materials are engineered to perform in the most demanding environments.'
     },
     {
         q: 'How quickly can you deliver materials?',

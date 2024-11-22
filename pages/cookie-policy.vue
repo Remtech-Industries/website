@@ -10,16 +10,10 @@
                 <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">2. Types of Cookies We Use</h2>
                 <p class="mb-4 lg:mb-6 xl:mb-8">We use several types of cookies to enhance your experience and improve the functionality of our website:</p>
                 <ul class="mb-8 lg:mb-12 xl:mb-16 bullet-list">
-                    <li>Strictly Necessary Cookies: These cookies are essential for the proper functioning of the website. They enable basic features such as page navigation and access to secure areas of the site. Without these cookies, some services you have requested may not be available.</li>
-                    <li>Performance Cookies: These cookies collect anonymous information about how visitors use our website, such as which pages are visited most often. This data helps us improve the performance and design of our website.</li>
-                    <li>Functional Cookies: These cookies allow our website to remember choices you make (such as language preferences or region) to provide a more personalized experience. They also enable features such as live chats or comment forms.</li>
-                    <li>Targeting/Advertising Cookies: These cookies track your browsing habits to deliver targeted advertisements that are more relevant to your interests. They may also limit the number of times you see an ad and help measure the effectiveness of advertising campaigns. These cookies are often placed by third-party advertising networks with our permission.</li>
-                    <li>Analytics Cookies: We use analytics services, such as Google Analytics, that place cookies on your device to collect data about how you interact with our website. This data helps us understand user behavior and improve the site based on usage patterns.</li>
+                    <li>Cookie Consent Cookie (Necessary Cookie): If you consent to the use of "all cookies" or "necessary cookies", a cookie will be stored on your device to remember your choice. If you choose to reject all cookies, this cookie will not be stored on your device and you will given a cookie consent prompt upon your next visit to our website, since the website will be unable to remember your selection.</li>
+                    <li>Google Analytics Cookies (Non-Necessary Cookies): This website uses Google Analytics to help RemTech understand how visitors interact with this website. These cookies collect data anonymously, reporting on trends without identifying individual visitors. For more information on Google Analytics cookies, please visit <a href="https://support.google.com/analytics/answer/11397207" target="_blank" class="underline">Google cookie usage on websites</a> and <a href="https://policies.google.com/technologies/cookies?hl=en-US" target="_blank" class="underline">how Google uses cookies</a>. These cookies will only be stored on your device if you consent to the use of "all cookies".</li>
                 </ul>
-                <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">3. Third-Party Cookies</h2>
-                <p class="mb-4 lg:mb-6 xl:mb-8">In some cases, we use third-party cookies provided by trusted third parties. These cookies may be set by external services such as social media platforms (e.g., LinkedIn or Facebook), advertisers, or analytics providers. The data collected by these third parties is subject to their respective privacy policies.</p>
-                <p class="mb-8 lg:mb-12 xl:mb-16">We have no control over how third-party cookies are used, but we ensure that any third parties we work with are reputable and comply with relevant data protection regulations.</p>
-                <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">4. Why We Use Cookies</h2>
+                <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">3. Why We Use Cookies</h2>
                 <p class="mb-4 lg:mb-6 xl:mb-8">We use cookies to:</p>
                 <ul class="mb-8 lg:mb-12 xl:mb-16 bullet-list">
                     <li>Enhance your browsing experience by remembering preferences and settings</li>
@@ -27,20 +21,20 @@
                     <li>Provide targeted advertisements and measure the effectiveness of marketing campaigns</li>
                     <li>Track website usage for internal reporting purposes</li>
                 </ul>
-                <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">5. Your Choices Regarding Cookies</h2>
+                <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">4. Your Choices Regarding Cookies</h2>
                 <p class="mb-4 lg:mb-6 xl:mb-8">You have the right to control the use of cookies on our website. You can manage your cookie preferences in the following ways:</p>
                 <ul class="mb-8 lg:mb-12 xl:mb-16 bullet-list">
                     <li>Browser Settings: Most web browsers allow you to control cookie settings, including the ability to block or delete cookies. You can usually find cookie management options under the "Settings" or "Preferences" section of your browser. Please note that disabling certain cookies may affect the functionality of the website and limit your access to certain features.</li>
                     <li>Opt-Out Tools: Some third-party advertising services provide opt-out mechanisms that allow you to control the use of targeting or advertising cookies. For example, you can visit the Digital Advertising Alliance of Canada (DAAC) opt-out page to manage your preferences.</li>
-                    <li>Cookie Consent: When you first visit our website, you will be presented with a cookie consent banner that allows you to accept or reject certain types of cookies. You can modify your consent preferences at any time by adjusting the settings in the banner or through your browser settings.</li>
+                    <li>Cookie Consent: When you first visit our website, you will be presented with a cookie consent banner that allows you to accept or reject certain types of cookies. You can modify your consent preferences at any time by adjusting the settings through your browser settings.</li>
                 </ul>
-                <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">6. Changes to This Cookie Policy</h2>
+                <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">5. Changes to This Cookie Policy</h2>
                 <p class="mb-8 lg:mb-12 xl:mb-16">We may update this Cookie Policy from time to time to reflect changes in technology, legal requirements, or our data practices. Any updates will be posted on our website, and we encourage you to review this policy periodically to stay informed of any changes.</p>
-                <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">7. Contact Information</h2>
+                <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">6. Contact Information</h2>
                 <p class="mb-4 lg:mb-6 xl:mb-8">If you have any questions, concerns, or requests regarding this Cookie Policy or how we handle your personal information, please contact us at:</p>
                 <p class="mb-4 lg:mb-6 xl:mb-8">RemTech Industries<br>69 White Street,<br>Aylmer,<br>ON N5H 2R9</p>
                 <p class="mb-4 lg:mb-6 xl:mb-8">Phone: <a href="tel:+15197733459" class="underline">+1 (519) 773-3459</a><br>Email: <a href="mailto:rfq@remtechindustries.com" class="underline">rfq@remtechindustries.com</a></p>
-                <p class="mb-8 lg:mb-12 xl:mb-16">This Cookie Policy was last updated on October 11, 2024.</p>
+                <p class="mb-8 lg:mb-12 xl:mb-16">This Cookie Policy was last updated on October 22, 2024.</p>
             </div>
         </div>
         <Footer />

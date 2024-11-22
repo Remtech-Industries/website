@@ -15,7 +15,7 @@
                     <li>You may not use this website in a way that causes, or may cause, damage to the website or impairs the availability or accessibility of the website.</li>
                 </ul>
                 <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">4. Privacy</h2>
-                <p class="mb-8 lg:mb-12 xl:mb-16">Our <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink> governs how we collect, use, and protect any personal information you provide while using our website. Please refer to our <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink> for more information.</p>
+                <p class="mb-8 lg:mb-12 xl:mb-16">Our <NuxtLink to="/privacy-policy" class="underline">Privacy Policy</NuxtLink> governs how we collect, use, and protect any personal information you provide while using our website. Please refer to our <NuxtLink to="/privacy-policy" class="underline">Privacy Policy</NuxtLink> for more information.</p>
                 <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">5. Accuracy of Information</h2>
                 <p class="mb-8 lg:mb-12 xl:mb-16">While we strive to ensure the accuracy of the information provided on this website, we do not warrant that the information is up-to-date, complete, or free from errors. RemTech Industries is not liable for any inaccuracies or omissions in the website content.</p>
                 <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">6. Orders and Pricing</h2>
@@ -34,7 +34,7 @@
                 <p class="mb-4 lg:mb-6 xl:mb-8">If you have any questions or concerns regarding these Terms and Conditions, please contact us at:</p>
                 <p class="mb-4 lg:mb-6 xl:mb-8">RemTech Industries<br>69 White Street,<br>Aylmer,<br>ON N5H 2R9</p>
                 <p class="mb-4 lg:mb-6 xl:mb-8">Phone: <a href="tel:+15197733459" class="underline">+1 (519) 773-3459</a><br>Email: <a href="mailto:rfq@remtechindustries.com" class="underline">rfq@remtechindustries.com</a></p>
-                <p class="mb-8 lg:mb-12 xl:mb-16">This Terms & Conditions page was last updated on October 11, 2024.</p>
+                <p class="mb-8 lg:mb-12 xl:mb-16">This Terms & Conditions page was last updated on October 22, 2024.</p>
             </div>
         </div>
         <Footer />

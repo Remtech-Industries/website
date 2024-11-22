@@ -46,9 +46,9 @@
                 <span class="text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl"><NuxtLink to="/alloys" class="text-blue-900 underline">Explore Our Material Catalog - Find Your Ideal Solution Today.</NuxtLink></span>
             </div>
             <div class="bg-blue-900 bg-materials-blue md:w-2/5 text-right flex flex-col justify-center items-stretch text-gray-50 py-16 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12 xl:px-16">
-                <span class="text-xl/tight md:text-2xl/tight lg:text-3xl/tight xl:text-4xl/tight 2xl:text-5xl/tight sora mb-4 lg:mb-8">"RemTech is one of our most reliable suppliers. The quality and high level of ethics from all the employees make RemTech a company of preference. Always willing to go above and beyond to meet and surpass customer's requirements."</span>
-                <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Beatriz Tirado</span>
-                <span>(John Crane)</span>
+                <span class="text-xl/tight md:text-2xl/tight lg:text-3xl/tight xl:text-4xl/tight 2xl:text-5xl/tight sora mb-4 lg:mb-8">"I have not come across any of our suppliers that gives us the quality and service that RemTech provides us. RemTech raises the bar on anyone else when it comes to customer service and the friendliest atmosphere which makes them an absolute pleasure to work with."</span>
+                <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Brian Gallen</span>
+                <span>(Flowserve)</span>
             </div>
         </div>
         <div class="md:min-h-svh bg-community text-center flex flex-col justify-center items-stretch py-16 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12 xl:px-16 text-gray-50">
