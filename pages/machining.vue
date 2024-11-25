@@ -109,7 +109,6 @@
 </template>
 
 <script setup>
-let menuIsOpen = ref(false)
 useSeoMeta({
     title: 'Machining',
     ogTitle: 'Machining',
@@ -118,6 +117,8 @@ useSeoMeta({
     ogImage: '/images/og/machining.png',
     twitterImage: '/images/og/machining.png'
 })
+
+let menuIsOpen = ref(false)
 const galleryImages = [
     {
         src: '/images/gallery-machining/zirconium-702.jpg',

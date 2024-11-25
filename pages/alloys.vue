@@ -79,7 +79,6 @@
 </template>
 
 <script setup>
-let menuIsOpen = ref(false)
 useSeoMeta({
     title: 'Alloys',
     ogTitle: 'Alloys',
@@ -88,6 +87,8 @@ useSeoMeta({
     ogImage: '/images/og/alloys.png',
     twitterImage: '/images/og/alloys.png'
 })
+
+let menuIsOpen = ref(false)
 const faqs = [
     {
         q: 'What types of stainless steels and specialty alloys do you offer?',

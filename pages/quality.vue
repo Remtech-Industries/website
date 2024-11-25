@@ -59,7 +59,6 @@
 </template>
 
 <script setup>
-let menuIsOpen = ref(false)
 useSeoMeta({
     title: 'Quality',
     ogTitle: 'Quality',
@@ -68,4 +67,6 @@ useSeoMeta({
     ogImage: '/images/og/quality.png',
     twitterImage: '/images/og/quality.png'
 })
+
+let menuIsOpen = ref(false)
 </script>

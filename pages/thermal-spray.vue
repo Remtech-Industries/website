@@ -91,7 +91,6 @@
 </template>
 
 <script setup>
-let menuIsOpen = ref(false)
 useSeoMeta({
     title: 'Thermal Spray',
     ogTitle: 'Thermal Spray',
@@ -100,6 +99,8 @@ useSeoMeta({
     ogImage: '/images/og/thermal-spray.png',
     twitterImage: '/images/og/thermal-spray.png'
 })
+
+let menuIsOpen = ref(false)
 const galleryImages = [
     {
         src: '/images/gallery-thermal-spray/wc-cover-gun.jpg',

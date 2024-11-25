@@ -17,49 +17,179 @@ html {
 }
 
 .bg-part-array-red {
-  background: url('/images/part-array-red.jpg') no-repeat center center / cover;
+  background: url('/images/backgrounds/part-array-red/640.jpg') no-repeat center center / cover;
 }
 
 .bg-thermal-spray-gun-yellow {
-  background: url('/images/thermal-spray-gun-yellow.jpg') no-repeat center center / cover;
+  background: url('/images/backgrounds/thermal-spray-gun-yellow/640.jpg') no-repeat center center / cover;
 }
 
 .bg-materials-blue {
-  background: url('/images/materials-blue.jpg') no-repeat center center / cover;
+  background: url('/images/backgrounds/materials-blue/640.jpg') no-repeat center center / cover;
 }
 
 .bg-community {
-  background: url('/images/community.jpg') no-repeat center center / cover;
+  background: url('/images/backgrounds/community/640.jpg') no-repeat center center / cover;
 }
 
 .bg-remtech-red {
-  background: url('/images/remtech-red.jpg') no-repeat center center / cover;
+  background: url('/images/backgrounds/remtech-red/640.jpg') no-repeat center center / cover;
 }
 
 .bg-measuing-blue {
-  background: url('/images/measuring-blue.jpg') no-repeat center center / cover;
+  background: url('/images/backgrounds/measuring-blue/640.jpg') no-repeat center center / cover;
+}
+
+@media screen(sm) {
+  .bg-part-array-red {
+    background: url('/images/backgrounds/part-array-red/768.jpg') no-repeat center center / cover;
+  }
+
+  .bg-thermal-spray-gun-yellow {
+    background: url('/images/backgrounds/thermal-spray-gun-yellow/768.jpg') no-repeat center center / cover;
+  }
+
+  .bg-materials-blue {
+    background: url('/images/backgrounds/materials-blue/768.jpg') no-repeat center center / cover;
+  }
+
+  .bg-community {
+    background: url('/images/backgrounds/community/768.jpg') no-repeat center center / cover;
+  }
+
+  .bg-remtech-red {
+    background: url('/images/backgrounds/remtech-red/768.jpg') no-repeat center center / cover;
+  }
+
+  .bg-measuing-blue {
+    background: url('/images/backgrounds/measuring-blue/768.jpg') no-repeat center center / cover;
+  }
+}
+
+@media screen(md) {
+  .bg-part-array-red {
+    background: url('/images/backgrounds/part-array-red/1024.jpg') no-repeat center center / cover;
+  }
+
+  .bg-thermal-spray-gun-yellow {
+    background: url('/images/backgrounds/thermal-spray-gun-yellow/1024.jpg') no-repeat center center / cover;
+  }
+
+  .bg-materials-blue {
+    background: url('/images/backgrounds/materials-blue/1024.jpg') no-repeat center center / cover;
+  }
+
+  .bg-community {
+    background: url('/images/backgrounds/community/1024.jpg') no-repeat center center / cover;
+  }
+
+  .bg-remtech-red {
+    background: url('/images/backgrounds/remtech-red/1024.jpg') no-repeat center center / cover;
+  }
+
+  .bg-measuing-blue {
+    background: url('/images/backgrounds/measuring-blue/1024.jpg') no-repeat center center / cover;
+  }
+}
+
+@media screen(lg) {
+  .bg-part-array-red {
+    background: url('/images/backgrounds/part-array-red/1280.jpg') no-repeat center center / cover;
+  }
+
+  .bg-thermal-spray-gun-yellow {
+    background: url('/images/backgrounds/thermal-spray-gun-yellow/1280.jpg') no-repeat center center / cover;
+  }
+
+  .bg-materials-blue {
+    background: url('/images/backgrounds/materials-blue/1280.jpg') no-repeat center center / cover;
+  }
+
+  .bg-community {
+    background: url('/images/backgrounds/community/1280.jpg') no-repeat center center / cover;
+  }
+
+  .bg-remtech-red {
+    background: url('/images/backgrounds/remtech-red/1280.jpg') no-repeat center center / cover;
+  }
+
+  .bg-measuing-blue {
+    background: url('/images/backgrounds/measuring-blue/1280.jpg') no-repeat center center / cover;
+  }
+}
+
+@media screen(xl) {
+  .bg-part-array-red {
+    background: url('/images/backgrounds/part-array-red/1536.jpg') no-repeat center center / cover;
+  }
+
+  .bg-thermal-spray-gun-yellow {
+    background: url('/images/backgrounds/thermal-spray-gun-yellow/1536.jpg') no-repeat center center / cover;
+  }
+
+  .bg-materials-blue {
+    background: url('/images/backgrounds/materials-blue/1536.jpg') no-repeat center center / cover;
+  }
+
+  .bg-community {
+    background: url('/images/backgrounds/community/1536.jpg') no-repeat center center / cover;
+  }
+
+  .bg-remtech-red {
+    background: url('/images/backgrounds/remtech-red/1536.jpg') no-repeat center center / cover;
+  }
+
+  .bg-measuing-blue {
+    background: url('/images/backgrounds/measuring-blue/1536.jpg') no-repeat center center / cover;
+  }
+}
+
+@media screen(2xl) {
+  .bg-part-array-red {
+    background: url('/images/backgrounds/part-array-red/1920.jpg') no-repeat center center / cover;
+  }
+
+  .bg-thermal-spray-gun-yellow {
+    background: url('/images/backgrounds/thermal-spray-gun-yellow/1920.jpg') no-repeat center center / cover;
+  }
+
+  .bg-materials-blue {
+    background: url('/images/backgrounds/materials-blue/1920.jpg') no-repeat center center / cover;
+  }
+
+  .bg-community {
+    background: url('/images/backgrounds/community/1920.jpg') no-repeat center center / cover;
+  }
+
+  .bg-remtech-red {
+    background: url('/images/backgrounds/remtech-red/1920.jpg') no-repeat center center / cover;
+  }
+
+  .bg-measuing-blue {
+    background: url('/images/backgrounds/measuring-blue/1920.jpg') no-repeat center center / cover;
+  }
 }
 
 @media screen(sm) {
   .bg-drawing-1 {
-    background: url('/images/drawing-1.svg') no-repeat -330% 100% / 120%;
+    background: url('/images/vector-drawings/drawing-1.svg') no-repeat -330% 100% / 120%;
   }
 
   .bg-drawing-2 {
-    background: url('/images/drawing-2.svg') no-repeat -330% 100% / 120%;
+    background: url('/images/vector-drawings/drawing-2.svg') no-repeat -330% 100% / 120%;
   }
 
   .bg-drawing-3 {
-    background: url('/images/drawing-3.svg') no-repeat 120% 50% / 200%;
+    background: url('/images/vector-drawings/drawing-3.svg') no-repeat 120% 50% / 200%;
   }
 
   .bg-drawing-4 {
-    background: url('/images/drawing-4.svg') no-repeat -60% 50% / 200%;
+    background: url('/images/vector-drawings/drawing-4.svg') no-repeat -60% 50% / 200%;
     @apply bg-red-700;
   }
 
   .bg-drawing-5 {
-    background: url('/images/drawing-5.svg') no-repeat -160% 140% / 120%;
+    background: url('/images/vector-drawings/drawing-5.svg') no-repeat -160% 140% / 120%;
   }
 }
 

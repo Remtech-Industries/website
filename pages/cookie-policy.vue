@@ -42,7 +42,6 @@
 </template>
 
 <script setup>
-let menuIsOpen = ref(false)
 useSeoMeta({
     title: 'Cookie Policy',
     ogTitle: 'Cookie Policy',
@@ -51,4 +50,6 @@ useSeoMeta({
     ogImage: '/images/og/cookie-policy.png',
     twitterImage: '/images/og/cookie-policy.png'
 })
+
+let menuIsOpen = ref(false)
 </script>

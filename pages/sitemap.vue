@@ -25,7 +25,6 @@
 </template>
 
 <script setup>
-let menuIsOpen = ref(false)
 useSeoMeta({
     title: 'Sitemap',
     ogTitle: 'Sitemap',
@@ -34,4 +33,6 @@ useSeoMeta({
     ogImage: '/images/og/sitemap.png',
     twitterImage: '/images/og/sitemap.png'
 })
+
+let menuIsOpen = ref(false)
 </script>

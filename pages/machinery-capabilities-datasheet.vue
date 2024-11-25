@@ -40,10 +40,6 @@
 </template>
 
 <script setup>
-const table = useTemplateRef('table')
-const hasScroll = ref(false)
-let menuIsOpen = ref(false)
-
 useSeoMeta({
     title: 'Machinery Capabilities Datasheet',
     ogTitle: 'Machinery Capabilities Datasheet',
@@ -52,6 +48,10 @@ useSeoMeta({
     ogImage: '/images/og/machinery-capabilities-datasheet.png',
     twitterImage: '/images/og/machinery-capabilities-datasheet.png'
 })
+
+const table = useTemplateRef('table')
+const hasScroll = ref(false)
+let menuIsOpen = ref(false)
 
 function print() {
   window.print()

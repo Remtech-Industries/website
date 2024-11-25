@@ -27,7 +27,6 @@
 </template>
 
 <script setup>
-let menuIsOpen = ref(false)
 useSeoMeta({
     title: 'Thermal Spray Line Card',
     ogTitle: 'Thermal Spray Line Card',
@@ -36,6 +35,8 @@ useSeoMeta({
     ogImage: '/images/og/thermal-spray-line-card.png',
     twitterImage: '/images/og/thermal-spray-line-card.png'
 })
+
+let menuIsOpen = ref(false)
 
 function print() {
   window.print()

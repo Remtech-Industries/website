@@ -64,7 +64,6 @@
 </template>
 
 <script setup>
-let menuIsOpen = ref(false)
 useSeoMeta({
     title: 'Privacy Policy',
     ogTitle: 'Privacy Policy',
@@ -73,4 +72,6 @@ useSeoMeta({
     ogImage: '/images/og/privacy-policy.png',
     twitterImage: '/images/og/privacy-policy.png'
 })
+
+let menuIsOpen = ref(false)
 </script>

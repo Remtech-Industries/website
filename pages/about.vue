@@ -73,7 +73,6 @@
 </template>
 
 <script setup>
-let menuIsOpen = ref(false)
 useSeoMeta({
     title: 'About',
     ogTitle: 'About',
@@ -82,6 +81,8 @@ useSeoMeta({
     ogImage: '/images/og/about.png',
     twitterImage: '/images/og/about.png'
 })
+
+let menuIsOpen = ref(false)
 const employees = [
     {
         // imageSrc: '/images/gallery-personnel/willy-siemens-1.jpg',
