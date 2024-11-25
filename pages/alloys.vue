@@ -80,6 +80,14 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'Alloys',
+    ogTitle: 'Alloys',
+    description: 'High-Quality Steels and Alloys for All Your Industrial Needs. Source custom-sized, hard-to-find materials with full traceability from Rem-Tech Industries - Your trusted specialty alloys provider.',
+    ogDescription: 'High-Quality Steels and Alloys for All Your Industrial Needs. Source custom-sized, hard-to-find materials with full traceability from Rem-Tech Industries - Your trusted specialty alloys provider.',
+    ogImage: '/images/og/alloys.png',
+    twitterImage: '/images/og/alloys.png'
+})
 const faqs = [
     {
         q: 'What types of stainless steels and specialty alloys do you offer?',

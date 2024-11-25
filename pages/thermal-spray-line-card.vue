@@ -28,6 +28,14 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'Thermal Spray Line Card',
+    ogTitle: 'Thermal Spray Line Card',
+    description: 'Rem-Tech Industries offers cutting-edge thermal spray coating services using both High Velocity Oxy-Fuel (HVOF) and Plasma Spray technologies. Our solutions provide wear resistance, corrosion protection, and extended durability, ensuring your equipment performs reliably under the most extreme conditions. From oil and gas to nuclear applications, our coatings are designed to meet the rigorous demands of modern industries.',
+    ogDescription: 'Rem-Tech Industries offers cutting-edge thermal spray coating services using both High Velocity Oxy-Fuel (HVOF) and Plasma Spray technologies. Our solutions provide wear resistance, corrosion protection, and extended durability, ensuring your equipment performs reliably under the most extreme conditions. From oil and gas to nuclear applications, our coatings are designed to meet the rigorous demands of modern industries.',
+    ogImage: '/images/og/thermal-spray-line-card.png',
+    twitterImage: '/images/og/thermal-spray-line-card.png'
+})
 
 function print() {
   window.print()

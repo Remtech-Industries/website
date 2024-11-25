@@ -60,4 +60,12 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'Quality',
+    ogTitle: 'Quality',
+    description: 'Quality you can trust, every time. At RemTech, quality isn\'t just a promise—it\'s the foundation of everything we do. From precision machining to complex projects in the nuclear industry, our commitment to excellence ensures that you receive the highest level of reliability and accuracy, every time.',
+    ogDescription: 'Quality you can trust, every time. At RemTech, quality isn\'t just a promise—it\'s the foundation of everything we do. From precision machining to complex projects in the nuclear industry, our commitment to excellence ensures that you receive the highest level of reliability and accuracy, every time.',
+    ogImage: '/images/og/quality.png',
+    twitterImage: '/images/og/quality.png'
+})
 </script>

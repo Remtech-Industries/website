@@ -77,4 +77,12 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'Your Manufacturing Partners',
+    ogTitle: 'Your Manufacturing Partners',
+    description: 'RemTech delivers machining, thermal spray, and alloys with unmatched expertise and reliability.',
+    ogDescription: 'RemTech delivers machining, thermal spray, and alloys with unmatched expertise and reliability.',
+    ogImage: '/images/og/index.png',
+    twitterImage: '/images/og/index.png'
+})
 </script>

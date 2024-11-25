@@ -74,6 +74,14 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'About',
+    ogTitle: 'About',
+    description: 'Where innovation meets integrity - your trusted partner for complex manufacturing solutions and a stronger future.',
+    ogDescription: 'Where innovation meets integrity - your trusted partner for complex manufacturing solutions and a stronger future.',
+    ogImage: '/images/og/about.png',
+    twitterImage: '/images/og/about.png'
+})
 const employees = [
     {
         // imageSrc: '/images/gallery-personnel/willy-siemens-1.jpg',

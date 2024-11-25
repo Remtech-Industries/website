@@ -92,6 +92,14 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'Thermal Spray',
+    ogTitle: 'Thermal Spray',
+    description: 'Thermal spray coatings for superior durability. Enhance your critical components with advanced thermal spray coatings from Rem-Tech Industries.',
+    ogDescription: 'Thermal spray coatings for superior durability. Enhance your critical components with advanced thermal spray coatings from Rem-Tech Industries.',
+    ogImage: '/images/og/thermal-spray.png',
+    twitterImage: '/images/og/thermal-spray.png'
+})
 const galleryImages = [
     {
         src: '/images/gallery-thermal-spray/wc-cover-gun.jpg',

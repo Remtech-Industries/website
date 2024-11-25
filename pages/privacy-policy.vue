@@ -65,4 +65,12 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'Privacy Policy',
+    ogTitle: 'Privacy Policy',
+    description: 'At RemTech Industries, we are committed to protecting the privacy and security of the personal information of our customers, employees, and website visitors. This Privacy Policy outlines how we collect, use, disclose, and protect personal information in compliance with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and any applicable provincial legislation.',
+    ogDescription: 'At RemTech Industries, we are committed to protecting the privacy and security of the personal information of our customers, employees, and website visitors. This Privacy Policy outlines how we collect, use, disclose, and protect personal information in compliance with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and any applicable provincial legislation.',
+    ogImage: '/images/og/privacy-policy.png',
+    twitterImage: '/images/og/privacy-policy.png'
+})
 </script>

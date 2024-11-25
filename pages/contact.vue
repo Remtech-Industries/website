@@ -22,4 +22,12 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'Contact',
+    ogTitle: 'Contact',
+    description: 'Your new go-to supplier awaits. Reach out today and get a free quote.',
+    ogDescription: 'Your new go-to supplier awaits. Reach out today and get a free quote.',
+    ogImage: '/images/og/contact.png',
+    twitterImage: '/images/og/contact.png'
+})
 </script>

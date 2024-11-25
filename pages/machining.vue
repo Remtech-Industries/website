@@ -110,6 +110,14 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'Machining',
+    ogTitle: 'Machining',
+    description: 'Your manufacturing partners. RemTech delivers machining, thermal spray, and alloys with unmatched expertise and reliability.',
+    ogDescription: 'Your manufacturing partners. RemTech delivers machining, thermal spray, and alloys with unmatched expertise and reliability.',
+    ogImage: '/images/og/machining.png',
+    twitterImage: '/images/og/machining.png'
+})
 const galleryImages = [
     {
         src: '/images/gallery-machining/zirconium-702.jpg',

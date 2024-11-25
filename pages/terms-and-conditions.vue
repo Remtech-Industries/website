@@ -43,4 +43,12 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'Terms and Conditions',
+    ogTitle: 'Terms and Conditions',
+    description: 'Welcome to RemTech Industries. These terms and conditions outline the rules and regulations for the use of RemTech Industries\' website and the services provided by RemTech Industries.',
+    ogDescription: 'Welcome to RemTech Industries. These terms and conditions outline the rules and regulations for the use of RemTech Industries\' website and the services provided by RemTech Industries.',
+    ogImage: '/images/og/terms-and-conditions.png',
+    twitterImage: '/images/og/terms-and-conditions.png'
+})
 </script>

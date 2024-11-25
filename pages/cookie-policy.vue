@@ -43,4 +43,12 @@
 
 <script setup>
 let menuIsOpen = ref(false)
+useSeoMeta({
+    title: 'Cookie Policy',
+    ogTitle: 'Cookie Policy',
+    description: 'At RemTech Industries, we use cookies and similar tracking technologies to enhance your experience on our website, improve performance, and analyze how you interact with our site. This Cookie Policy explains what cookies are, how we use them, and your choices regarding their use. This policy is designed to comply with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA), and outlines our commitment to protecting your privacy while using these technologies.',
+    ogDescription: 'At RemTech Industries, we use cookies and similar tracking technologies to enhance your experience on our website, improve performance, and analyze how you interact with our site. This Cookie Policy explains what cookies are, how we use them, and your choices regarding their use. This policy is designed to comply with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA), and outlines our commitment to protecting your privacy while using these technologies.',
+    ogImage: '/images/og/cookie-policy.png',
+    twitterImage: '/images/og/cookie-policy.png'
+})
 </script>
