@@ -18,8 +18,9 @@
         </button>
       </div>
     </div>
-    <form @submit.prevent="handleFormSubmit" v-show="error === false && success === false">
+    <form @submit.prevent="handleFormSubmit" name="contactForm" method="post" enctype="multipart/form-data" v-show="error === false && success === false" ref="form" data-netlify="true">
       <h3 class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6">Get a Free Quote</h3>
+      <input type="hidden" name="form-name" value="contactForm">
       <label>
         <span class="text-sm md:text-base block mb-1">Your Name <span class="text-xs">(required)</span></span>
         <input type="text" name="Name" v-model="name" class="w-full form-bg px-4 py-3" maxlength="255" required />
@@ -33,34 +34,31 @@
         <textarea name="Project Details" v-model="details" class="w-full form-bg px-4 py-3 block" maxlength="65535" required></textarea>
       </label>
       <label>
-        <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Project Files <span class="text-xs">(20mb max.)</span></span>
+        <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Project/Drawing File <span class="text-xs">(8mb max.)</span></span>
         <span class="block relative">
-          <input @change="handleFileUpload" type="file" class="w-full form-bg px-4 py-3 h-24" name="FileUpload" multiple />
+          <input @change="handleFileUpload" type="file" class="w-full form-bg px-4 py-3 h-24" name="FileUpload" />
           <span class="flex justify-center items-center text-center absolute top-0 left-0 w-full h-full form-bg p-4 pointer-events-none cursor-pointer">{{ fileUploadLabel }}</span>
         </span>
       </label>
       <button type="submit" class="underline py-4 mt-4 text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
-        Submit
+        {{ loading ? 'Submitting...' : 'Submit' }}
       </button>
     </form>
   </div>
 </template>
 
 <script setup>
-const name = ref('')
-const email = ref('')
-const details = ref('')
+const loading = ref(false)
 const success = ref(false)
 const error = ref(false)
+const form = useTemplateRef('form')
 let fileUploadLabel = ref('Drag files here or click to upload.')
-let files = []
 
 function handleFileUpload(e) {
   if (e.target.files.length === 0) {
     fileUploadLabel.value = 'Drag files here or click to upload.'
   } else {
     fileUploadLabel.value = ''
-    files = e.target.files
 
     for (var x = 0; x < files.length; x++) {
       fileUploadLabel.value += files[x].name + ', '
@@ -80,22 +78,20 @@ function close() {
 
 async function handleFormSubmit() {
   try {
-    const formData = new FormData()
-    formData.append('SingleLine', name.value)
-    formData.append('Email', email.value)
-    formData.append('MultiLine', details.value)
-    for (var x = 0; x < files.length; x++) {
-      formData.append('FileUpload', files[x]);
-    }
+    const formData = new FormData(form.value)
+    loading.value = true
 
-    await $fetch('/api/contact', {
+    await $fetch('/', {
       method: 'POST',
+      headers: { 'Content-Type': 'multipart/form-data' },
       body: formData
     })
 
     success.value = true
+    loading.value = false
   } catch (e) {
     error.value = true
+    loading.value = false
   }
 }
 </script>
