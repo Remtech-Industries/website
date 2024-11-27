@@ -19,7 +19,7 @@
             </button>
             <p class="hidden print:block text-right">remtechindustries.com<br>rfq@remtechindustries.com<br>+1 (519) 773-3459</p>
         </div>
-        <div v-if="menuOpen" class="fixed top-0 w-full h-dvh z-10 flex flex-col items-center overflow-x-hidden overflow-y-auto" :class="props.menuclass">
+        <div v-show="menuOpen" class="fixed top-0 w-full h-dvh z-10 flex flex-col items-center overflow-x-hidden overflow-y-auto" :class="props.menuclass">
             <div class="flex justify-between items-start w-full p-4 md:p-5 lg:p-6 xl:p-8 2xl:p-10">
                 <div class="sm:flex">
                     <NuxtLink to="/">
