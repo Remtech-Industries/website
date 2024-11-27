@@ -23,15 +23,15 @@
       <input type="hidden" name="form-name" value="contactForm">
       <label>
         <span class="text-sm md:text-base block mb-1">Your Name <span class="text-xs">(required)</span></span>
-        <input type="text" name="Name" v-model="name" class="w-full form-bg px-4 py-3" maxlength="255" required />
+        <input type="text" name="Name" class="w-full form-bg px-4 py-3" maxlength="255" required />
       </label>
       <label>
         <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Your Email <span class="text-xs">(required)</span></span>
-        <input type="email" name="Email" v-model="email" class="w-full form-bg px-4 py-3" maxlength="255" required />
+        <input type="email" name="Email" class="w-full form-bg px-4 py-3" maxlength="255" required />
       </label>
       <label>
         <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Your Project Details <span class="text-xs">(required)</span></span>
-        <textarea name="Project Details" v-model="details" class="w-full form-bg px-4 py-3 block" maxlength="65535" required></textarea>
+        <textarea name="Project Details" class="w-full form-bg px-4 py-3 block" maxlength="65535" required></textarea>
       </label>
       <label>
         <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Project/Drawing File <span class="text-xs">(8mb max.)</span></span>
@@ -52,7 +52,7 @@ const loading = ref(false)
 const success = ref(false)
 const error = ref(false)
 const form = useTemplateRef('form')
-let fileUploadLabel = ref('Drag files here or click to upload.')
+const fileUploadLabel = ref('Drag files here or click to upload.')
 
 function handleFileUpload(e) {
   if (e.target.files.length === 0) {
