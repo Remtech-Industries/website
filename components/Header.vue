@@ -12,7 +12,7 @@
                 <li><NuxtLink to="/thermal-spray" class="px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 flex h-full items-center">Thermal Spray</NuxtLink></li>
                 <li><NuxtLink to="/alloys" class="px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 flex h-full items-center">Alloys</NuxtLink></li>
             </ul>
-            <button @click="open" class="flex justify-between flex-col h-6 lg:h-7.5 xl:h-9 w-8 lg:w-10 xl:w-12 print:hidden" aria-label="open menu">
+            <button ref="button" @click="open" class="flex justify-between flex-col h-6 lg:h-7.5 xl:h-9 w-8 lg:w-10 xl:w-12 print:hidden" aria-label="open menu">
                 <div class="w-full border-color-unset border-b-2 xl:border-b-3"></div>
                 <div class="w-full border-color-unset border-b-2 xl:border-b-3"></div>
                 <div class="w-full border-color-unset border-b-2 xl:border-b-3"></div>
@@ -22,7 +22,7 @@
         <div v-show="menuOpen" class="fixed top-0 w-full h-dvh z-10 flex flex-col items-center overflow-x-hidden overflow-y-auto" :class="props.menuclass">
             <div class="flex justify-between items-start w-full p-4 md:p-5 lg:p-6 xl:p-8 2xl:p-10">
                 <div class="sm:flex">
-                    <NuxtLink to="/">
+                    <NuxtLink to="/" ref="first" @keydown="tabEnd">
                         <img src="/images/logos/logo.png" alt="The RemTech Industries Logo" class="h-10 md:h-12 lg:h-14 xl:h-16 2xl:h-20 mb-2 sm:mb-0 sm:mr-2 md:mr-3 lg:mr-4 w-auto">
                     </NuxtLink>
                     <NuxtLink to="/alloys">
@@ -48,7 +48,7 @@
                     <li><NuxtLink to="/terms-and-conditions" class="block py-2 md:py-3 xl:py-4">Terms & Conditions</NuxtLink></li>
                     <li><NuxtLink to="/privacy-policy" class="block py-2 md:py-3 xl:py-4">Privacy Policy</NuxtLink></li>
                     <li><NuxtLink to="/cookie-policy" class="block py-2 md:py-3 xl:py-4">Cookie Policy</NuxtLink></li>
-                    <li><NuxtLink to="/sitemap" class="block py-2 md:py-3 xl:py-4">Sitemap</NuxtLink></li>
+                    <li><NuxtLink to="/sitemap" class="block py-2 md:py-3 xl:py-4" ref="last" @keydown="tabStart">Sitemap</NuxtLink></li>
                 </ul>
             </div>
         </div>
@@ -59,14 +59,37 @@
 const menuOpen = ref(false)
 const emit = defineEmits(['open', 'close'])
 const props = defineProps(['menuclass', 'alloys'])
+let button = useTemplateRef('button')
+let firstElement = useTemplateRef('first')
+let lastElement = useTemplateRef('last')
 
 function open() {
     menuOpen.value = true
     emit('open')
+    window.setTimeout(() => {
+        firstElement.value.$el.focus()
+    }, 1)
 }
 
 function close() {
     menuOpen.value = false
     emit('close')
+    window.setTimeout(() => {
+        button.value.focus()
+    }, 1)
+}
+
+function tabStart(e) {
+    if (e.key === 'Tab' && !e.shiftKey) {
+        e.preventDefault()
+        firstElement.value.$el.focus()
+    }
+}
+
+function tabEnd(e) {
+    if (e.key === 'Tab' && e.shiftKey) {
+        e.preventDefault()
+        lastElement.value.$el.focus()
+    }
 }
 </script>
