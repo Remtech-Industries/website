@@ -59,7 +59,7 @@
 const menuOpen = ref(false)
 const emit = defineEmits(['open', 'close'])
 const props = defineProps(['menuclass', 'alloys'])
-let button = useTemplateRef('button')
+const button = useTemplateRef('button')
 
 function open() {
     menuOpen.value = true

@@ -1,25 +1,25 @@
 <template>
   <div>
     <div v-show="success === true">
-      <h3 class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6">Thank you for your request. Your submission has been received.</h3>
+      <h3 class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6" tabindex="0" ref="successMessage">Thank you for your request. Your submission has been received.</h3>
       <div class="flex justify-center">
-        <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20">
+        <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20" aria-label="return to contact form">
             <div class="w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
             <div class="w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
         </button>
       </div>
     </div>
     <div v-show="error === true">
-      <h3 class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6">An error has occurred while submitting your request. Please refresh the page and try again later.</h3>
+      <h3 class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6" tabindex="0" ref="errorMessage">An error has occurred while submitting your request. Please refresh the page and try again later.</h3>
       <div class="flex justify-center">
-        <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20">
+        <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20" aria-label="return to contact form">
             <div class="w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
             <div class="w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
         </button>
       </div>
     </div>
     <form @submit.prevent="handleFormSubmit" name="contactForm" method="post" enctype="multipart/form-data" v-show="error === false && success === false" ref="form" data-netlify="true">
-      <h3 class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6">Get a Free Quote</h3>
+      <h3 class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6" tabindex="0" ref="formHeading">Get a Free Quote</h3>
       <input type="hidden" name="form-name" value="contactForm">
       <label>
         <span class="text-sm md:text-base block mb-1">Your Name <span class="text-xs">(required)</span></span>
@@ -52,6 +52,9 @@ const loading = ref(false)
 const success = ref(false)
 const error = ref(false)
 const form = useTemplateRef('form')
+const successMessage = useTemplateRef('successMessage')
+const errorMessage = useTemplateRef('errorMessage')
+const formHeading = useTemplateRef('formHeading')
 const fileUploadLabel = ref('Drag files here or click to upload.')
 
 function handleFileUpload(e) {
@@ -72,7 +75,7 @@ function close() {
   success.value = false
   error.value = false
   window.setTimeout(() => {
-    //
+    formHeading.value.focus()
   }, 1)
 }
 
@@ -89,9 +92,15 @@ async function handleFormSubmit() {
 
     success.value = true
     loading.value = false
+    window.setTimeout(() => {
+      successMessage.value.focus()
+    }, 1)
   } catch (e) {
     error.value = true
     loading.value = false
+    window.setTimeout(() => {
+      errorMessage.value.focus()
+    }, 1)
   }
 }
 </script>
