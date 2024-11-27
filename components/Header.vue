@@ -12,7 +12,7 @@
                 <li><NuxtLink to="/thermal-spray" class="px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 flex h-full items-center">Thermal Spray</NuxtLink></li>
                 <li><NuxtLink to="/alloys" class="px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 flex h-full items-center">Alloys</NuxtLink></li>
             </ul>
-            <button @click="open" class="flex justify-between flex-col h-6 lg:h-7.5 xl:h-9 w-8 lg:w-10 xl:w-12 print:hidden">
+            <button @click="open" class="flex justify-between flex-col h-6 lg:h-7.5 xl:h-9 w-8 lg:w-10 xl:w-12 print:hidden" aria-label="open menu">
                 <div class="w-full border-color-unset border-b-2 xl:border-b-3"></div>
                 <div class="w-full border-color-unset border-b-2 xl:border-b-3"></div>
                 <div class="w-full border-color-unset border-b-2 xl:border-b-3"></div>
@@ -29,7 +29,7 @@
                         <img src="/images/logos/alloys-logo.png" alt="The RemTech Alloys Logo" class="h-10 md:h-12 lg:h-14 xl:h-16 2xl:h-20 w-auto">
                     </NuxtLink>
                 </div>
-                <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20">
+                <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20" aria-label="close menu">
                     <div class="w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
                     <div class="w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
                 </button>

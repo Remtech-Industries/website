@@ -11,14 +11,14 @@
       <div class="w-1/2 mr-2">
         <h2 class="sora text-2xl lg:text-4xl xl:text-5xl mb-4">High Velocity Oxygen Fuel</h2>
         <p class="mb-2">The HVOF (High Velocity Oxy-Fuel) system uses a high velocity, low temperature process to produce hard face surfaces which help protect components against wear and corrosion.</p>
-        <img src="/images/thermal-spray/hvof-gun-diagram.jpg" alt="HVOF Gun Diagram" class="mb-2">
-        <img src="/images/thermal-spray/hvof-gun-robot.jpg" alt="HVOF Gun Diagram">
+        <img src="/images/thermal-spray/hvof-gun-diagram.jpg" alt="HVOF Gun Function Diagram" class="mb-2">
+        <img src="/images/thermal-spray/hvof-gun-robot.jpg" alt="HVOF Gun">
       </div>
       <div class="w-1/2 ml-2">
         <h2 class="sora text-2xl lg:text-4xl xl:text-5xl mb-4">Plasma</h2>
         <p class="mb-2">The Plasma process utilizes the heat of an inert ionized gas to create thermal energy to melt and propel ceramic powders onto surfaces creating extremely hard, dense, wear and corrosion resistant coatings.</p>
-        <img src="/images/thermal-spray/plasma-gun-diagram.jpg" alt="Plasma Gun Diagram" class="mb-2">
-        <img src="/images/thermal-spray/plasma-gun-robot.jpg" alt="Plasma Gun Diagram">
+        <img src="/images/thermal-spray/plasma-gun-diagram.jpg" alt="Plasma Gun Function Diagram" class="mb-2">
+        <img src="/images/thermal-spray/plasma-gun-robot.jpg" alt="Plasma Gun">
       </div>
     </div>
     <CoatingList />

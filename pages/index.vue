@@ -1,7 +1,7 @@
 <template>
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
         <div class="relative h-svh">
-            <video autoplay muted loop playsinline class="absolute w-full h-full top-0 left-0 object-cover opacity-50">
+            <video autoplay muted loop playsinline class="absolute w-full h-full top-0 left-0 object-cover opacity-50 pointer-events-none" aria-hidden="true">
                 <source src="/video.webm" type="video/webm">
                 <source src="/video.mp4" type="video/mp4">
             </video>
