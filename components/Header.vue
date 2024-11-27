@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <div class="flex justify-between relative items-center p-4 md:p-5 lg:p-6 xl:p-8 2xl:p-10">
+        <div class="flex justify-between relative items-center p-4 md:p-5 lg:p-6 xl:p-8 2xl:p-10" v-show="!menuOpen">
             <NuxtLink to="/alloys" v-if="alloys">
                 <img src="/images/logos/alloys-logo.png" alt="The RemTech Industries Logo" class="h-10 md:h-12 lg:h-14 xl:h-16 2xl:h-20 mr-4 w-auto">
             </NuxtLink>
@@ -19,10 +19,10 @@
             </button>
             <p class="hidden print:block text-right">remtechindustries.com<br>rfq@remtechindustries.com<br>+1 (519) 773-3459</p>
         </div>
-        <div v-show="menuOpen" class="fixed top-0 w-full h-dvh z-10 flex flex-col items-center overflow-x-hidden overflow-y-auto" :class="props.menuclass">
+        <div v-show="menuOpen" class="fixed top-0 w-full h-dvh z-10 flex flex-col items-center overflow-x-hidden overflow-y-auto" :class="props.menuclass" aria-modal="true" role="dialog">
             <div class="flex justify-between items-start w-full p-4 md:p-5 lg:p-6 xl:p-8 2xl:p-10">
                 <div class="sm:flex">
-                    <NuxtLink to="/" ref="first" @keydown="tabEnd">
+                    <NuxtLink to="/">
                         <img src="/images/logos/logo.png" alt="The RemTech Industries Logo" class="h-10 md:h-12 lg:h-14 xl:h-16 2xl:h-20 mb-2 sm:mb-0 sm:mr-2 md:mr-3 lg:mr-4 w-auto">
                     </NuxtLink>
                     <NuxtLink to="/alloys">
@@ -48,7 +48,7 @@
                     <li><NuxtLink to="/terms-and-conditions" class="block py-2 md:py-3 xl:py-4">Terms & Conditions</NuxtLink></li>
                     <li><NuxtLink to="/privacy-policy" class="block py-2 md:py-3 xl:py-4">Privacy Policy</NuxtLink></li>
                     <li><NuxtLink to="/cookie-policy" class="block py-2 md:py-3 xl:py-4">Cookie Policy</NuxtLink></li>
-                    <li><NuxtLink to="/sitemap" class="block py-2 md:py-3 xl:py-4" ref="last" @keydown="tabStart">Sitemap</NuxtLink></li>
+                    <li><NuxtLink to="/sitemap" class="block py-2 md:py-3 xl:py-4">Sitemap</NuxtLink></li>
                 </ul>
             </div>
         </div>
@@ -60,15 +60,10 @@ const menuOpen = ref(false)
 const emit = defineEmits(['open', 'close'])
 const props = defineProps(['menuclass', 'alloys'])
 let button = useTemplateRef('button')
-let firstElement = useTemplateRef('first')
-let lastElement = useTemplateRef('last')
 
 function open() {
     menuOpen.value = true
     emit('open')
-    window.setTimeout(() => {
-        firstElement.value.$el.focus()
-    }, 1)
 }
 
 function close() {
@@ -77,19 +72,5 @@ function close() {
     window.setTimeout(() => {
         button.value.focus()
     }, 1)
-}
-
-function tabStart(e) {
-    if (e.key === 'Tab' && !e.shiftKey) {
-        e.preventDefault()
-        firstElement.value.$el.focus()
-    }
-}
-
-function tabEnd(e) {
-    if (e.key === 'Tab' && e.shiftKey) {
-        e.preventDefault()
-        lastElement.value.$el.focus()
-    }
 }
 </script>

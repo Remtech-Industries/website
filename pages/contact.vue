@@ -2,7 +2,7 @@
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
         <div class="md:min-h-svh flex flex-col bg-yellow-50">
             <Header @open="menuIsOpen = true" @close="menuIsOpen = false" class="absolute w-full" menuclass="bg-yellow-300" />
-            <div class="flex flex-col md:flex-row items-stretch flex-grow">
+            <div class="flex flex-col md:flex-row items-stretch flex-grow" v-show="!menuIsOpen">
                 <div class="md:w-3/5 flex flex-col justify-center items-stretch pt-24 pb-16 lg:pt-28 lg:pb-24 xl:pt-36 xl:pb-32 2xl:pt-44 px-4 md:px-8 lg:px-12 xl:px-16">
                     <h2 class="text-4xl/tight md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight 2xl:text-8xl/tight sora mb-8 lg:mb-12 xl:mb-16">Your New Go-To Supplier Awaits. Get a Quote Today.</h2>
                     <div class="underline">
@@ -15,7 +15,7 @@
                     <ContactForm class="form-yellow" />
                 </div>
             </div>
-            <Footer />
+            <Footer v-show="!menuIsOpen" />
         </div>
     </div>
 </template>

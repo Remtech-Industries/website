@@ -1,7 +1,7 @@
 <template>
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
         <Header @open="menuIsOpen = true" @close="menuIsOpen = false" menuclass="bg-red-700 text-gray-50" />
-        <div class="flex justify-center">
+        <div class="flex justify-center" v-show="!menuIsOpen">
             <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-4 lg:mb-6 xl:mb-8">Cookie Policy</h1>
                 <p class="mb-8 lg:mb-12 xl:mb-16">At RemTech Industries, we use cookies and similar tracking technologies to enhance your experience on our website, improve performance, and analyze how you interact with our site. This Cookie Policy explains what cookies are, how we use them, and your choices regarding their use. This policy is designed to comply with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA), and outlines our commitment to protecting your privacy while using these technologies.</p>
@@ -37,7 +37,7 @@
                 <p class="mb-8 lg:mb-12 xl:mb-16">This Cookie Policy was last updated on October 22, 2024.</p>
             </div>
         </div>
-        <Footer />
+        <Footer v-show="!menuIsOpen" />
     </div>
 </template>
 

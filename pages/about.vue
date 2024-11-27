@@ -2,72 +2,74 @@
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
         <div class="relative h-svh bg-remtech-red text-gray-50">
             <Header @open="menuIsOpen = true" @close="menuIsOpen = false" menuclass="bg-red-700 text-gray-50" />
-            <span class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
+            <span class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16" v-show="!menuIsOpen">
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl block sora mb-2 lg:mb-4 xl:mb-6">
                     Where Innovation Meets Integrity
                 </h1>
                 <p class="mx-4 md:mx-5 lg:mx-6 xl:mx-8 2xl:mx-10">Your trusted partner for complex manufacturing solutions and a stronger future.</p>
             </span>
         </div>
-        <div class="flex justify-center">
-            <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
-                <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-8 lg:mb-12 xl:mb-16">About RemTech</h2>
-                <p class="mb-8 lg:mb-12 xl:mb-16">At Rem-Tech Industries, we specialize in delivering high-performance materials and precision-engineered solutions that enhance the lifespan and reliability of your critical components. Our expertise spans from thermal spray coatings to custom machining to stainless steels and specialty alloys, offering unmatched quality and tailored solutions to protect your equipment from wear, corrosion, and extreme conditions.</p>
-                <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Solving Challenges, Creating Impact</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">We understand the challenges you face in demanding industries. Our mission is simple: to be your trusted partner, providing innovative solutions that not only solve your immediate problems but help you achieve long-term success. Whether it's sourcing rare alloys or providing advanced coating technologies, we turn obstacles into opportunities.</p>
-                <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Empowering Communities with Every Partnership</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">At Rem-Tech, our commitment goes beyond business. From creating 100+ local jobs to partnering in community projects like building a local school, to partnering in co-operative education programs with multiple local schools, we believe in making a difference where it counts. We're not just invested in your success, but in the future of our communities.</p>
-                <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Driven by Expertise, Focused on You</h3>
-                <p>With decades of experience, we've built a reputation for reliability, precision, and unmatched customer service. Our clients return time and time again because we don't just deliver materials—we deliver peace of mind, ensuring every solution is tailored to your needs, and every challenge is met with dedication and care.</p>
-            </div>
-        </div>
-        <div class="bg-red-700 flex justify-center">
-            <div class="flex flex-col text-gray-50 pt-16 xl:pt-24 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
-                <h2 class="text-4xl/tight md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight sora mb-4 lg:mb-8">Our People</h2>
-                <div class="sm:flex items-center mb-12">
-                    <img src="/images/gallery-personnel/ben-rempel.png" alt="Ben Rempel" class="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16 2xl:mr-24">
-                    <div class="sm:w-2/3">
-                        <h3 class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora">Ben Rempel</h3>
-                        <p class="md:text-lg/tight lg:text-xl/tight xl:text-2xl/tight 2xl:text-3xl/tight mb-4">General Manager</p>
-                        <p>"At RemTech, we built this company with one goal in mind: to help our clients solve their toughest manufacturing challenges with precision and integrity. It's not just about making parts—it's about creating solutions that make a lasting impact."</p>
-                    </div>
-                </div>
-                <div class="sm:flex items-center mb-12">
-                    <img src="/images/gallery-personnel/peter-rempel.png" alt="Peter Rempel" class="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16 2xl:mr-24">
-                    <div class="sm:w-2/3">
-                        <h3 class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora">Peter Rempel</h3>
-                        <p class="md:text-lg/tight lg:text-xl/tight xl:text-2xl/tight 2xl:text-3xl/tight mb-4">Production Manager</p>
-                        <p>"Our success comes from our commitment to precision and quality. Whether it's a complex part or a simple one, we approach every project with the same attention to detail and dedication to getting it right the first time."</p>
-                    </div>
+        <div v-show="!menuIsOpen">
+            <div class="flex justify-center">
+                <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
+                    <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-8 lg:mb-12 xl:mb-16">About RemTech</h2>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">At Rem-Tech Industries, we specialize in delivering high-performance materials and precision-engineered solutions that enhance the lifespan and reliability of your critical components. Our expertise spans from thermal spray coatings to custom machining to stainless steels and specialty alloys, offering unmatched quality and tailored solutions to protect your equipment from wear, corrosion, and extreme conditions.</p>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Solving Challenges, Creating Impact</h3>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">We understand the challenges you face in demanding industries. Our mission is simple: to be your trusted partner, providing innovative solutions that not only solve your immediate problems but help you achieve long-term success. Whether it's sourcing rare alloys or providing advanced coating technologies, we turn obstacles into opportunities.</p>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Empowering Communities with Every Partnership</h3>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">At Rem-Tech, our commitment goes beyond business. From creating 100+ local jobs to partnering in community projects like building a local school, to partnering in co-operative education programs with multiple local schools, we believe in making a difference where it counts. We're not just invested in your success, but in the future of our communities.</p>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Driven by Expertise, Focused on You</h3>
+                    <p>With decades of experience, we've built a reputation for reliability, precision, and unmatched customer service. Our clients return time and time again because we don't just deliver materials—we deliver peace of mind, ensuring every solution is tailored to your needs, and every challenge is met with dedication and care.</p>
                 </div>
             </div>
-        </div>
-        <div class="bg-red-700 flex justify-center bg-drawing-4">
-            <div class="flex flex-col text-gray-50 pb-16 xl:pb-24 max-w-screen-2xl pl-4 md:pl-8 lg:pl-12 xl:pl-16 pr-2 md:pr-4 lg:pr-6 xl:pr-8">
-                <div class="flex flex-wrap">
-                    <div v-for="employee in employees" class="w-1/2 sm:w-1/3 md:w-1/4 pr-2 md:pr-4 lg:pr-6 xl:pr-8 pb-4 md:pb-8 lg:pb-12 xl:pb-16">
-                        <img :src="employee.imageSrc" :alt="employee.name" class="mb-1 md:pb-2 2xl:pb-3">
-                        <p class="font-bold text-sm lg:text-base xl:text-lg 2xl:text-xl">{{ employee.name }}</p>
-                        <p class="text-xs lg:text-sm xl:text-base 2xl:text-lg">{{ employee.role }}</p>
+            <div class="bg-red-700 flex justify-center">
+                <div class="flex flex-col text-gray-50 pt-16 xl:pt-24 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
+                    <h2 class="text-4xl/tight md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight sora mb-4 lg:mb-8">Our People</h2>
+                    <div class="sm:flex items-center mb-12">
+                        <img src="/images/gallery-personnel/ben-rempel.png" alt="Ben Rempel" class="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16 2xl:mr-24">
+                        <div class="sm:w-2/3">
+                            <h3 class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora">Ben Rempel</h3>
+                            <p class="md:text-lg/tight lg:text-xl/tight xl:text-2xl/tight 2xl:text-3xl/tight mb-4">General Manager</p>
+                            <p>"At RemTech, we built this company with one goal in mind: to help our clients solve their toughest manufacturing challenges with precision and integrity. It's not just about making parts—it's about creating solutions that make a lasting impact."</p>
+                        </div>
+                    </div>
+                    <div class="sm:flex items-center mb-12">
+                        <img src="/images/gallery-personnel/peter-rempel.png" alt="Peter Rempel" class="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16 2xl:mr-24">
+                        <div class="sm:w-2/3">
+                            <h3 class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora">Peter Rempel</h3>
+                            <p class="md:text-lg/tight lg:text-xl/tight xl:text-2xl/tight 2xl:text-3xl/tight mb-4">Production Manager</p>
+                            <p>"Our success comes from our commitment to precision and quality. Whether it's a complex part or a simple one, we approach every project with the same attention to detail and dedication to getting it right the first time."</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="md:min-h-svh flex flex-col">
-            <div class="flex flex-col md:flex-row items-stretch flex-grow">
-                <div class="md:w-3/5 flex flex-col justify-center items-stretch py-16 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12 xl:px-16">
-                    <h2 class="text-4xl/tight md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight 2xl:text-8xl/tight sora mb-8 lg:mb-12 xl:mb-16">Your New Go-To Supplier Awaits. Get a Quote Today.</h2>
-                    <div class="underline">
-                        <a href="tel:+15197733459" class="mr-20 2xl:mr-32 mb-4 md:mb-8 2xl:mb-12 text-nowrap inline-block">+1 (519) 773-3459</a>
-                        <a href="mailto:rfq@remtechindustries.com" class="mr-20 2xl:mr-32 mb-4 md:mb-8 2xl:mb-12 text-nowrap inline-block">rfq@remtechindustries.com</a>
-                        <a href="https://maps.app.goo.gl/NqjaYQquZcUZ1Vp29" target="_blank" rel="nofollow" class="mr-20 2xl:mr-32 text-nowrap inline-block">Located in Ontario, Canada</a>
+            <div class="bg-red-700 flex justify-center bg-drawing-4">
+                <div class="flex flex-col text-gray-50 pb-16 xl:pb-24 max-w-screen-2xl pl-4 md:pl-8 lg:pl-12 xl:pl-16 pr-2 md:pr-4 lg:pr-6 xl:pr-8">
+                    <div class="flex flex-wrap">
+                        <div v-for="employee in employees" class="w-1/2 sm:w-1/3 md:w-1/4 pr-2 md:pr-4 lg:pr-6 xl:pr-8 pb-4 md:pb-8 lg:pb-12 xl:pb-16">
+                            <img :src="employee.imageSrc" :alt="employee.name" class="mb-1 md:pb-2 2xl:pb-3">
+                            <p class="font-bold text-sm lg:text-base xl:text-lg 2xl:text-xl">{{ employee.name }}</p>
+                            <p class="text-xs lg:text-sm xl:text-base 2xl:text-lg">{{ employee.role }}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-gray-100 md:w-2/5 flex flex-col justify-center items-stretch py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
-                    <ContactForm class="form-gray" />
-                </div>
             </div>
-            <Footer />
+            <div class="md:min-h-svh flex flex-col">
+                <div class="flex flex-col md:flex-row items-stretch flex-grow">
+                    <div class="md:w-3/5 flex flex-col justify-center items-stretch py-16 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12 xl:px-16">
+                        <h2 class="text-4xl/tight md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight 2xl:text-8xl/tight sora mb-8 lg:mb-12 xl:mb-16">Your New Go-To Supplier Awaits. Get a Quote Today.</h2>
+                        <div class="underline">
+                            <a href="tel:+15197733459" class="mr-20 2xl:mr-32 mb-4 md:mb-8 2xl:mb-12 text-nowrap inline-block">+1 (519) 773-3459</a>
+                            <a href="mailto:rfq@remtechindustries.com" class="mr-20 2xl:mr-32 mb-4 md:mb-8 2xl:mb-12 text-nowrap inline-block">rfq@remtechindustries.com</a>
+                            <a href="https://maps.app.goo.gl/NqjaYQquZcUZ1Vp29" target="_blank" rel="nofollow" class="mr-20 2xl:mr-32 text-nowrap inline-block">Located in Ontario, Canada</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 md:w-2/5 flex flex-col justify-center items-stretch py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
+                        <ContactForm class="form-gray" />
+                    </div>
+                </div>
+                <Footer />
+            </div>
         </div>
     </div>
 </template>

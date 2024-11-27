@@ -2,108 +2,110 @@
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
         <div class="relative h-svh bg-part-array-red text-gray-50">
             <Header @open="menuIsOpen = true" @close="menuIsOpen = false" menuclass="bg-red-700 text-gray-50" />
-            <span class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
+            <span class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16" v-show="!menuIsOpen">
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl block sora mb-2 lg:mb-4 xl:mb-6">
                     Precision Machining Solutions Crafted to Your Needs
                 </h1>
                 <p class="mx-4 md:mx-5 lg:mx-6 xl:mx-8 2xl:mx-10">Get high-quality results delivered on time, every time. <NuxtLink to="/contact" class="underline">Call Us Today</NuxtLink> to talk to our machining experts.</p>
             </span>
         </div>
-        <div class="flex justify-center bg-drawing-1">
-            <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
-                <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-8 lg:mb-12 xl:mb-16">Key Machining Capabilities</h2>
-                <p class="mb-4 lg:mb-6 xl:mb-8">For over 25 years, RemTech has delivered fast, high-precision machining to industries like manufacturing, pharmaceutical, oil & gas, nuclear, and more. Our expertise spans components like sleeves, shafts, pump rings, and seal faces.</p>
-                <p class="mb-4 lg:mb-6 xl:mb-8">We specialize in rapid-turnaround CNC and manual machining of super alloys and hard-to-machine materials like Stainless Steel, Super Duplex, Titanium, Inconel, and Hastelloy.</p>
-                <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">CNC Turning</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">Our advanced CNC lathes deliver precision cylindrical parts with tight tolerances. Specializing in low-volume production, we handle complex geometries and materials with ease.</p>
-                <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">CNC Milling</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">With multi-axis CNC milling capabilities, we can machine intricate parts with high precision, ensuring complex geometries and surfaces are manufactured to your exact specifications.</p>
-                <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Electronic Discharge Machining (EDM)</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">Our EDM services enable us to machine hard metals and intricate parts that are difficult to process with traditional methods, achieving fine details and high accuracy.</p>
-                <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Grinding</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">We offer high-precision grinding services to achieve smooth finishes and exact dimensions for parts requiring tight tolerances and superior surface quality.</p>
-                <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Lapping</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">Our lapping services provide ultra-flat and highly polished surfaces for components that require extreme precision and smoothness, ensuring the highest quality finish.</p>
-                <NuxtLink to="/machinery-capabilities-datasheet" class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-red-700 underline">View Our Machinery Capabilities Datasheet</NuxtLink>
+        <div v-show="!menuIsOpen">
+            <div class="flex justify-center bg-drawing-1">
+                <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
+                    <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-8 lg:mb-12 xl:mb-16">Key Machining Capabilities</h2>
+                    <p class="mb-4 lg:mb-6 xl:mb-8">For over 25 years, RemTech has delivered fast, high-precision machining to industries like manufacturing, pharmaceutical, oil & gas, nuclear, and more. Our expertise spans components like sleeves, shafts, pump rings, and seal faces.</p>
+                    <p class="mb-4 lg:mb-6 xl:mb-8">We specialize in rapid-turnaround CNC and manual machining of super alloys and hard-to-machine materials like Stainless Steel, Super Duplex, Titanium, Inconel, and Hastelloy.</p>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">CNC Turning</h3>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">Our advanced CNC lathes deliver precision cylindrical parts with tight tolerances. Specializing in low-volume production, we handle complex geometries and materials with ease.</p>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">CNC Milling</h3>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">With multi-axis CNC milling capabilities, we can machine intricate parts with high precision, ensuring complex geometries and surfaces are manufactured to your exact specifications.</p>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Electronic Discharge Machining (EDM)</h3>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">Our EDM services enable us to machine hard metals and intricate parts that are difficult to process with traditional methods, achieving fine details and high accuracy.</p>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Grinding</h3>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">We offer high-precision grinding services to achieve smooth finishes and exact dimensions for parts requiring tight tolerances and superior surface quality.</p>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Lapping</h3>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">Our lapping services provide ultra-flat and highly polished surfaces for components that require extreme precision and smoothness, ensuring the highest quality finish.</p>
+                    <NuxtLink to="/machinery-capabilities-datasheet" class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-red-700 underline">View Our Machinery Capabilities Datasheet</NuxtLink>
+                </div>
             </div>
-        </div>
-        <div class="bg-red-700 flex justify-center">
-            <div class="flex flex-col text-gray-50 py-16 xl:py-24 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
-                <span class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora mb-4 lg:mb-8">"There is not a supplier that has the service that RemTech does. They far out perform any of our other suppliers."</span>
-                <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Ron Zacharias</span>
-                <span>(Advanced Stainless)</span>
+            <div class="bg-red-700 flex justify-center">
+                <div class="flex flex-col text-gray-50 py-16 xl:py-24 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
+                    <span class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora mb-4 lg:mb-8">"There is not a supplier that has the service that RemTech does. They far out perform any of our other suppliers."</span>
+                    <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Ron Zacharias</span>
+                    <span>(Advanced Stainless)</span>
+                </div>
             </div>
-        </div>
-        <div class="flex justify-center">
-            <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
-                <h2 class="text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl sora mb-8 lg:mb-12 xl:mb-16">Our Proven Machining Process</h2>
-                <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">1. Consultation</h3>
-                <p class="mb-4 lg:mb-6 xl:mb-8">We start with a review of your specifications to fully understand your technical drawings, requirements, and goals. Our team ensures alignment with your project's requirements before moving forward. Reach out to get started today.</p>
-                <span class="block mb-8 lg:mb-12 xl:mb-16">
-                    <a href="tel:+15197733459" class="mr-20 2xl:mr-32 text-nowrap inline-block underline text-red-700">+1 (519) 773-3459</a>
-                    <a href="mailto:rfq@remtechindustries.com" class="text-nowrap inline-block underline text-red-700">rfq@remtechindustries.com</a>
-                </span>
-                <div class="flex justify-center">
-                    <div class="h-0.75 w-1/2 max-w-96 bg-gray-950 mb-8 lg:mb-12 xl:mb-16"></div>
+            <div class="flex justify-center">
+                <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
+                    <h2 class="text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl sora mb-8 lg:mb-12 xl:mb-16">Our Proven Machining Process</h2>
+                    <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">1. Consultation</h3>
+                    <p class="mb-4 lg:mb-6 xl:mb-8">We start with a review of your specifications to fully understand your technical drawings, requirements, and goals. Our team ensures alignment with your project's requirements before moving forward. Reach out to get started today.</p>
+                    <span class="block mb-8 lg:mb-12 xl:mb-16">
+                        <a href="tel:+15197733459" class="mr-20 2xl:mr-32 text-nowrap inline-block underline text-red-700">+1 (519) 773-3459</a>
+                        <a href="mailto:rfq@remtechindustries.com" class="text-nowrap inline-block underline text-red-700">rfq@remtechindustries.com</a>
+                    </span>
+                    <div class="flex justify-center">
+                        <div class="h-0.75 w-1/2 max-w-96 bg-gray-950 mb-8 lg:mb-12 xl:mb-16"></div>
+                    </div>
+                    <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">2. Production Planning</h3>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">Our experienced team of planners determines the optimal machining processes required to meet your specifications. Using advanced CAD software, we program our lathes and mills for the precise and efficient manufacture of your provided designs.</p>
+                    <div class="flex justify-center">
+                        <div class="h-0.75 w-1/2 max-w-96 bg-gray-950 mb-8 lg:mb-12 xl:mb-16"></div>
+                    </div>
+                    <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">3. Precision Machining</h3>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">With CNC turning, CNC milling, EDM, grinding, and lapping, we machine your components using high-quality materials and cutting-edge technology.</p>
+                    <div class="flex justify-center">
+                        <div class="h-0.75 w-1/2 max-w-96 bg-gray-950 mb-8 lg:mb-12 xl:mb-16"></div>
+                    </div>
+                    <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">4. Quality Assurance</h3>
+                    <p class="mb-8 lg:mb-12 xl:mb-16">Your parts undergo rigorous quality control. We adhere to ISO 9001 and CSA N299 and implement meticulous inspection processes using cutting edge inspection equipment to guarantee flawless results.</p>
+                    <div class="flex justify-center">
+                        <div class="h-0.75 w-1/2 max-w-96 bg-gray-950 mb-8 lg:mb-12 xl:mb-16"></div>
+                    </div>
+                    <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">5. On-Time Delivery</h3>
+                    <p>We prioritize meeting your deadlines, providing prompt delivery while maintaining the highest quality to support your project timelines.</p>
                 </div>
-                <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">2. Production Planning</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">Our experienced team of planners determines the optimal machining processes required to meet your specifications. Using advanced CAD software, we program our lathes and mills for the precise and efficient manufacture of your provided designs.</p>
-                <div class="flex justify-center">
-                    <div class="h-0.75 w-1/2 max-w-96 bg-gray-950 mb-8 lg:mb-12 xl:mb-16"></div>
-                </div>
-                <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">3. Precision Machining</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">With CNC turning, CNC milling, EDM, grinding, and lapping, we machine your components using high-quality materials and cutting-edge technology.</p>
-                <div class="flex justify-center">
-                    <div class="h-0.75 w-1/2 max-w-96 bg-gray-950 mb-8 lg:mb-12 xl:mb-16"></div>
-                </div>
-                <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">4. Quality Assurance</h3>
-                <p class="mb-8 lg:mb-12 xl:mb-16">Your parts undergo rigorous quality control. We adhere to ISO 9001 and CSA N299 and implement meticulous inspection processes using cutting edge inspection equipment to guarantee flawless results.</p>
-                <div class="flex justify-center">
-                    <div class="h-0.75 w-1/2 max-w-96 bg-gray-950 mb-8 lg:mb-12 xl:mb-16"></div>
-                </div>
-                <h3 class="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl sora mb-4 lg:mb-6 xl:mb-8">5. On-Time Delivery</h3>
-                <p>We prioritize meeting your deadlines, providing prompt delivery while maintaining the highest quality to support your project timelines.</p>
             </div>
-        </div>
-        <div class="bg-red-700 text-gray-50 flex justify-center">
-            <Carousel header="Machined Parts" :images="galleryImages" />
-        </div>
-        <div class="relative">
-            <div class="md:w-3/5 min-h-dvh flex flex-col justify-center items-stretch py-16 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12 xl:px-16">
-                <h2 class="text-3xl/tight md:text-4xl/tight lg:text-5xl/tight xl:text-6xl/tight 2xl:text-7xl/tight sora mb-8 lg:mb-12 xl:mb-16">Machining Frequently Asked Questions</h2>
-                <ul>
-                    <li v-for="(faq, index) in faqs">
-                        <button @click="selectedFaqIndex = index" class="text-left py-4 w-full" :class="selectedFaqIndex === index ? 'font-bold bg-yellow-300 md:bg-opacity-0 px-4 md:px-0 text-xl mt-4 md:mt-0' : 'text-lg'">{{ faq.q }}</button>
-                        <div class="md:h-full md:absolute md:top-0 md:right-0 md:w-2/5 pb-4 mb-4 bg-yellow-300" v-show="selectedFaqIndex === index">
-                            <div class="md:h-dvh md:flex md:flex-col md:justify-center md:sticky md:top-0">
-                                <div class="max-h-full overflow-y-auto md:py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
-                                    <h3 class="hidden md:block text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-6 2xl:mb-10">{{ faq.q }}</h3>
-                                    <p class="md:text-lg lg:text-xl 2xl:text-2xl mb-6 2xl:mb-10">{{ faq.a }}</p>
-                                    <NuxtLink v-if="faq.link && faq.linkText" :to="faq.link" class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl underline font-bold mb-6 2xl:mb-10 block">{{ faq.linkText }}</NuxtLink>
-                                    <NuxtLink to="/contact" class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl underline font-bold">Request a Free Quote Today.</NuxtLink>
+            <div class="bg-red-700 text-gray-50 flex justify-center">
+                <Carousel header="Machined Parts" :images="galleryImages" />
+            </div>
+            <div class="relative">
+                <div class="md:w-3/5 min-h-dvh flex flex-col justify-center items-stretch py-16 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12 xl:px-16">
+                    <h2 class="text-3xl/tight md:text-4xl/tight lg:text-5xl/tight xl:text-6xl/tight 2xl:text-7xl/tight sora mb-8 lg:mb-12 xl:mb-16">Machining Frequently Asked Questions</h2>
+                    <ul>
+                        <li v-for="(faq, index) in faqs">
+                            <button @click="selectedFaqIndex = index" class="text-left py-4 w-full" :class="selectedFaqIndex === index ? 'font-bold bg-yellow-300 md:bg-opacity-0 px-4 md:px-0 text-xl mt-4 md:mt-0' : 'text-lg'">{{ faq.q }}</button>
+                            <div class="md:h-full md:absolute md:top-0 md:right-0 md:w-2/5 pb-4 mb-4 bg-yellow-300" v-show="selectedFaqIndex === index">
+                                <div class="md:h-dvh md:flex md:flex-col md:justify-center md:sticky md:top-0">
+                                    <div class="max-h-full overflow-y-auto md:py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
+                                        <h3 class="hidden md:block text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-6 2xl:mb-10">{{ faq.q }}</h3>
+                                        <p class="md:text-lg lg:text-xl 2xl:text-2xl mb-6 2xl:mb-10">{{ faq.a }}</p>
+                                        <NuxtLink v-if="faq.link && faq.linkText" :to="faq.link" class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl underline font-bold mb-6 2xl:mb-10 block">{{ faq.linkText }}</NuxtLink>
+                                        <NuxtLink to="/contact" class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl underline font-bold">Request a Free Quote Today.</NuxtLink>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <span class="block w-1/3 border-b-2 border-gray-950 max-w-52" v-if="index !== faqs.length - 1"></span>
-                    </li>
-                </ul>
+                            <span class="block w-1/3 border-b-2 border-gray-950 max-w-52" v-if="index !== faqs.length - 1"></span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="md:min-h-svh flex flex-col bg-red-50">
-            <div class="flex flex-col md:flex-row items-stretch flex-grow">
-                <div class="md:w-3/5 md:order-1 flex flex-col justify-center items-stretch py-16 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12 xl:px-16">
-                    <h2 class="text-4xl/tight md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight 2xl:text-8xl/tight sora mb-8 lg:mb-12 xl:mb-16">Your New Go-To Supplier Awaits. Get a Quote Today.</h2>
-                    <div class="underline">
-                        <a href="tel:+15197733459" class="mr-20 2xl:mr-32 mb-4 md:mb-8 2xl:mb-12 text-nowrap inline-block">+1 (519) 773-3459</a>
-                        <a href="mailto:rfq@remtechindustries.com" class="mr-20 2xl:mr-32 mb-4 md:mb-8 2xl:mb-12 text-nowrap inline-block">rfq@remtechindustries.com</a>
-                        <a href="https://maps.app.goo.gl/NqjaYQquZcUZ1Vp29" target="_blank" rel="nofollow" class="mr-20 2xl:mr-32 text-nowrap inline-block">Located in Ontario, Canada</a>
+            <div class="md:min-h-svh flex flex-col bg-red-50">
+                <div class="flex flex-col md:flex-row items-stretch flex-grow">
+                    <div class="md:w-3/5 md:order-1 flex flex-col justify-center items-stretch py-16 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12 xl:px-16">
+                        <h2 class="text-4xl/tight md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight 2xl:text-8xl/tight sora mb-8 lg:mb-12 xl:mb-16">Your New Go-To Supplier Awaits. Get a Quote Today.</h2>
+                        <div class="underline">
+                            <a href="tel:+15197733459" class="mr-20 2xl:mr-32 mb-4 md:mb-8 2xl:mb-12 text-nowrap inline-block">+1 (519) 773-3459</a>
+                            <a href="mailto:rfq@remtechindustries.com" class="mr-20 2xl:mr-32 mb-4 md:mb-8 2xl:mb-12 text-nowrap inline-block">rfq@remtechindustries.com</a>
+                            <a href="https://maps.app.goo.gl/NqjaYQquZcUZ1Vp29" target="_blank" rel="nofollow" class="mr-20 2xl:mr-32 text-nowrap inline-block">Located in Ontario, Canada</a>
+                        </div>
+                    </div>
+                    <div class="bg-red-700 md:w-2/5 flex flex-col justify-center items-stretch text-gray-50 py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
+                        <ContactForm class="form-red" />
                     </div>
                 </div>
-                <div class="bg-red-700 md:w-2/5 flex flex-col justify-center items-stretch text-gray-50 py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
-                    <ContactForm class="form-red" />
-                </div>
+                <Footer />
             </div>
-            <Footer />
         </div>
     </div>
 </template>

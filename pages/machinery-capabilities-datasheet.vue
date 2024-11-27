@@ -1,41 +1,43 @@
 <template>
   <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
     <Header @open="menuIsOpen = true" @close="menuIsOpen = false" menuclass="bg-red-700 text-gray-50" />
-    <div class="flex justify-end px-4 md:px-8 lg:px-12 xl:px-16 print:hidden">
-      <button @click="print" class="underline font-bold">Print Datasheet</button>
-    </div>
-    <div class="relative">
-      <div class="flex sticky lg:relative z-10 top-0 justify-between items-center bg-gray-50 py-2 md:py-4 lg:py-6 xl:py-8 px-4 md:px-8 lg:px-12 xl:px-16">
-        <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-4 lg:mb-6 xl:mb-8">Machinery Capabilities Datasheet</h1>
-        <div class="flex justify-end flex-wrap sm:flex-nowrap" v-if="hasScroll">
-          <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="left">
-            <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>
-            <span class="block w-4 lg:w-6 2xl:w-8 h-4 lg:h-6 2xl:h-8 border-color-unset border-b-2 border-l-2 rotate-45 absolute top-1/2 left-0.5 lg:left-1 -translate-y-1/2"></span>
-          </button>
-          <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="right">
-            <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>
-            <span class="block w-4 lg:w-6 2xl:w-8 h-4 lg:h-6 2xl:h-8 border-color-unset border-t-2 border-r-2 rotate-45 absolute top-1/2 right-0.5 lg:right-1 -translate-y-1/2"></span>
-          </button>
+    <div v-show="!menuIsOpen">
+      <div class="flex justify-end px-4 md:px-8 lg:px-12 xl:px-16 print:hidden">
+        <button @click="print" class="underline font-bold">Print Datasheet</button>
+      </div>
+      <div class="relative">
+        <div class="flex sticky lg:relative z-10 top-0 justify-between items-center bg-gray-50 py-2 md:py-4 lg:py-6 xl:py-8 px-4 md:px-8 lg:px-12 xl:px-16">
+          <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-4 lg:mb-6 xl:mb-8">Machinery Capabilities Datasheet</h1>
+          <div class="flex justify-end flex-wrap sm:flex-nowrap" v-if="hasScroll">
+            <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="left">
+              <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>
+              <span class="block w-4 lg:w-6 2xl:w-8 h-4 lg:h-6 2xl:h-8 border-color-unset border-b-2 border-l-2 rotate-45 absolute top-1/2 left-0.5 lg:left-1 -translate-y-1/2"></span>
+            </button>
+            <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="right">
+              <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>
+              <span class="block w-4 lg:w-6 2xl:w-8 h-4 lg:h-6 2xl:h-8 border-color-unset border-t-2 border-r-2 rotate-45 absolute top-1/2 right-0.5 lg:right-1 -translate-y-1/2"></span>
+            </button>
+          </div>
+        </div>
+        <div class="w-full">
+          <div class="overflow-x-auto px-4 md:px-8 lg:px-12 xl:px-16 mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24" ref="table">
+            <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base table-row-alternate mb-2 md:mb-4 lg:mb-6 xl:mb-8">
+              <tbody>
+                <template v-for="(machineGroup, i) in machineGroups">
+                  <tr class="bg-gray-200 text-lg 2xl:text-xl">
+                    <th v-for="(column, j) in machineGroup.columns" :id="i + '-' + j" class="p-2 print:border-2 border-gray-950" :colspan="column.span === undefined ? 1 : column.span">{{ column.text }}</th>
+                  </tr>
+                  <tr v-for="machine in machineGroup.machines">
+                    <td v-for="(data, j) in machine" :headers="i + '-' + j" class="p-2 print:border-2 border-gray-950" :colspan="data.span === undefined ? 1 : data.span">{{ data.text }}</td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-      <div class="w-full">
-        <div class="overflow-x-auto px-4 md:px-8 lg:px-12 xl:px-16 mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24" ref="table">
-          <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base table-row-alternate mb-2 md:mb-4 lg:mb-6 xl:mb-8">
-            <tbody>
-              <template v-for="(machineGroup, i) in machineGroups">
-                <tr class="bg-gray-200 text-lg 2xl:text-xl">
-                  <th v-for="(column, j) in machineGroup.columns" :id="i + '-' + j" class="p-2 print:border-2 border-gray-950" :colspan="column.span === undefined ? 1 : column.span">{{ column.text }}</th>
-                </tr>
-                <tr v-for="machine in machineGroup.machines">
-                  <td v-for="(data, j) in machine" :headers="i + '-' + j" class="p-2 print:border-2 border-gray-950" :colspan="data.span === undefined ? 1 : data.span">{{ data.text }}</td>
-                </tr>
-              </template>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <Footer />
     </div>
-    <Footer />
   </div>
 </template>
 
