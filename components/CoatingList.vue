@@ -1,7 +1,7 @@
 <template>
     <div class="relative">
         <div class="flex sticky lg:relative z-10 top-0 justify-between items-center bg-gray-50 py-2 md:py-4 lg:py-6 xl:py-8 px-4 md:px-8 lg:px-12 xl:px-16">
-            <h3 class="text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora">Thermal Spray Coating List</h3>
+            <h2 class="text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora">Thermal Spray Coating List</h2>
             <div class="flex justify-end flex-wrap sm:flex-nowrap" v-if="hasScroll">
                 <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="left">
                     <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>

@@ -1,12 +1,12 @@
 <template>
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
         <div class="relative h-svh bg-materials-blue text-gray-50">
-            <Header @open="menuIsOpen = true" @close="menuIsOpen = false" :alloys="true" menuclass="bg-blue-900 text-gray-50" />
+            <Header @open="menuIsOpen = true" @close="menuIsOpen = false" menuclass="bg-blue-900 text-gray-50" />
             <span class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16" v-show="!menuIsOpen">
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl block sora mb-2 lg:mb-4 xl:mb-6">
                     High-Quality Steels and Alloys for All Your Industrial Needs
                 </h1>
-                <p class="mx-4 md:mx-5 lg:mx-6 xl:mx-8 2xl:mx-10">Source custom-sized, hard-to-find materials with full traceability from Rem-Tech Industries - Your trusted specialty alloys provider. <NuxtLink to="/contact" class="underline">Get a Quote Today for Your Alloy Needs.</NuxtLink></p>
+                <p class="mx-4 md:mx-5 lg:mx-6 xl:mx-8 2xl:mx-10">Source custom-sized, hard-to-find materials with full traceability from Rem-Tech Industries - Your trusted specialty alloys provider. <NuxtLink to="/contact" class="underline">Contact</NuxtLink> us today for a quote for all your alloy needs.</p>
             </span>
         </div>
         <div v-show="!menuIsOpen">
@@ -29,7 +29,7 @@
                     <p class="mb-4 lg:mb-6 xl:mb-8">High-performance materials that meet or exceed industry standards, ensuring long-lasting performance.</p>
                     <h4 class="font-bold">Reliable Availability</h4>
                     <p class="mb-8 lg:mb-12 xl:mb-16">Access hard-to-find materials quickly, so you can avoid project delays.</p>
-                    <NuxtLink to="/contact" class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-blue-900 underline">Get Your Material Solution Today.</NuxtLink>
+                    <span class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl"><NuxtLink to="/contact" class="text-blue-900 underline">Contact</NuxtLink> us today to get your material solution.</span>
                 </div>
             </div>
             <div class="bg-blue-900 text-gray-50 flex justify-center">
@@ -51,7 +51,7 @@
                                     <div class="max-h-full overflow-y-auto md:py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
                                         <h3 class="hidden md:block text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-6 2xl:mb-10">{{ faq.q }}</h3>
                                         <p class="md:text-lg lg:text-xl 2xl:text-2xl mb-6 2xl:mb-10">{{ faq.a }}</p>
-                                        <NuxtLink to="/contact" class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl underline font-bold">Request a Free Quote Today.</NuxtLink>
+                                        <span class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-bold"><NuxtLink to="/contact" class="underline">Contact</NuxtLink> us today for a free quote.</span>
                                     </div>
                                 </div>
                             </div>

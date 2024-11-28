@@ -2,10 +2,7 @@
     <nav>
         <button @click="skipMenu" class="absolute -translate-y-full p-2 bg-red-700 text-gray-50 focus:translate-y-1 z-50">Skip to content</button>
         <div class="flex justify-between relative items-center p-4 md:p-5 lg:p-6 xl:p-8 2xl:p-10" v-show="!menuOpen">
-            <NuxtLink to="/alloys" v-if="alloys">
-                <img src="/images/logos/alloys-logo.png" alt="The RemTech Industries Logo" class="h-10 md:h-12 lg:h-14 xl:h-16 2xl:h-20 mr-4 w-auto">
-            </NuxtLink>
-            <NuxtLink to="/" v-else>
+            <NuxtLink to="/">
                 <img src="/images/logos/logo.png" alt="The RemTech Industries Logo" class="h-10 md:h-12 lg:h-14 xl:h-16 2xl:h-20 mr-4 w-auto">
             </NuxtLink>
             <ul class="hidden sm:flex print:hidden">
@@ -53,14 +50,14 @@
                 </ul>
             </div>
         </div>
-        <div ref="menuend" tabindex="0" aria-label="end of menu"></div>
+        <div ref="menuend" tabindex="-1" aria-label="end of menu"></div>
     </nav>
 </template>
 
 <script setup>
 const menuOpen = ref(false)
 const emit = defineEmits(['open', 'close'])
-const props = defineProps(['menuclass', 'alloys'])
+const props = defineProps(['menuclass'])
 const button = useTemplateRef('button')
 const menuEnd = useTemplateRef('menuend')
 

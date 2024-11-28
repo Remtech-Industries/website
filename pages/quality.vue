@@ -14,7 +14,7 @@
                 <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
                     <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-4 lg:mb-6 xl:mb-8">ISO 9001:2015 Certified for Your Peace of Mind</h2>
                     <p class="mb-4 lg:mb-6 xl:mb-8">We hold an active ISO 9001:2015 certification, a globally recognized standard for quality management systems. This means our processes are built to consistently meet customer and regulatory requirements, ensuring you get the best results, every time.</p>
-                    <p class="underline mb-8 lg:mb-12 xl:mb-16 text-lg md:text-xl xl:text-2xl 2xl:text-3xl"><a href="/documents/iso-certification.pdf" target="_blank">View our ISO 9001:2015 Certificate</a></p>
+                    <p class="mb-8 lg:mb-12 xl:mb-16 text-lg md:text-xl xl:text-2xl 2xl:text-3xl">View our <a href="/documents/iso-certification.pdf" target="_blank" class="underline">ISO 9001:2015 Certificate</a></p>
                     <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Compliant with CSA N299.3-16 for Nuclear Work</h3>
                     <p class="mb-8 lg:mb-12 xl:mb-16">For projects that require the highest standards, our quality management system is also compliant with CSA N299.3-16, allowing us to confidently handle nuclear work.</p>
                     <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Advanced Inspection Capabilities</h3>

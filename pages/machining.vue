@@ -6,7 +6,7 @@
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl block sora mb-2 lg:mb-4 xl:mb-6">
                     Precision Machining Solutions Crafted to Your Needs
                 </h1>
-                <p class="mx-4 md:mx-5 lg:mx-6 xl:mx-8 2xl:mx-10">Get high-quality results delivered on time, every time. <NuxtLink to="/contact" class="underline">Call Us Today</NuxtLink> to talk to our machining experts.</p>
+                <p class="mx-4 md:mx-5 lg:mx-6 xl:mx-8 2xl:mx-10">Get high-quality results delivered on time, every time. <NuxtLink to="/contact" class="underline">Contact</NuxtLink> us today to talk to our machining experts.</p>
             </span>
         </div>
         <div v-show="!menuIsOpen">
@@ -25,7 +25,7 @@
                     <p class="mb-8 lg:mb-12 xl:mb-16">We offer high-precision grinding services to achieve smooth finishes and exact dimensions for parts requiring tight tolerances and superior surface quality.</p>
                     <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Lapping</h3>
                     <p class="mb-8 lg:mb-12 xl:mb-16">Our lapping services provide ultra-flat and highly polished surfaces for components that require extreme precision and smoothness, ensuring the highest quality finish.</p>
-                    <NuxtLink to="/machinery-capabilities-datasheet" class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-red-700 underline">View Our Machinery Capabilities Datasheet</NuxtLink>
+                    <span class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">View our <NuxtLink to="/machinery-capabilities-datasheet" class="text-red-700 underline">Machinery Capabilities Datasheet</NuxtLink> to learn more.</span>
                 </div>
             </div>
             <div class="bg-red-700 flex justify-center">
@@ -81,7 +81,7 @@
                                         <h3 class="hidden md:block text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-6 2xl:mb-10">{{ faq.q }}</h3>
                                         <p class="md:text-lg lg:text-xl 2xl:text-2xl mb-6 2xl:mb-10">{{ faq.a }}</p>
                                         <NuxtLink v-if="faq.link && faq.linkText" :to="faq.link" class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl underline font-bold mb-6 2xl:mb-10 block">{{ faq.linkText }}</NuxtLink>
-                                        <NuxtLink to="/contact" class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl underline font-bold">Request a Free Quote Today.</NuxtLink>
+                                        <span class="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-bold"><NuxtLink to="/contact" class="underline">Contact</NuxtLink> us today for a free quote.</span>
                                     </div>
                                 </div>
                             </div>
