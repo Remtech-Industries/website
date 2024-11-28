@@ -56,12 +56,14 @@ const successMessage = useTemplateRef('successMessage')
 const errorMessage = useTemplateRef('errorMessage')
 const fileUploadLabel = ref('Drag files here or click to upload.')
 const props = defineProps(['headinglevel'])
+let files = []
 
 function handleFileUpload(e) {
   if (e.target.files.length === 0) {
     fileUploadLabel.value = 'Drag files here or click to upload.'
   } else {
     fileUploadLabel.value = ''
+    files = e.target.files
 
     for (var x = 0; x < files.length; x++) {
       fileUploadLabel.value += files[x].name + ', '
