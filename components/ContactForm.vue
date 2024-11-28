@@ -18,7 +18,7 @@
         </button>
       </div>
     </div>
-    <form @submit.prevent="handleFormSubmit" name="contactForm" method="post" enctype="multipart/form-data" v-show="error === false && success === false" ref="form" data-netlify="true" tabindex="-1">
+    <form name="contactForm" method="post" enctype="multipart/form-data" v-show="error === false && success === false" ref="form" tabindex="-1" netlify>
       <component :is="props.headinglevel ?? 'h3'" class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6">Get a Free Quote</component>
       <input type="hidden" name="form-name" value="contactForm">
       <label>
