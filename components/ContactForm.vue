@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-show="success === true">
+    <div v-if="success === true">
       <p class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6" tabindex="-1" ref="successMessage">Thank you for your request. Your submission has been received.</p>
       <div class="flex justify-center">
         <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20" aria-label="return to contact form">
@@ -9,7 +9,7 @@
         </button>
       </div>
     </div>
-    <div v-show="error === true">
+    <div v-if="error === true">
       <p class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6" tabindex="-1" ref="errorMessage">An error has occurred while submitting your request. Please refresh the page and try again later.</p>
       <div class="flex justify-center">
         <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20" aria-label="return to contact form">
@@ -18,7 +18,7 @@
         </button>
       </div>
     </div>
-    <form name="contactForm" method="post" enctype="multipart/form-data" v-show="error === false && success === false" ref="form" tabindex="-1" netlify>
+    <form @submit.prevent="handleFormSubmit" name="contactForm" method="post" enctype="multipart/form-data" v-show="error === false && success === false" ref="form" data-netlify="true" tabindex="-1">
       <component :is="props.headinglevel ?? 'h3'" class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6">Get a Free Quote</component>
       <input type="hidden" name="form-name" value="contactForm">
       <label>
@@ -78,7 +78,7 @@ async function handleFormSubmit() {
 
     await $fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { 'Content-Type': 'multipart/form-data' },
       body: new URLSearchParams(formData).toString()
     })
 
