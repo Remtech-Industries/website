@@ -71,14 +71,6 @@ function handleFileUpload(e) {
   }
 }
 
-function close() {
-  success.value = false
-  error.value = false
-  window.setTimeout(() => {
-    form.value.focus()
-  }, 1)
-}
-
 async function handleFormSubmit() {
   try {
     const formData = new FormData(form.value)
@@ -102,5 +94,13 @@ async function handleFormSubmit() {
       errorMessage.value.focus()
     }, 1)
   }
+}
+
+function close() {
+  success.value = false
+  error.value = false
+  window.setTimeout(() => {
+    form.value.focus()
+  }, 1)
 }
 </script>
