@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-show="success === true">
-      <p class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6" tabindex="0" ref="successMessage">Thank you for your request. Your submission has been received.</p>
+      <p class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6" tabindex="-1" ref="successMessage">Thank you for your request. Your submission has been received.</p>
       <div class="flex justify-center">
         <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20" aria-label="return to contact form">
             <div class="w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div v-show="error === true">
-      <p class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6" tabindex="0" ref="errorMessage">An error has occurred while submitting your request. Please refresh the page and try again later.</p>
+      <p class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6" tabindex="-1" ref="errorMessage">An error has occurred while submitting your request. Please refresh the page and try again later.</p>
       <div class="flex justify-center">
         <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20" aria-label="return to contact form">
             <div class="w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
@@ -78,8 +78,8 @@ async function handleFormSubmit() {
 
     await $fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'multipart/form-data' },
-      body: formData
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
     })
 
     success.value = true
