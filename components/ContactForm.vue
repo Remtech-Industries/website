@@ -34,11 +34,13 @@
         <textarea name="Project Details" class="w-full form-bg px-4 py-3 block" maxlength="65535" required></textarea>
       </label>
       <label>
-        <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Project/Drawing File <span class="text-xs">(8mb max.)</span></span>
+        <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Project/Drawing File <span class="text-xs">(8mb, 3 files max.)</span></span>
         <span class="block relative">
-          <input @change="handleFileUpload" type="file" class="w-full form-bg px-4 py-3 h-24" name="FileUpload" multiple />
+          <input @change="handleFileUpload" type="file" class="w-full form-bg px-4 py-3 h-24" name="FileUpload0" multiple />
           <span class="flex justify-center items-center text-center absolute top-0 left-0 w-full h-full form-bg p-4 pointer-events-none cursor-pointer">{{ fileUploadLabel }}</span>
         </span>
+        <input type="hidden" name="FileUpload1" />
+        <input type="hidden" name="FileUpload2" />
       </label>
       <button type="submit" class="underline py-4 mt-4 text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
         {{ loading ? 'Submitting...' : 'Submit' }}
@@ -77,10 +79,12 @@ async function handleFormSubmit() {
   try {
     loading.value = true
     const formData = new FormData(form.value)
-    for (var x = 0; x < files.length; x++) {
-      //formData.append('FileUpload', files[x]);
+    if (files.length > 3) {
+      throw new Error('Too many files uploaded')
     }
-    console.dir([...formData])
+    for (var x = 0; x < files.length; x++) {
+      formData.set('FileUpload' + i, files[x])
+    }
 
     await $fetch('/', {
       method: 'POST',
