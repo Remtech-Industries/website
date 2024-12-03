@@ -84,7 +84,6 @@ async function handleFormSubmit() {
 
     await $fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'multipart/form-data' },
       body: formData
     })
 
