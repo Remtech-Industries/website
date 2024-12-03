@@ -36,7 +36,7 @@
       <label>
         <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Project/Drawing File <span class="text-xs">(8mb max.)</span></span>
         <span class="block relative">
-          <input @change="handleFileUpload" type="file" class="w-full form-bg px-4 py-3 h-24" name="FileUpload" />
+          <input @change="handleFileUpload" type="file" class="w-full form-bg px-4 py-3 h-24" name="FileUpload" multiple />
           <span class="flex justify-center items-center text-center absolute top-0 left-0 w-full h-full form-bg p-4 pointer-events-none cursor-pointer">{{ fileUploadLabel }}</span>
         </span>
       </label>
@@ -75,8 +75,11 @@ function handleFileUpload(e) {
 
 async function handleFormSubmit() {
   try {
-    const formData = new FormData(form.value)
     loading.value = true
+    const formData = new FormData(form.value)
+    for (var x = 0; x < files.length; x++) {
+      formData.append('Files', files[x]);
+    }
 
     await $fetch('/', {
       method: 'POST',
