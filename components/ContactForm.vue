@@ -84,7 +84,7 @@ async function handleFormSubmit() {
       throw new Error('Too many files uploaded')
     }
     for (var x = 0; x < files.length; x++) {
-      formData.set('FileUpload' + i, files[x])
+      formData.set('FileUpload' + x, files[x])
     }
 
     await $fetch('/', {
