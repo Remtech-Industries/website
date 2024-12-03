@@ -78,7 +78,7 @@ async function handleFormSubmit() {
     loading.value = true
     const formData = new FormData(form.value)
     for (var x = 0; x < files.length; x++) {
-      formData.append('FileUpload', files[x]);
+      //formData.append('FileUpload', files[x]);
     }
     console.dir([...formData])
 
