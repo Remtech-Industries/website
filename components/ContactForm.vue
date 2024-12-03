@@ -85,7 +85,7 @@ async function handleFormSubmit() {
     await $fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'multipart/form-data' },
-      body: new URLSearchParams(formData).toString()
+      body: formData
     })
 
     success.value = true
