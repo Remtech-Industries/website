@@ -80,7 +80,7 @@ async function handleFormSubmit() {
     for (var x = 0; x < files.length; x++) {
       formData.append('FileUpload', files[x]);
     }
-    console.dir(formData)
+    console.dir([...formData])
 
     await $fetch('/', {
       method: 'POST',
