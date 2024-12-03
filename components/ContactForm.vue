@@ -80,6 +80,7 @@ async function handleFormSubmit() {
     loading.value = true
     const formData = new FormData(form.value)
     if (files.length > 3) {
+      console.log(files.length)
       throw new Error('Too many files uploaded')
     }
     for (var x = 0; x < files.length; x++) {
@@ -97,6 +98,7 @@ async function handleFormSubmit() {
       successMessage.value.focus()
     }, 1)
   } catch (e) {
+    console.error(e)
     error.value = true
     loading.value = false
     window.setTimeout(() => {
