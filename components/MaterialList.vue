@@ -42,7 +42,7 @@
                   </tr>
                   <tr v-for="(part, i) in material.parts" class="border-blue-800 border-x-2" :class="i + 1 === material.parts.length ? 'border-b-2' : ''">
                     <td :headers="material.headingId + ' ' + material.headingId + 'size'" class="py-2 px-6">{{ part.partno }}</td>
-                    <td :headers="material.headingId + ' ' + material.headingId + 'stock'" class="py-2 px-6">{{ part.qtyonhand }}[missing]" in stock</td>
+                    <td :headers="material.headingId + ' ' + material.headingId + 'stock'" class="py-2 px-6">{{ part.total_quantity }}" in stock</td>
                   </tr>
                 </template>
               </template>
