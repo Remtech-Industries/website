@@ -2,12 +2,12 @@
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
         <div class="relative h-svh bg-measuing-blue text-gray-50">
             <Header @open="menuIsOpen = true" @close="menuIsOpen = false" menuclass="bg-blue-900 text-gray-50" />
-            <span class="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16" v-show="!menuIsOpen">
+            <div class="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16" v-show="!menuIsOpen">
                 <h1 class="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl block sora mb-8 sm:my-16 lg:my-24 2xl:my-36">
                     Quality You Can Trust, Every Time
                 </h1>
                 <p class="sm:w-2/3 lg:w-1/2">At RemTech, quality isn't just a promise—it's the foundation of everything we do. From precision machining to complex projects in the nuclear industry, our commitment to excellence ensures that you receive the highest level of reliability and accuracy, every time.</p>
-            </span>
+            </div>
         </div>
         <div v-show="!menuIsOpen">
             <div class="flex justify-center bg-drawing-5">

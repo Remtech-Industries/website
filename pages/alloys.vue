@@ -2,12 +2,12 @@
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
         <div class="relative h-svh bg-materials-blue text-gray-50">
             <Header @open="menuIsOpen = true" @close="menuIsOpen = false" menuclass="bg-blue-900 text-gray-50" />
-            <span class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16" v-show="!menuIsOpen">
+            <div class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16" v-show="!menuIsOpen">
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl block sora mb-2 lg:mb-4 xl:mb-6">
                     High-Quality Steels and Alloys for All Your Industrial Needs
                 </h1>
                 <p class="mx-4 md:mx-5 lg:mx-6 xl:mx-8 2xl:mx-10">Source custom-sized, hard-to-find materials with full traceability from Rem-Tech Industries - Your trusted specialty alloys provider. <NuxtLink to="/contact" class="underline">Contact</NuxtLink> us today for a quote for all your alloy needs.</p>
-            </span>
+            </div>
         </div>
         <div v-show="!menuIsOpen">
             <div class="flex justify-center bg-drawing-3">
