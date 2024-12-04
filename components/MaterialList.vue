@@ -15,7 +15,7 @@
     </div>
     <div class="w-full">
       <div class="overflow-x-auto px-4 md:px-8 lg:px-12 xl:px-16" ref="table">
-        <table class="min-w-full text-nowrap text-left text-xs xl:text-sm 2xl:text-base table-row-alternate mb-2 md:mb-4 lg:mb-6 xl:mb-8">
+        <table class="min-w-full text-nowrap text-left text-xs xl:text-sm 2xl:text-base mb-2 md:mb-4 lg:mb-6 xl:mb-8">
           <tbody>
             <template v-for="materialGroup in materialGroups">
               <tr class="bg-blue-900 text-gray-50 border-blue-900 border-x-2">
@@ -27,24 +27,22 @@
                 <!-- <th :id="materialGroup.headingId + 'dinenno'" class="p-2">DIN / EN No.</th> -->
                 <th :id="materialGroup.headingId + 'viewstock'" class="p-2 w-1/3">View Stock</th>
               </tr>
-              <template v-for="material in materialGroup.materials">
-                <tr :class="selectedMaterial === material.headingId ? 'bg-blue-800 text-gray-50 border-blue-800 border-x-2 font-bold' : ''">
+              <template v-for="(material, i) in materialGroup.materials">
+                <tr :class="selectedMaterial === material.headingId ? 'bg-blue-800 text-gray-50 border-blue-800 border-x-2 font-bold' : (i % 2 === 1 ? 'bg-gray-100 border-gray-100 border-x-2' : 'border-gray-50 border-x-2')">
                   <td :id="material.headingId" :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'materialgrade'" class="p-2">{{ material.title }}</td>
                   <!-- <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'unsno'" class="p-2">[missing]</td> -->
                   <!-- <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'dinenno'" class="p-2">[missing]</td> -->
                   <td v-if="selectedMaterial === material.headingId" :headers="material.headingId + ' ' + materialGroup.headingId + ' ' + materialGroup.headingId + 'viewstock'" class="p-2"><button @click="selectedMaterial = null" class="underline">Close</button></td>
                   <td v-else :headers="material.headingId + ' ' + materialGroup.headingId + ' ' + materialGroup.headingId + 'viewstock'" class="p-2"><button @click="selectedMaterial = material.headingId" v-if="material.parts.length > 0" class="underline">View Stock</button></td>
                 </tr>
-                <template v-if="selectedMaterial === material.headingId">
-                  <tr class="bg-blue-800 text-gray-50 border-blue-800 border-x-2">
-                    <th :id="material.headingId + 'size'" class="py-2 px-6">Size</th>
-                    <th :id="material.headingId + 'stock'" class="py-2 px-6">Stock</th>
-                  </tr>
-                  <tr v-for="(part, i) in material.parts" class="border-blue-800 border-x-2" :class="i + 1 === material.parts.length ? 'border-b-2' : ''">
-                    <td :headers="material.headingId + ' ' + material.headingId + 'size'" class="py-2 px-6">{{ part.partno }}</td>
-                    <td :headers="material.headingId + ' ' + material.headingId + 'stock'" class="py-2 px-6">{{ part.total_quantity }}" in stock</td>
-                  </tr>
-                </template>
+                <tr v-show="selectedMaterial === material.headingId" class="bg-blue-800 text-gray-50 border-blue-800 border-x-2">
+                  <th :id="material.headingId + 'size'" class="py-2 px-6">Size</th>
+                  <th :id="material.headingId + 'stock'" class="py-2 px-6">Stock</th>
+                </tr>
+                <tr v-show="selectedMaterial === material.headingId" v-for="(part, i) in material.parts" class="border-blue-800 border-x-2" :class="(i + 1 === material.parts.length ? 'border-b-2' : '') + ' ' + (i % 2 === 1 ? ' bg-gray-100' : '')">
+                  <td :headers="material.headingId + ' ' + material.headingId + 'size'" class="py-2 px-6">{{ part.partno }}</td>
+                  <td :headers="material.headingId + ' ' + material.headingId + 'stock'" class="py-2 px-6">{{ part.total_quantity }}" in stock</td>
+                </tr>
               </template>
             </template>
           </tbody>
@@ -98,14 +96,16 @@ onMounted(() => {
   window.addEventListener('resize', showHideArrows)
 })
 
-$fetch('https://data.remtechalloys.com/material_info.json').then(res => {
-  materialGroups.value = res.material_groups.map(materialGroup => {
-    materialGroup.headingId = materialGroup.title.replaceAll(' ', '_').replaceAll(',', '').toLowerCase()
-    materialGroup.materials = materialGroup.materials.map(material => {
-      material.headingId = material.title.replaceAll(' ', '_').replaceAll(',', '').toLowerCase()
-      return material
-    })
-    return materialGroup
+const res = await useAsyncData(
+  'materialGroups',
+  () => $fetch('https://data.remtechalloys.com/material_info.json')
+)
+materialGroups.value = res.data.value.material_groups.map(materialGroup => {
+  materialGroup.headingId = materialGroup.title.replaceAll(' ', '_').replaceAll(',', '').toLowerCase()
+  materialGroup.materials = materialGroup.materials.map(material => {
+    material.headingId = material.title.replaceAll(' ', '_').replaceAll(',', '').toLowerCase()
+    return material
   })
+  return materialGroup
 })
 </script>
