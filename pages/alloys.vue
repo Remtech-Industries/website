@@ -34,8 +34,8 @@
             </div>
             <div class="bg-blue-900 text-gray-50 flex justify-center">
                 <div class="flex flex-col py-16 xl:py-24 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
-                    <span class="text-xl/tight md:text-2xl/tight lg:text-3xl/tight xl:text-4xl/tight 2xl:text-5xl/tight sora mb-4 lg:mb-8">"RemTech is our best supplier, meeting and exceeding all of our expectations - immediate response to all of our enquiries, and same day shipping for our emergency orders - you help us keep our customers up and running."</span>
-                    <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Carole Fitzgerald</span>
+                    <span class="text-xl/tight md:text-2xl/tight lg:text-3xl/tight xl:text-4xl/tight 2xl:text-5xl/tight sora mb-4 lg:mb-8">"You have the best response time for quotes, open order updates, and general inquiries. I appreciate everything you do!"</span>
+                    <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Eric Gerber</span>
                     <span>(Flowserve)</span>
                 </div>
             </div>

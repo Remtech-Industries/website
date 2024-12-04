@@ -23,9 +23,9 @@
                     <span class="text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">Get Your Custom <NuxtLink to="/machining" class="text-red-700 underline">Machining</NuxtLink> Solution - Learn About Our Process Today</span>
                 </div>
                 <div class="bg-red-700 bg-part-array-red md:w-2/5 text-right flex flex-col justify-center items-stretch text-gray-50 py-16 lg:py-24 xl:py-32 px-4 md:px-8 lg:px-12 xl:px-16">
-                    <span class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora mb-4 lg:mb-8">"You are the gold standard for machine shops that we use."</span>
-                    <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Sean Whitfield</span>
-                    <span>(Lincoln Laser)</span>
+                    <span class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora mb-4 lg:mb-8">"There is not a supplier that has the service that RemTech does. They far out perform any of our other suppliers."</span>
+                    <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Ron Zacharias</span>
+                    <span>(Advanced Stainless)</span>
                 </div>
             </div>
             <div class="md:min-h-svh flex flex-col md:flex-row items-stretch">
