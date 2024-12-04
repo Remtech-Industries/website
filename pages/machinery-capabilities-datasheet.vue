@@ -21,14 +21,14 @@
         </div>
         <div class="w-full">
           <div class="overflow-x-auto px-4 md:px-8 lg:px-12 xl:px-16 mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24" ref="table">
-            <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base table-row-alternate mb-2 md:mb-4 lg:mb-6 xl:mb-8">
+            <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base mb-2 md:mb-4 lg:mb-6 xl:mb-8">
               <tbody>
                 <template v-for="(machineGroup, i) in machineGroups">
                   <tr class="bg-gray-200 text-lg 2xl:text-xl">
                     <th v-for="(column, j) in machineGroup.columns" :id="i + '-' + j" class="p-2 print:border-2 border-gray-950" :colspan="column.span === undefined ? 1 : column.span">{{ column.text }}</th>
                   </tr>
-                  <tr v-for="machine in machineGroup.machines">
-                    <td v-for="(data, j) in machine" :headers="i + '-' + j" class="p-2 print:border-2 border-gray-950" :colspan="data.span === undefined ? 1 : data.span">{{ data.text }}</td>
+                  <tr v-for="(machine, j) in machineGroup.machines" :class="j % 2 === 1 ? 'bg-gray-100' : ''">
+                    <td v-for="(data, k) in machine" :headers="i + '-' + k" class="p-2 print:border-2 border-gray-950" :colspan="data.span === undefined ? 1 : data.span">{{ data.text }}</td>
                   </tr>
                 </template>
               </tbody>

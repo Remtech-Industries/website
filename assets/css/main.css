@@ -235,18 +235,6 @@ html {
   @apply bg-gray-200;
 }
 
-.table-row-alternate tr:nth-child(2n):not([class*='bg-']) {
-  @apply bg-gray-100;
-}
-
-.table-row-alternate tr:nth-child(2n):not([class*='border-']) {
-  @apply border-gray-100 border-x-2;
-}
-
-.table-row-alternate tr:nth-child(2n+1):not([class*='border-']) {
-  @apply border-gray-50 border-x-2;
-}
-
 .bullet-list li {
   @apply relative pl-4;
 }

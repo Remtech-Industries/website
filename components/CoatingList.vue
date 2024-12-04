@@ -15,7 +15,7 @@
         </div>
         <div class="w-full">
             <div class="overflow-x-auto mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24 px-4 md:px-8 lg:px-12 xl:px-16" ref="table">
-                <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base table-row-alternate mb-2 md:mb-4 lg:mb-6 xl:mb-8">
+                <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base mb-2 md:mb-4 lg:mb-6 xl:mb-8">
                     <tbody>
                         <template v-for="coatingGroup in coatingGroups">
                             <tr class="bg-yellow-300">
@@ -29,7 +29,7 @@
                                 <th :id="coatingGroup.headingId + 'hardness'" class="p-2 print:border-2 border-gray-950">Hardness</th>
                                 <th :id="coatingGroup.headingId + 'remtechnumber'" class="p-2 print:border-2 border-gray-950">RemTech #</th>
                             </tr>
-                            <tr v-for="coating in coatingGroup.coatings">
+                            <tr v-for="(coating, i) in coatingGroup.coatings" :class="i % 2 === 1 ? 'bg-gray-100' : ''">
                                 <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'composition'" class="p-2 print:border-2 border-gray-950">{{ coating.composition }}</td>
                                 <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'tradename'" class="p-2 print:border-2 border-gray-950">{{ coating.tradeName }}</td>
                                 <td :headers="coatingGroup.headingId + ' ' + coatingGroup.headingId + 'description'" class="p-2 print:border-2 border-gray-950">{{ coating.description }}</td>
