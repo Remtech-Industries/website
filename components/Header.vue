@@ -50,7 +50,7 @@
                 </ul>
             </div>
         </div>
-        <div ref="menuend" tabindex="-1" aria-label="end of menu" role="text"></div>
+        <div ref="menuend" tabindex="-1"></div>
     </nav>
 </template>
 
