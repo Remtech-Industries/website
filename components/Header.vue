@@ -11,9 +11,9 @@
                 <li><NuxtLink to="/alloys" class="px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 flex h-full items-center">Alloys</NuxtLink></li>
             </ul>
             <button ref="button" @click="open" class="flex justify-between flex-col h-6 lg:h-7.5 xl:h-9 w-8 lg:w-10 xl:w-12 print:hidden" aria-label="open menu">
-                <div class="w-full border-color-unset border-b-2 xl:border-b-3"></div>
-                <div class="w-full border-color-unset border-b-2 xl:border-b-3"></div>
-                <div class="w-full border-color-unset border-b-2 xl:border-b-3"></div>
+                <span class="block w-full border-color-unset border-b-2 xl:border-b-3"></span>
+                <span class="block w-full border-color-unset border-b-2 xl:border-b-3"></span>
+                <span class="block w-full border-color-unset border-b-2 xl:border-b-3"></span>
             </button>
             <p class="hidden print:block text-right">remtechindustries.com<br>rfq@remtechindustries.com<br>+1 (519) 773-3459</p>
         </div>
@@ -28,8 +28,8 @@
                     </NuxtLink>
                 </div>
                 <button @click="close" class="relative h-16 lg:h-18 xl:h-20 w-12 lg:w-16 xl:w-20" aria-label="close menu">
-                    <div class="w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
-                    <div class="w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
+                    <span class="block w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></span>
+                    <span class="block w-full border-color-unset border-b-2 xl:border-b-3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></span>
                 </button>
             </div>
             <div class="w-full flex flex-col items-start flex-grow max-w-screen-xl px-4 sm:px-12 md:px-16 lg:px-18 xl:px-24 2xl:px-32 pb-4 sm:pb-12 md:pb-16 lg:pb-18 xl:pb-24 2xl:pb-32">
