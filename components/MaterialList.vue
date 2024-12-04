@@ -3,11 +3,11 @@
     <div class="flex sticky lg:relative z-10 top-0 justify-between items-center bg-gray-50 py-2 md:py-4 lg:py-6 xl:py-8 px-4 md:px-8 lg:px-12 xl:px-16">
       <h2 class="text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora">Material Inventory</h2>
       <div class="flex justify-end flex-wrap sm:flex-nowrap" v-if="hasScroll">
-        <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="left">
+        <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="left" aria-label="scroll table left">
           <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>
           <span class="block w-4 lg:w-6 2xl:w-8 h-4 lg:h-6 2xl:h-8 border-color-unset border-b-2 border-l-2 rotate-45 absolute top-1/2 left-0.5 lg:left-1 -translate-y-1/2"></span>
         </button>
-        <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="right">
+        <button class="relative py-4 md:py-6 ml-6 lg:ml-12" @click="right" aria-label="scroll table right">
           <span class="block w-8 lg:w-12 2xl:w-16 border-color-unset border-b-2"></span>
           <span class="block w-4 lg:w-6 2xl:w-8 h-4 lg:h-6 2xl:h-8 border-color-unset border-t-2 border-r-2 rotate-45 absolute top-1/2 right-0.5 lg:right-1 -translate-y-1/2"></span>
         </button>
