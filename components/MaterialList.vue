@@ -29,7 +29,7 @@
               </tr>
               <template v-for="(material, i) in materialGroup.materials">
                 <tr :class="selectedMaterial === material.headingId ? 'bg-blue-800 text-gray-50 border-blue-800 border-x-2 font-bold' : (i % 2 === 1 ? 'bg-gray-100 border-gray-100 border-x-2' : 'border-gray-50 border-x-2')">
-                  <td :id="material.headingId" :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'materialgrade'" class="p-2">{{ material.title }}</td>
+                  <th :id="material.headingId" :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'materialgrade'" class="p-2">{{ material.title }}</th>
                   <!-- <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'unsno'" class="p-2">[missing]</td> -->
                   <!-- <td :headers="materialGroup.headingId + ' ' + materialGroup.headingId + 'dinenno'" class="p-2">[missing]</td> -->
                   <td v-if="selectedMaterial === material.headingId" :headers="material.headingId + ' ' + materialGroup.headingId + ' ' + materialGroup.headingId + 'viewstock'" class="p-2"><button @click="selectedMaterial = null" class="underline">Close</button></td>
