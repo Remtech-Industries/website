@@ -1,0 +1,1096 @@
+Received: from TO1PPFB7CD023AC.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:b08::685)
+ by YT3PR01MB11007.CANPRD01.PROD.OUTLOOK.COM with HTTPS; Mon, 25 Nov 2024
+ 15:50:30 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=aIA94WFotq3gznvNuxO2NwDl99Fj9r74r911+KdjcmsMupKS4RpkJoWfjW1qwBvWcqeb3mFi2HjKu+gDCWCqcwq9lNbIsDIfJoir8wMFhbBFTVlIBiOMhl8RhJDyRTTVz7FbGm8+QYuHee0xIyqVyimASWEXOJ6hz9rAzHzGst9uPSq/iFYA96NM9KXFpkVsE9AgZGdCRYpfYhqrhlhZqJecX06eZ8lAjCSAIWFvkWE5FAUrC2vL2DmV7/YxGr/iLKJ7ZpQaGraFllG5OqzL7LdgD8ssec3IjMF5JDq4454IHrVtxXQYDtxeT2+XOsOvroOgUpHGr4OSkwkml2Yryg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=WraejKQbIUcKADtD6XluYSnTcFVaGIwroASCTRlDxCE=;
+ b=CTfoWPFYrnILDseNLiRa2GExPDtiTrxFasZlToM7mj00bXHhQY/s0oNZQeDoMQam4mMYwbjjK+BbHn8kAeVgypgHwELDRaetzpf4K4Kw8H0iJvyNWw+n0FwXc5niMmqa6N/OQuvIHLVkLo3q1+Izp2H6d97QTv4oGE4PFefz+gFp8G7NdR+rPmyyJLu5z+9BWWWpDTQbhfH3EISM9C/GwiNstMbIiWTfiCv6ohvOdH4n7HZ5KUgkOJgcLzlQC8ruDI97gNBpi3JI5U3id7g0PbMGJ/oZkrJvhC/+ntHo9Qu+/wRZeCnTKoDS0hHLMAnWulsgypsFGMddKyMytv9xqA==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 40.107.21.76) smtp.rcpttodomain=remtechindustries.com
+ smtp.mailfrom=eagleburgmann.com; dmarc=pass (p=none sp=none pct=100)
+ action=none header.from=eagleburgmann.com; dkim=pass (signature was verified)
+ header.d=eagleburgmann.com; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=eagleburgmann.com]
+ dkim=[1,1,header.d=eagleburgmann.com]
+ dmarc=[1,1,header.from=eagleburgmann.com])
+Received: from YT4PR01CA0297.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:b01:10e::22)
+ by TO1PPFB7CD023AC.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:b08::685) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8182.21; Mon, 25 Nov
+ 2024 15:50:27 +0000
+Received: from YT1PEPF00001E8D.CANPRD01.PROD.OUTLOOK.COM
+ (2603:10b6:b01:10e:cafe::59) by YT4PR01CA0297.outlook.office365.com
+ (2603:10b6:b01:10e::22) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8182.20 via Frontend Transport; Mon,
+ 25 Nov 2024 15:50:25 +0000
+Authentication-Results: spf=pass (sender IP is 40.107.21.76)
+ smtp.mailfrom=eagleburgmann.com; dkim=pass (signature was verified)
+ header.d=eagleburgmann.com;dmarc=pass action=none
+ header.from=eagleburgmann.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of eagleburgmann.com
+ designates 40.107.21.76 as permitted sender) receiver=protection.outlook.com;
+ client-ip=40.107.21.76; helo=EUR05-VI1-obe.outbound.protection.outlook.com;
+ pr=C
+Received: from EUR05-VI1-obe.outbound.protection.outlook.com (40.107.21.76) by
+ YT1PEPF00001E8D.mail.protection.outlook.com (10.167.241.54) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8207.12
+ via Frontend Transport; Mon, 25 Nov 2024 15:50:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=DBwxoyy0IwKy+fwdiynOQb4HRHZlvJZRzPxEFniX6YBeCMdXerI6cdM02cJascFqX0rarHz2BwVqtccSlBFmlWdvVwPtzG8DLkHZY/bHisksrbtbNHjmra3BxF4D+GHHdrbuDZk2gNQZtVLd0TlyghlxOEY5j1tgh0D+ML2YVPZyrUwlCI/DVp7OuRMw1kVTQDyIcAoIKRPLb+ePnU1rVUW5UnRPvBTKHaUm9lcTPn4Hi5rY4tQYRZPpt2Jge1/sPTJhJT0BXvWSd/FJaJ8i1OLlcGP4z4yA9hwZGocvwNK2T95BHRHQ68aJK3lwlvAlYe0u9nQp1LRo6GmvAi5Wdw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=WraejKQbIUcKADtD6XluYSnTcFVaGIwroASCTRlDxCE=;
+ b=p7OPzvh5CfvFMMQqkauVR8a62WfEwyke/up1JXCHdruHIu4UAmHA/tX7IODnvRVZYW2oO9clhcwWoDra0YwF/Zn6T8E8JWDl/QDlYGAIZD880jz1zUpxUlICqahvV2f7czlbTL6w+QzrzyeF37frzcm6EgykZ7eLVyNngAscpn4w3MhYzm8udaLxT0GXFFOg1haSx6GZQUvbD0Wo1qFkfgR8G3z0ZOVup9zOik6WAI+K+N/r7IV7BIQqPmbnJEqKUtjtxOUFmnVd68LkFGTzDTGUAG95ll0BXplQ8E75LaQdLYn+ZiOvPnjuhHa+reps5kSk6dY4VLDF7B8VU1kHJg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=eagleburgmann.com; dmarc=pass action=none
+ header.from=eagleburgmann.com; dkim=pass header.d=eagleburgmann.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=eagleburgmann.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=WraejKQbIUcKADtD6XluYSnTcFVaGIwroASCTRlDxCE=;
+ b=n1uLM0XX+07oag9qxJa3oQoHDhQkXCFl4XaPCi9GDwyfe6wUnb1mC8OHIQtqfvqh1iw4MJzpeYx2sc7tDRt805VsY02mZ7+clw5gR6AJu9YFQOHdTepmrVOeN7lHMEp6rBblOyhiEJPEVcI67TKsmYTH/LCaTtR7mIyeOMSgyrY=
+Received: from DB8P191MB0585.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:131::24)
+ by DB9P191MB2121.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:33d::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8182.20; Mon, 25 Nov
+ 2024 15:50:22 +0000
+Received: from DB8P191MB0585.EURP191.PROD.OUTLOOK.COM
+ ([fe80::7407:503f:ce1c:c958]) by DB8P191MB0585.EURP191.PROD.OUTLOOK.COM
+ ([fe80::7407:503f:ce1c:c958%3]) with mapi id 15.20.8182.019; Mon, 25 Nov 2024
+ 15:50:22 +0000
+From: "Hughes, Jason" <Jason.Hughes@eagleburgmann.com>
+To: Dmitri Klassen <dklassen@remtechindustries.com>
+Subject: RE: Request for use of quote
+Thread-Topic: Request for use of quote
+Thread-Index: AQHbPRHO8foeUm1zY0Wnu1YJuXwCcrLDvH3QgAAA19uABGviMA==
+Date: Mon, 25 Nov 2024 15:50:22 +0000
+Message-ID:
+ <DB8P191MB058595A73CD3C72885DFB0B7822E2@DB8P191MB0585.EURP191.PROD.OUTLOOK.COM>
+References:
+ <YT3PR01MB110070D8D7C0D47F9DDC21B32C0232@YT3PR01MB11007.CANPRD01.PROD.OUTLOOK.COM>
+ <DB8P191MB058514A897571DA2868E124F82232@DB8P191MB0585.EURP191.PROD.OUTLOOK.COM>
+ <YT3PR01MB11007ABB13D2A903436A717A5C0232@YT3PR01MB11007.CANPRD01.PROD.OUTLOOK.COM>
+In-Reply-To:
+ <YT3PR01MB11007ABB13D2A903436A717A5C0232@YT3PR01MB11007.CANPRD01.PROD.OUTLOOK.COM>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+ MSIP_Label_317acaa7-474e-43f2-815d-bc42b4275451_ActionId=3dd73c3b-babc-43b1-b3cb-50cca73b13fe;MSIP_Label_317acaa7-474e-43f2-815d-bc42b4275451_ContentBits=0;MSIP_Label_317acaa7-474e-43f2-815d-bc42b4275451_Enabled=true;MSIP_Label_317acaa7-474e-43f2-815d-bc42b4275451_Method=Standard;MSIP_Label_317acaa7-474e-43f2-815d-bc42b4275451_Name=Internal
+ -
+ (C2);MSIP_Label_317acaa7-474e-43f2-815d-bc42b4275451_SetDate=2024-11-25T15:49:56Z;MSIP_Label_317acaa7-474e-43f2-815d-bc42b4275451_SiteId=e0703d2d-4e72-462e-aadb-1a14019e6f1a;
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=eagleburgmann.com;
+x-ms-traffictypediagnostic:
+ DB8P191MB0585:EE_|DB9P191MB2121:EE_|YT1PEPF00001E8D:EE_|TO1PPFB7CD023AC:EE_|YT3PR01MB11007:EE_
+X-MS-Office365-Filtering-Correlation-Id: eaa53fad-e024-4778-cc17-08dd0d68e079
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|376014|1800799024|366016|8096899003|7053199007|38070700018;
+X-Microsoft-Antispam-Message-Info-Original:
+ =?us-ascii?Q?+jlx3HVQ/kp807N4/wpd/OSt0f1wv0i/blWLizUbmEoJLFkiVmExoMj74j7A?=
+ =?us-ascii?Q?XeEiAMIW/Ra4jk2uZABvAONQZABI8ulwUq0Ne+bV+pJ5HjtiF6K57favKxdN?=
+ =?us-ascii?Q?LQNWPt3GBstGwr/ojB1lHn/diBEk1mQmoqFKU3shAaAMbCBi3A7HDwOFaza3?=
+ =?us-ascii?Q?8ZfCTl/U9xDtOk1clkV0maE1Y3mgtr7wS/pMdJocBQe47qAXimlnnghriMib?=
+ =?us-ascii?Q?s0dX95CHWfb+J5A5OY3lJrlS0QUMDKA2zLCRKzq4iXCN7QtxYPYt5Yas/T7v?=
+ =?us-ascii?Q?X+5QnpwdBGJTBxOdt+5j/WF9UMN0SN733W2VpH2Q/vPLkLkJYZLKS0IqFP9X?=
+ =?us-ascii?Q?ql1XxQNnFFGBgh6yaRwzEwLiZo9hOEYYtNHHNstKtDzwxuC02b3vGPeT6ur4?=
+ =?us-ascii?Q?bDTZvlbQ3oj1sgFPSoYARAvYa0nu+fgNkvXV5T83Ann6eQhpbXBYwxt/fItG?=
+ =?us-ascii?Q?4p7wqCC3l9CBmYvPqllWEd+xeEO6foRGSI7Dc1qZHB8hI6O2p5XZwEBCDL9E?=
+ =?us-ascii?Q?jzNfM/86vhy/c5bPN2fF2lUSKfGDj3aKpDlZenvHfjDjllhc6luACtvFjqiK?=
+ =?us-ascii?Q?OI3cMDjMEq3F8KKnCt35mtUgUvuU9i8o96jtuktmqv2o16AmNvckokcqWouv?=
+ =?us-ascii?Q?hIgtD1LXjki3UFtphSk6jvL9fMq/RjV99aOs6nl9uIb6WihDFNkm7h6V0vcN?=
+ =?us-ascii?Q?LYJ36mqtO/woO+tuAo8fVkqfOKtY0zOIuJPFVIj3PGwocbBNTuLKV+Dsgpa1?=
+ =?us-ascii?Q?QFo4e5CXJ5Jot+2G0S01hBClhMRk8qSWR7fBhV0ZEn9D6uVlAjf0ZY0PSuL5?=
+ =?us-ascii?Q?LKQYCWhbncpe+9DDs2D/ve0Bi52PG70yVGVh7F1B6LFeFr7N/hVjowcBFt4J?=
+ =?us-ascii?Q?BykoDDDwfDaN1De/Gkio/NVwennCs2xZQaDBLY/XYifonhCOGgZy36196TYL?=
+ =?us-ascii?Q?AoWkH9DVpzvV+Q3HzrmhqW53zXxV+h4YONY0OhSaW/yylACnBkqLoKqT2Z1b?=
+ =?us-ascii?Q?et+M4D5Bu5Ni+owYHXweuT4hjAR7JEgciL7ocmPdUU2rdCVyoSY8axjWq2fb?=
+ =?us-ascii?Q?rLOYNRNX5WIBUnXoU9GKNiiyKDxJ1CPNxPFbIMl5fqyqVCkaN8IHlR6ptrd8?=
+ =?us-ascii?Q?efNhlvX6a4Wf8uOAKbKkJx7WYruS6CYVK4XTEot2nI4ru3Kd3MSKI0+wp1Of?=
+ =?us-ascii?Q?3ozAH8S86A90Z3w3mW9W7/GvfwxXpPLIxZSAVZtD5FK6LlVCWVcMZrFI10X0?=
+ =?us-ascii?Q?exJHzLyam6YnCkx0AtXlE7CiOP4GTXk+j/oglYsN+QJ8ZpKhcypjpIgIpht+?=
+ =?us-ascii?Q?P6uKE4Ueng/Rmlt9rG3Qrzyrqgw+ZbAnXrbVLHTv55WLzdoOSFNBjkrfrCHP?=
+ =?us-ascii?Q?4k1p+oun8H4utZ6MM7Z5ZP/ccJqf?=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB8P191MB0585.EURP191.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(8096899003)(7053199007)(38070700018);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-Original-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-Original-0:
+ =?us-ascii?Q?rl5Cjep8MGGVesWrBXTNq/gKgj5w8OHBIy5IPC+mlLifQlgRMmUyTewjBudK?=
+ =?us-ascii?Q?jww9P/RLCjHVD+7qE5x19CcQ9KW0hr3uPQUesnkcvvQgsOIt58wtISt1apro?=
+ =?us-ascii?Q?k3k1vnSczSDlW+FtOYJR0Q0Wgn/sg+MB78qMz460HEk8FIYX7PAs1gNxf5WK?=
+ =?us-ascii?Q?YcbKh7lTVjYxDMgClapxmlOKPjEikqfznQhNvP0lT9/A3TloMsYNt3H+iHSS?=
+ =?us-ascii?Q?Yl/4HB+UR+OyuQ3Obp8zmjTtq/PgUYpIt0blE1HViPRbJoGbOxBN+BnYyQqN?=
+ =?us-ascii?Q?VKGaDW/pOoh1rr+/ZLttLSwcrxsBSRUfMtfipX671WMKp5oh+QENvSMwpeRI?=
+ =?us-ascii?Q?bDuNEBgRSTuT+g84rPXvNERDQiNm7LzD1t/9no6TqU9PebL0rNF9nzaK4tJp?=
+ =?us-ascii?Q?6cY4EXG82I8QMqdxCh5f1qE47gOFz/nQCibcvEs9+mCf8tBeROX9mOr6Q80t?=
+ =?us-ascii?Q?DmqA0H/DRsiQbe+p9nrIhXIQPlfux+P7fOpbFHrn6lAJS95PkfK1ff4g5mhO?=
+ =?us-ascii?Q?X6A68lFbE4b8bf7/STAGqu35j2Y4YZQjwaUXm8eunSDYKtolCrFlT95zEXQy?=
+ =?us-ascii?Q?JYshjlaHZcrXZ0MA28WfyHi951Hqci9PdEkolaysdrn35w5GvhDCIHtTGrC/?=
+ =?us-ascii?Q?nhcR6DbmONuo3ijgYhG4eqs5mBh3AmPvboaPH2Vg7VONSF9N1En2Y2NpEvLx?=
+ =?us-ascii?Q?pSpwV3V493/84lh8J8i2Ukk+jYzpzDcrDiOXxO+/AZugFCbDisbadfwYwqp3?=
+ =?us-ascii?Q?7RHR8p0KODBFIdI+mWbVryu4BrktgyAMbmOxX+jfijxPmpcD/NgAWGva4URq?=
+ =?us-ascii?Q?mS71o5iTr9qGManMc1P1vOiNcQyoXm+9zHotHOPIhRwDbBtUnWgBknkVRYOZ?=
+ =?us-ascii?Q?pdKoiUINb8K03ISTXimLqHzUozCJGZaHB6Ncl8rQsmbHjylbY1xSQd/j8M2g?=
+ =?us-ascii?Q?2/vKr7su1guc6PEzlpJAjzHdBv18v7eAlDlNSJnaT0mEglZhuYRbt5lYRhkY?=
+ =?us-ascii?Q?EnqgviKtSAwQ55nM7okGevY9O9mMAGXb9goiC32+GQV3hfYZObpAtPOF1dUp?=
+ =?us-ascii?Q?q8hElibfQMwU/gYNLWDM0FNtjeyyYehrLK2bKJoBZWnF8wS5xETU9BTIYQ4m?=
+ =?us-ascii?Q?B5bzR0GrhBeo3e9YLylrn88iLRm75RQ7CwKGyrpltISh4OAeaY4MLZJhqUSL?=
+ =?us-ascii?Q?UQUnS9OFR/uEpnqkZaff724Y4krzlmS86wE6XIqUvtrYXfo9wOs0YZFelZVr?=
+ =?us-ascii?Q?xpm/DDjmbOedBxwOw6bWshBjcs1eoH2kaQ1SNCJy8LL17iQ813+WyxTSGvz7?=
+ =?us-ascii?Q?ae2eeJ7R91FRwI2WorSekYNg0vE3GojtrArK+h7LV3WpdWClPoL8vAtARdMG?=
+ =?us-ascii?Q?rvP2uoFRyYwUSj6J7C1fC/t3+r5yKUgSJ4XlmdbL0rnAdKIyu+hYNH57bmkH?=
+ =?us-ascii?Q?kDT0w4I8XwgsycHPpykkIQW0xWHD8JguacihilSMsrxpJ7ztV6oVwPe2VRWc?=
+ =?us-ascii?Q?nS/UH6D9OYvm70yU5rzT/2ccLgeCr8XV8HiZ2ralAQW4fz5ZGu2Uyo970F9d?=
+ =?us-ascii?Q?AIC1WuqwlUWgYcfGnRMyYlKlvA7ZthyNXTP2NegXM5aNBK53ndyJv3k2mVSw?=
+ =?us-ascii?Q?/Q=3D=3D?=
+Content-Type: multipart/related;
+	boundary="_004_DB8P191MB058595A73CD3C72885DFB0B7822E2DB8P191MB0585EURP_";
+	type="multipart/alternative"
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9P191MB2121
+Return-Path: Jason.Hughes@eagleburgmann.com
+X-MS-Exchange-Organization-ExpirationStartTime: 25 Nov 2024 15:50:25.0316
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ eaa53fad-e024-4778-cc17-08dd0d68e079
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 08020390-40da-4da5-b230-af0cf191e38e:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ YT1PEPF00001E8D.CANPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted:
+ YT1PEPF00001E8D.CANPRD01.PROD.OUTLOOK.COM
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource:
+ YT1PEPF00001E8D.CANPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ 3ee0c257-a635-41bc-e817-08dd0d68ded5
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam:
+ BCL:0;ARA:13230040|35042699022|8096899003|4076899003|7053199007;
+X-Forefront-Antispam-Report:
+ CIP:40.107.21.76;CTRY:AT;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:EUR05-VI1-obe.outbound.protection.outlook.com;PTR:mail-vi1eur05on2076.outbound.protection.outlook.com;CAT:NONE;SFS:(13230040)(35042699022)(8096899003)(4076899003)(7053199007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Nov 2024 15:50:24.7192
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: eaa53fad-e024-4778-cc17-08dd0d68e079
+X-MS-Exchange-CrossTenant-Id: 08020390-40da-4da5-b230-af0cf191e38e
+X-MS-Exchange-CrossTenant-AuthSource:
+ YT1PEPF00001E8D.CANPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TO1PPFB7CD023AC
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:05.3387265
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8182.018
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?Windows-1252?Q?J6U62zmN1XAWRS+++TNxvImUI+5AyAzBxI1v3jFe+uF3qOULhJVxfF7g?=
+ =?Windows-1252?Q?BndeU82JFhkfga4JaEbhrdsqaZj/L7SPwicaogRmflpGd2MA6irgdY6p?=
+ =?Windows-1252?Q?soCv2QFRiBpHsEkPeAmZUNm7hpU0JwB/oEeIAbA8F7oqacpKOnBjPUlA?=
+ =?Windows-1252?Q?tmWmif0GKhfzLh5xAlhjusqYxkafHKSL78sURENdTuwR2hr27D29J1qd?=
+ =?Windows-1252?Q?/smUf1zxjCoXpqcyMCHIrYawXCa+JNsrOoitkZwYWMNGzdAW1bjD9vh2?=
+ =?Windows-1252?Q?vNdc0pk1+xY67u+V6YRWLQZcjPPzFDKe86zLR1Nb1fDoLTwai0Wsl4f6?=
+ =?Windows-1252?Q?d3z5EbqPV6zx3CpxmPfZIEaKh5+t+EDHhjH4E9FeJ84p2IHc3f94KUL/?=
+ =?Windows-1252?Q?QzRFa9VDITu24Ll7fjzKlKs92BET/3VAVWsiXGcSTm+AX23xQ5RarKxy?=
+ =?Windows-1252?Q?0WPzTL40TywjyMObWQL92D9a4WKEyzzfccNs1pv+GpeAWyskhjMxYFsf?=
+ =?Windows-1252?Q?iRCGDSeKSHtXcJjxub//T3d+doRQCzOmV4K1qQS/JkR79MK5CzveejYM?=
+ =?Windows-1252?Q?gLTNeS0kZyxEolWJNuw7jZTYKXROhUOYAWTsRKOKSERH+038Ph4Ym/sL?=
+ =?Windows-1252?Q?UrMwOkQ3lF+iOWkkymoY96f6CzGDeP01Nq2gazI5KBbPCCkFVOr9qaDL?=
+ =?Windows-1252?Q?Y5950wKDPqimeWHWoqr0C1OtlFWCKastVIv3ooQYXFLUPBd7pnJhQgwa?=
+ =?Windows-1252?Q?4m/DzsVVwX9cdDzcfUqgaTepMd+E9k12ARClU4e5mIY0y2ftwdd+QsLH?=
+ =?Windows-1252?Q?cxz36KKltiVd1oIv6a2V1lTz4ntNtH8PgmkkxhvfdKWUfmMAxLBZcvyd?=
+ =?Windows-1252?Q?HHc758Rm1ATylH3SUQMV5ZeI69Y2rmNlklhFDZYktvKWn8QxqHybMujy?=
+ =?Windows-1252?Q?tHZaPW5r9GKRt/+tfjhoTeCK7j6ALhn/fPbWgf21tGByYBYcUd5j13FK?=
+ =?Windows-1252?Q?2WytgH6/GEFC2SiKe5ZohcRodVQ0SlzPwYK2sFjuzh0+iM/yiJGaE7Qd?=
+ =?Windows-1252?Q?j5ZTRCtjesnFzfr9Z+c5XHsW4C9pdjoobyUkNoT+rB39Nca8/q6z63rz?=
+ =?Windows-1252?Q?DQ9C9P5rFEuD1ShnIqhOQ8zhHEfrvp7MZdZpgUT7T8uxjwtboScwTB9a?=
+ =?Windows-1252?Q?9OsPENnESsAY8GM6ZaFprQneaPM8dXDy67qLC7suzWSF40LLlv+mosfx?=
+ =?Windows-1252?Q?MBA58ewSLZyjciAUMMXNOsq2V3Deq51nlUtXHgmqgxs6L3FWc2ibTNoD?=
+ =?Windows-1252?Q?/NCMkRi4p1DptSwLBMFKXAMVl3mMGevFKzZboe7zvonIgoVq+q//KWr3?=
+ =?Windows-1252?Q?H0N8ffCdXERZRNmAXDixmVWBWBePY/FYj89JFNfxxOR6GQf5i27VFFVA?=
+ =?Windows-1252?Q?Ugf/Vmm2HBi3gVr7YS1hYfO4mDt8fA+9MLMBjkReRQVHkcgMdjZLw8bf?=
+ =?Windows-1252?Q?uqTjiVmgJKKCjMUxPBtBtPrGY7q9PCM/iU8IfwC8s35ECEjEFl+8iqMs?=
+ =?Windows-1252?Q?Ps89seTgogy1vMTeDMKIvuhks7XwlCb3e/tBnxhTVgxT4GLe4zKaUckG?=
+ =?Windows-1252?Q?jRPnrGErIzUTbXUAYkxsfbEsgjXce40smpsKAWBXZgUo7aixiC1bCRyr?=
+ =?Windows-1252?Q?pVlMcBr0uLUBODJo+n7u61Smrh/3tgi3SMYMKbXajWoujNMzw8bbnE7h?=
+ =?Windows-1252?Q?t7tVUrX0hNoo76Q7egTbQVaNBXEoYSKZdu1P5b1TSYHAXjs71Gwcyixa?=
+ =?Windows-1252?Q?Ho8Bn7hMi/P9Sj+lfrgzgpLt+0RkOue8rG3n7DoH2h+DAU0GNXJRukDI?=
+ =?Windows-1252?Q?m0G7PA5+KpBJInuJ6ZFGbThVIS6ROQPUFJvFjDQuDHOL7TABTyP+TlVt?=
+ =?Windows-1252?Q?fUFzMTeY+RPTTaR+cPHGFvdMxQjjwyoNcM6vbXhPlMy9EbqOviz5yqyO?=
+ =?Windows-1252?Q?uZhpBtBKx14+/6Vr+zKqL9WpfVkbTXQud+gqrllhH4FHvRUAA7B6jyVl?=
+ =?Windows-1252?Q?qKAbbzaUeSlf7RLrPeRuFCIbez8lQpFOGFZcZg=3D=3D?=
+MIME-Version: 1.0
+
+--_004_DB8P191MB058595A73CD3C72885DFB0B7822E2DB8P191MB0585EURP_
+Content-Type: multipart/alternative;
+	boundary="_000_DB8P191MB058595A73CD3C72885DFB0B7822E2DB8P191MB0585EURP_"
+
+--_000_DB8P191MB058595A73CD3C72885DFB0B7822E2DB8P191MB0585EURP_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Hello Dmitri,
+
+You have full permission to use my testimonial!
+
+
+Best Regards,
+
+Jason Hughes
+Order Fulfillment Supervisor
+
+EagleBurgmann Industries LP
+10035 Brookriver Dr., Houston, TX 77040 / USA
+Office: 713-939-9515
+Direct Line: 281-984-1087
+Cell: 346-262-9986
+jason.hughes@eagleburgmann.com<mailto:jason.hughes@eagleburgmann.com>
+www.eagleburgmann.com<http://www.eagleburgmann.com/>
+
+[cid:image001.png@01DB3F1F.70E31D30]
+
+From: Dmitri Klassen <dklassen@remtechindustries.com>
+Sent: Friday, November 22, 2024 2:19 PM
+To: Hughes, Jason <Jason.Hughes@eagleburgmann.com>
+Subject: Re: Request for use of quote
+
+You don't often get email from dklassen@remtechindustries.com<mailto:dklass=
+en@remtechindustries.com>. Learn why this is important<https://aka.ms/Learn=
+AboutSenderIdentification>
+[External]:
+
+Fantastic, thank you Jason! I will await your confirmation.
+
+
+Dmitri Klassen |  REM-TECH INDUSTRIES INC.
+
+Quality Assurance
+69 White Street,  Aylmer, Ontario  N5H 2R9
+
+P: 519.773.3459  |  F: 519.773.7914  |  E: dklassen@remtechindustries.com<m=
+ailto:dklassen@remtechindustries.com>  |  W: www.remtechindustries.com<http=
+s://remtechindustries.com>
+
+This email and any attachments are only for use by the intended recipient(s=
+) and may contain legally privileged, confidential, proprietary or otherwis=
+e private information.  Any unauthorized use, reproduction, dissemination, =
+distribution or other disclosure of the contents of this e-mail or its atta=
+chments is strictly prohibited.  If you have received this email in error, =
+please notify the sender immediately and delete the original.
+
+---------------------------------------------------------------------------=
+--------------------------------------------
+
+
+
+________________________________
+From: Hughes, Jason <Jason.Hughes@eagleburgmann.com<mailto:Jason.Hughes@eag=
+leburgmann.com>>
+Sent: Friday, November 22, 2024 3:17 PM
+To: Dmitri Klassen <dklassen@remtechindustries.com<mailto:dklassen@remtechi=
+ndustries.com>>
+Subject: RE: Request for use of quote
+
+
+Dmitri,
+
+
+
+I have no problem at all with that, but let me run it by my manager to make=
+ sure they are okay with the company name being used. I would imagine they'=
+re okay with it; I just need to make sure.
+
+
+
+Best Regards,
+
+
+
+Jason Hughes
+
+Order Fulfillment Supervisor
+
+
+
+EagleBurgmann Industries LP
+
+10035 Brookriver Dr., Houston, TX 77040 / USA
+
+Office: 713-939-9515
+
+Direct Line: 281-984-1087
+
+Cell: 346-262-9986
+
+jason.hughes@eagleburgmann.com<mailto:jason.hughes@eagleburgmann.com>
+
+www.eagleburgmann.com<http://www.eagleburgmann.com/>
+
+
+
+[cid:image001.png@01DB3F1F.70E31D30]
+
+
+
+From: Dmitri Klassen <dklassen@remtechindustries.com<mailto:dklassen@remtec=
+hindustries.com>>
+Sent: Friday, November 22, 2024 1:08 PM
+To: Hughes, Jason <Jason.Hughes@eagleburgmann.com<mailto:Jason.Hughes@eagle=
+burgmann.com>>
+Subject: Request for use of quote
+
+
+
+You don't often get email from dklassen@remtechindustries.com<mailto:dklass=
+en@remtechindustries.com>. Learn why this is important<https://aka.ms/Learn=
+AboutSenderIdentification>
+
+[External]:
+
+
+
+Hello Jason,
+
+
+
+RemTech is undergoing a website update, and we are looking to include custo=
+mer testimonials in the new website. While looking through the results of p=
+ast customer satisfaction surveys, I found that in 2020, you submitted an e=
+ntry that included the text "RemTech is the absolute best vendor with whom =
+I work. You always come through for us when we're in a bind. And I trust yo=
+ur quoted delivery times more than anyone." I am requesting your permission=
+ to use this quote in our upcoming website alongside your name and company =
+name. Please let me know if this would be acceptable or if you have any que=
+stions.
+
+
+
+Thank you for your consideration,
+
+
+
+Dmitri Klassen |  REM-TECH INDUSTRIES INC.
+
+Quality Assurance
+69 White Street,  Aylmer, Ontario  N5H 2R9
+
+P: 519.773.3459  |  F: 519.773.7914  |  E: dklassen@remtechindustries.com<m=
+ailto:dklassen@remtechindustries.com>  |  W: www.remtechindustries.com<http=
+s://remtechindustries.com>
+
+This email and any attachments are only for use by the intended recipient(s=
+) and may contain legally privileged, confidential, proprietary or otherwis=
+e private information.  Any unauthorized use, reproduction, dissemination, =
+distribution or other disclosure of the contents of this e-mail or its atta=
+chments is strictly prohibited.  If you have received this email in error, =
+please notify the sender immediately and delete the original.
+
+---------------------------------------------------------------------------=
+--------------------------------------------
+
+
+
+--_000_DB8P191MB058595A73CD3C72885DFB0B7822E2DB8P191MB0585EURP_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:wf_segoe-ui_normal;}
+@font-face
+	{font-family:"Open Sans";
+	panose-1:2 11 6 6 3 5 4 2 2 4;}
+@font-face
+	{font-family:"Franklin Gothic Medium Cond";}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+p.xmsonormal, li.xmsonormal, div.xmsonormal
+	{mso-style-name:x_msonormal;
+	margin:0in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.EmailStyle24
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"blue" vlink=3D"purple" style=3D"word-wrap:brea=
+k-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal">Hello Dmitri, <o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">You have full permission to use my testimonial! <o:p=
+></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif">Best Regards,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Arial&quot;,sans-serif">Jason Hughes<o:p></o:p></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif">Order Fulfillment Supervisor<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Arial&quot;,sans-serif">EagleBurgmann Industries LP</span></b><span style=
+=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif">
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif">10035 Brookriver Dr., Houston, TX 77040 / USA<o:p></o=
+:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif">Office: 713-939-9515&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif">Direct Line: 281-984-1087&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif">Cell: 346-262-9986&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><u><span style=3D"font-size:10.0pt;font-family:&quot=
+;Arial&quot;,sans-serif"><a href=3D"mailto:jason.hughes@eagleburgmann.com">=
+<span style=3D"color:#0563C1">jason.hughes@eagleburgmann.com</span></a>
+</span></u><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sa=
+ns-serif"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif"><a href=3D"http://www.eagleburgmann.com/"><span style=
+=3D"color:#0563C1">www.eagleburgmann.com</span></a><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"181" height=3D"46" style=
+=3D"width:1.8854in;height:.4791in" id=3D"Picture_x0020_2" src=3D"cid:image0=
+01.png@01DB3F1F.70E31D30"><o:p></o:p></p>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Dmitri Klassen &lt;dklassen@remtechindu=
+stries.com&gt;
+<br>
+<b>Sent:</b> Friday, November 22, 2024 2:19 PM<br>
+<b>To:</b> Hughes, Jason &lt;Jason.Hughes@eagleburgmann.com&gt;<br>
+<b>Subject:</b> Re: Request for use of quote<o:p></o:p></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"left" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td width=3D"0" style=3D"width:.3pt;background:#A6A6A6;padding:5.25pt 1.5pt=
+ 5.25pt 1.5pt">
+</td>
+<td width=3D"100%" style=3D"width:100.0%;background:#EAEAEA;padding:5.25pt =
+3.75pt 5.25pt 11.25pt;aspect-ratio: revert !important;background:revert !im=
+portant;block-size: revert !important;border:revert !important;bottom: reve=
+rt !important;color:revert !important;color-scheme: revert !important;conte=
+nt-visibility: revert !important;cursor:revert !important;direction:revert =
+!important;display:revert !important;font-size:revert !important;height:rev=
+ert !important;hyphens: revert !important;letter-spacing:revert !important;=
+line-height:revert !important;margin:revert !important;opacity: revert !imp=
+ortant;order: revert !important;outline: revert !important;overflow:revert =
+!important;padding:revert !important;position:revert !important;resize: rev=
+ert !important;rotate: revert !important;scale: revert !important;tab-size:=
+ revert !important;table-layout:revert !important;text-align:revert !import=
+ant;text-indent:revert !important;text-orientation: revert !important;text-=
+overflow: revert !important;text-shadow:revert !important;text-transform:re=
+vert !important;text-wrap: revert !important;top:revert !important;transiti=
+on: revert !important;user-select: revert !important;vertical-align:revert =
+!important;visibility:revert !important;white-space:revert !important;width=
+:revert !important;word-break:revert !important;word-spacing:revert !import=
+ant;writing-mode:revert !important;zoom: revert !important">
+<div>
+<p class=3D"MsoNormal" style=3D"mso-element:frame;mso-element-frame-hspace:=
+2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-el=
+ement-anchor-horizontal:column;mso-height-rule:exactly">
+<span style=3D"font-size:9.0pt;font-family:wf_segoe-ui_normal;color:#212121=
+">You don't often get email from
+<a href=3D"mailto:dklassen@remtechindustries.com">dklassen@remtechindustrie=
+s.com</a>.
+<a href=3D"https://aka.ms/LearnAboutSenderIdentification">Learn why this is=
+ important</a>
+<o:p></o:p></span></p>
+</div>
+</td>
+<td width=3D"75" style=3D"width:56.25pt;background:#EAEAEA;padding:5.25pt 3=
+.75pt 5.25pt 3.75pt;aspect-ratio: revert !important;background:revert !impo=
+rtant;block-size: revert !important;border:revert !important;bottom: revert=
+ !important;color:revert !important;color-scheme: revert !important;content=
+-visibility: revert !important;cursor:revert !important;direction:revert !i=
+mportant;display:revert !important;font-size:revert !important;height:rever=
+t !important;hyphens: revert !important;letter-spacing:revert !important;li=
+ne-height:revert !important;margin:revert !important;opacity: revert !impor=
+tant;order: revert !important;outline: revert !important;overflow:revert !i=
+mportant;padding:revert !important;position:revert !important;resize: rever=
+t !important;rotate: revert !important;scale: revert !important;tab-size: r=
+evert !important;table-layout:revert !important;text-align:revert !importan=
+t;text-indent:revert !important;text-orientation: revert !important;text-ov=
+erflow: revert !important;text-shadow:revert !important;text-transform:reve=
+rt !important;text-wrap: revert !important;top:revert !important;transition=
+: revert !important;user-select: revert !important;vertical-align:revert !i=
+mportant;visibility:revert !important;white-space:revert !important;width:r=
+evert !important;word-break:revert !important;word-spacing:revert !importan=
+t;writing-mode:revert !important;zoom: revert !important;align: left !impor=
+tant">
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-line-height-alt:12.0pt"><span style=3D"=
+font-size:14.0pt;color:blue">[External]:<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ap=
+tos&quot;,sans-serif;color:black">Fantastic, thank you Jason! I will await =
+your confirmation.<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ap=
+tos&quot;,sans-serif;color:black"><o:p>&nbsp;</o:p></span></p>
+</div>
+<div id=3D"Signature">
+<p><b><span style=3D"font-size:10.0pt;font-family:&quot;Open Sans&quot;,san=
+s-serif;color:#1F497D">Dmitri Klassen
+</span></b><span style=3D"font-size:10.0pt;font-family:&quot;Open Sans&quot=
+;,sans-serif;color:#1F497D">|&nbsp;
+</span><b><span style=3D"font-family:&quot;Aptos&quot;,sans-serif;color:#24=
+2424">REM-TECH INDUSTRIES INC.</span></b><b><span style=3D"font-size:10.0pt=
+;font-family:&quot;Open Sans&quot;,sans-serif;color:#393939">&nbsp;&nbsp;</=
+span></b><o:p></o:p></p>
+<p style=3D"margin-bottom:7.5pt;background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Open Sans&quot;,sans-serif;color:#1F497D">Quality =
+Assurance</span><span style=3D"font-size:10.0pt;font-family:&quot;Open Sans=
+&quot;,sans-serif;color:#393939"><br>
+</span><span style=3D"font-family:&quot;Aptos&quot;,sans-serif;color:#24242=
+4">69 White Street, &nbsp;Aylmer, Ontario&nbsp; N5H 2R9&nbsp;</span><o:p></=
+o:p></p>
+<p style=3D"background:white"><b><span style=3D"font-size:10.0pt;font-famil=
+y:&quot;Open Sans&quot;,sans-serif;color:#1F497D">P:</span></b><span style=
+=3D"font-size:10.0pt;font-family:&quot;Open Sans&quot;,sans-serif;color:#1F=
+497D">&nbsp;519.773.3459&nbsp; |<b>&nbsp; F:</b>&nbsp;519.773.7914&nbsp; |&=
+nbsp;
+<b>E:</b>&nbsp;</span><span style=3D"font-size:10.0pt;font-family:&quot;Ope=
+n Sans&quot;,sans-serif;color:#393939"><a href=3D"mailto:dklassen@remtechin=
+dustries.com" title=3D"mailto:dklassen@remtechindustries.com">dklassen@remt=
+echindustries.com</a></span><span style=3D"font-size:10.0pt;font-family:&qu=
+ot;Open Sans&quot;,sans-serif;color:#1F497D">&nbsp;
+ |&nbsp; <b>W:</b>&nbsp;</span><span style=3D"font-size:10.0pt;font-family:=
+&quot;Franklin Gothic Medium Cond&quot;,sans-serif;color:#428BCA"><a href=
+=3D"https://remtechindustries.com" title=3D"https://remtechindustries.com">=
+www.remtechindustries.com</a></span><o:p></o:p></p>
+<p style=3D"margin-bottom:7.5pt;background:white"><span style=3D"font-famil=
+y:&quot;Aptos&quot;,sans-serif;color:#242424">This email and any attachment=
+s are only for use by the intended recipient(s) and may contain legally pri=
+vileged, confidential, proprietary or otherwise
+ private information.&nbsp; Any unauthorized use, reproduction, disseminati=
+on, distribution or other disclosure of the contents of this e-mail or its =
+attachments is strictly prohibited.&nbsp; If you have received this email i=
+n error, please notify the sender immediately
+ and delete the original.</span><o:p></o:p></p>
+<p style=3D"margin-bottom:7.5pt;background:white"><span style=3D"font-famil=
+y:&quot;Aptos&quot;,sans-serif;color:#242424">-----------------------------=
+---------------------------------------------------------------------------=
+---------------</span><o:p></o:p></p>
+<p style=3D"background:white"><span style=3D"font-family:&quot;Aptos&quot;,=
+sans-serif;color:#242424">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ap=
+tos&quot;,sans-serif;color:black"><o:p>&nbsp;</o:p></span></p>
+</div>
+<div class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<hr size=3D"2" width=3D"98%" align=3D"center">
+</div>
+<div id=3D"divRplyFwdMsg">
+<p class=3D"MsoNormal"><b><span style=3D"color:black">From:</span></b><span=
+ style=3D"color:black"> Hughes, Jason &lt;<a href=3D"mailto:Jason.Hughes@ea=
+gleburgmann.com">Jason.Hughes@eagleburgmann.com</a>&gt;<br>
+<b>Sent:</b> Friday, November 22, 2024 3:17 PM<br>
+<b>To:</b> Dmitri Klassen &lt;<a href=3D"mailto:dklassen@remtechindustries.=
+com">dklassen@remtechindustries.com</a>&gt;<br>
+<b>Subject:</b> RE: Request for use of quote</span> <o:p></o:p></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"xmsonormal">Dmitri, <o:p></o:p></p>
+<p class=3D"xmsonormal">&nbsp;<o:p></o:p></p>
+<p class=3D"xmsonormal">I have no problem at all with that, but let me run =
+it by my manager to make sure they are okay with the company name being use=
+d. I would imagine they&#8217;re okay with it; I just need to make sure.
+<o:p></o:p></p>
+<p class=3D"xmsonormal">&nbsp;<o:p></o:p></p>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif">Best Regards,</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:10.0pt;font-family:&quo=
+t;Arial&quot;,sans-serif">Jason Hughes</span></b><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif">Order Fulfillment Supervisor</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><b><span style=3D"font-size:10.0pt;font-family:&quo=
+t;Arial&quot;,sans-serif">EagleBurgmann Industries LP</span></b><span style=
+=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif">
+</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif">10035 Brookriver Dr., Houston, TX 77040 / USA</span>=
+<o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif">Office: 713-939-9515&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;
+</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif">Direct Line: 281-984-1087&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;
+</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif">Cell: 346-262-9986&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><u><span style=3D"font-size:10.0pt;font-family:&quo=
+t;Arial&quot;,sans-serif"><a href=3D"mailto:jason.hughes@eagleburgmann.com"=
+><span style=3D"color:#0563C1">jason.hughes@eagleburgmann.com</span></a>
+</span></u><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif"><a href=3D"http://www.eagleburgmann.com/"><span styl=
+e=3D"color:#0563C1">www.eagleburgmann.com</span></a></span><o:p></o:p></p>
+<p class=3D"xmsonormal"><span style=3D"font-size:10.0pt;font-family:&quot;A=
+rial&quot;,sans-serif">&nbsp;</span><o:p></o:p></p>
+<p class=3D"xmsonormal"><img border=3D"0" width=3D"181" height=3D"46" style=
+=3D"width:1.8854in;height:.4791in" id=3D"x_Picture_x0020_2" src=3D"cid:imag=
+e001.png@01DB3F1F.70E31D30"><o:p></o:p></p>
+</div>
+<p class=3D"xmsonormal">&nbsp;<o:p></o:p></p>
+<div>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"xmsonormal"><b>From:</b> Dmitri Klassen &lt;<a href=3D"mailto:d=
+klassen@remtechindustries.com">dklassen@remtechindustries.com</a>&gt;
+<br>
+<b>Sent:</b> Friday, November 22, 2024 1:08 PM<br>
+<b>To:</b> Hughes, Jason &lt;<a href=3D"mailto:Jason.Hughes@eagleburgmann.c=
+om">Jason.Hughes@eagleburgmann.com</a>&gt;<br>
+<b>Subject:</b> Request for use of quote<o:p></o:p></p>
+</div>
+</div>
+<p class=3D"xmsonormal">&nbsp;<o:p></o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"left" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td width=3D"0" style=3D"width:.3pt;background:#A6A6A6;padding:5.25pt 1.5pt=
+ 5.25pt 1.5pt">
+</td>
+<td width=3D"100%" style=3D"width:100.0%;background:#EAEAEA;padding:5.25pt =
+3.75pt 5.25pt 11.25pt;background:revert!important;border:revert!important;b=
+ottom:revert!important;color:revert!important;direction:revert!important;di=
+splay:revert!important;font-size:revert!important;height:revert!important;l=
+etter-spacing:revert!important;line-height:revert!important;margin:revert!i=
+mportant;opacity:revert!important;order:revert!important;outline:revert!imp=
+ortant;overflow:revert!important;padding:revert!important;position:revert!i=
+mportant;tab-size:revert!important;table-layout:revert!important;text-align=
+:revert!important;text-indent:revert!important;text-orientation:revert!impo=
+rtant;text-overflow:revert!important;text-transform:revert!important;top:re=
+vert!important;vertical-align:revert!important;visibility:revert!important;=
+white-space:revert!important;width:revert!important;word-break:revert!impor=
+tant;word-spacing:revert!important;writing-mode:revert!important;zoom:rever=
+t!important">
+<div>
+<p class=3D"xmsonormal" style=3D"mso-element:frame;mso-element-frame-hspace=
+:2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;mso-e=
+lement-anchor-horizontal:column;mso-height-rule:exactly">
+<span style=3D"font-size:9.0pt;font-family:wf_segoe-ui_normal;color:#212121=
+">You don't often get email from
+<a href=3D"mailto:dklassen@remtechindustries.com">dklassen@remtechindustrie=
+s.com</a>.
+<a href=3D"https://aka.ms/LearnAboutSenderIdentification">Learn why this is=
+ important</a>
+</span><o:p></o:p></p>
+</div>
+</td>
+<td width=3D"75" style=3D"width:56.25pt;background:#EAEAEA;padding:5.25pt 3=
+.75pt 5.25pt 3.75pt;background:revert!important;border:revert!important;bot=
+tom:revert!important;color:revert!important;direction:revert!important;disp=
+lay:revert!important;font-size:revert!important;height:revert!important;let=
+ter-spacing:revert!important;line-height:revert!important;margin:revert!imp=
+ortant;opacity:revert!important;order:revert!important;outline:revert!impor=
+tant;overflow:revert!important;padding:revert!important;position:revert!imp=
+ortant;tab-size:revert!important;table-layout:revert!important;text-align:r=
+evert!important;text-indent:revert!important;text-orientation:revert!import=
+ant;text-overflow:revert!important;text-transform:revert!important;top:reve=
+rt!important;vertical-align:revert!important;visibility:revert!important;wh=
+ite-space:revert!important;width:revert!important;word-break:revert!importa=
+nt;word-spacing:revert!important;writing-mode:revert!important;zoom:revert!=
+important">
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:14.0pt;color:blue">[Extern=
+al]:</span><o:p></o:p></p>
+<p class=3D"xmsonormal">&nbsp;<o:p></o:p></p>
+<div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;A=
+ptos&quot;,sans-serif;color:black">Hello Jason,</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;A=
+ptos&quot;,sans-serif;color:black">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;A=
+ptos&quot;,sans-serif;color:black">RemTech is undergoing a website update, =
+and we are looking to include customer testimonials in the new website. Whi=
+le looking through the results of past customer
+ satisfaction surveys, I found that in 2020, you submitted an entry that in=
+cluded the text &quot;RemTech is the absolute best vendor with whom I work.=
+ You always come through for us when we're in a bind. And I trust your quot=
+ed delivery times more than anyone.&quot;
+ I am requesting your permission to use this quote in our upcoming website =
+alongside your name and company name. Please let me know if this would be a=
+cceptable or if you have any questions.</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;A=
+ptos&quot;,sans-serif;color:black">&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;A=
+ptos&quot;,sans-serif;color:black">Thank you for your consideration,</span>=
+<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"xmsonormal"><span style=3D"font-size:12.0pt;font-family:&quot;A=
+ptos&quot;,sans-serif;color:black">&nbsp;</span><o:p></o:p></p>
+</div>
+<div id=3D"x_Signature">
+<p><b><span style=3D"font-size:10.0pt;font-family:&quot;Open Sans&quot;,san=
+s-serif;color:#1F497D">Dmitri Klassen
+</span></b><span style=3D"font-size:10.0pt;font-family:&quot;Open Sans&quot=
+;,sans-serif;color:#1F497D">|&nbsp;
+</span><b><span style=3D"font-family:&quot;Aptos&quot;,sans-serif;color:#24=
+2424">REM-TECH INDUSTRIES INC.</span></b><b><span style=3D"font-size:10.0pt=
+;font-family:&quot;Open Sans&quot;,sans-serif;color:#393939">&nbsp;&nbsp;</=
+span></b><o:p></o:p></p>
+<p style=3D"margin-bottom:7.5pt;background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Open Sans&quot;,sans-serif;color:#1F497D">Quality =
+Assurance</span><span style=3D"font-size:10.0pt;font-family:&quot;Open Sans=
+&quot;,sans-serif;color:#393939"><br>
+</span><span style=3D"font-family:&quot;Aptos&quot;,sans-serif;color:#24242=
+4">69 White Street, &nbsp;Aylmer, Ontario&nbsp; N5H 2R9&nbsp;</span><o:p></=
+o:p></p>
+<p style=3D"background:white"><b><span style=3D"font-size:10.0pt;font-famil=
+y:&quot;Open Sans&quot;,sans-serif;color:#1F497D">P:</span></b><span style=
+=3D"font-size:10.0pt;font-family:&quot;Open Sans&quot;,sans-serif;color:#1F=
+497D">&nbsp;519.773.3459&nbsp; |<b>&nbsp; F:</b>&nbsp;519.773.7914&nbsp; |&=
+nbsp;
+<b>E:</b>&nbsp;</span><span style=3D"font-size:10.0pt;font-family:&quot;Ope=
+n Sans&quot;,sans-serif;color:#393939"><a href=3D"mailto:dklassen@remtechin=
+dustries.com" title=3D"mailto:dklassen@remtechindustries.com">dklassen@remt=
+echindustries.com</a></span><span style=3D"font-size:10.0pt;font-family:&qu=
+ot;Open Sans&quot;,sans-serif;color:#1F497D">&nbsp;
+ |&nbsp; <b>W:</b>&nbsp;</span><span style=3D"font-size:10.0pt;font-family:=
+&quot;Franklin Gothic Medium Cond&quot;,sans-serif;color:#428BCA"><a href=
+=3D"https://remtechindustries.com" title=3D"https://remtechindustries.com">=
+www.remtechindustries.com</a></span><o:p></o:p></p>
+<p style=3D"margin-bottom:7.5pt;background:white"><span style=3D"font-famil=
+y:&quot;Aptos&quot;,sans-serif;color:#242424">This email and any attachment=
+s are only for use by the intended recipient(s) and may contain legally pri=
+vileged, confidential, proprietary or otherwise
+ private information.&nbsp; Any unauthorized use, reproduction, disseminati=
+on, distribution or other disclosure of the contents of this e-mail or its =
+attachments is strictly prohibited.&nbsp; If you have received this email i=
+n error, please notify the sender immediately
+ and delete the original.</span><o:p></o:p></p>
+<p style=3D"margin-bottom:7.5pt;background:white"><span style=3D"font-famil=
+y:&quot;Aptos&quot;,sans-serif;color:#242424">-----------------------------=
+---------------------------------------------------------------------------=
+---------------</span><o:p></o:p></p>
+<p style=3D"background:white"><span style=3D"font-family:&quot;Aptos&quot;,=
+sans-serif;color:#242424">&nbsp;</span><o:p></o:p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+--_000_DB8P191MB058595A73CD3C72885DFB0B7822E2DB8P191MB0585EURP_--
+
+--_004_DB8P191MB058595A73CD3C72885DFB0B7822E2DB8P191MB0585EURP_
+Content-Type: image/png; name="image001.png"
+Content-Description: image001.png
+Content-Disposition: inline; filename="image001.png"; size=11164;
+	creation-date="Mon, 25 Nov 2024 15:50:21 GMT";
+	modification-date="Mon, 25 Nov 2024 15:50:22 GMT"
+Content-ID: <image001.png@01DB3F1F.70E31D30>
+Content-Transfer-Encoding: base64
+
+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
+
+--_004_DB8P191MB058595A73CD3C72885DFB0B7822E2DB8P191MB0585EURP_--

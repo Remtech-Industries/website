@@ -1,0 +1,308 @@
+Received: from YT2PR01MB8790.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:b01:b9::21)
+ by YT3PR01MB11007.CANPRD01.PROD.OUTLOOK.COM with HTTPS; Fri, 22 Nov 2024
+ 19:11:54 +0000
+Received: from YT4PR01CA0503.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:b01:10c::21)
+ by YT2PR01MB8790.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:b01:b9::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8158.27; Fri, 22 Nov
+ 2024 19:11:52 +0000
+Received: from TO1PEPF00005346.CANPRD01.PROD.OUTLOOK.COM
+ (2603:10b6:b01:10c:cafe::20) by YT4PR01CA0503.outlook.office365.com
+ (2603:10b6:b01:10c::21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8182.16 via Frontend
+ Transport; Fri, 22 Nov 2024 19:11:52 +0000
+Authentication-Results: spf=pass (sender IP is 209.85.210.44)
+ smtp.mailfrom=advancedstainless.ca; dkim=pass (signature was verified)
+ header.d=advancedstainless.ca;dmarc=pass action=none
+ header.from=advancedstainless.ca;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of advancedstainless.ca
+ designates 209.85.210.44 as permitted sender)
+ receiver=protection.outlook.com; client-ip=209.85.210.44;
+ helo=mail-ot1-f44.google.com; pr=C
+Received: from mail-ot1-f44.google.com (209.85.210.44) by
+ TO1PEPF00005346.mail.protection.outlook.com (10.167.241.6) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8182.16
+ via Frontend Transport; Fri, 22 Nov 2024 19:11:51 +0000
+Received: by mail-ot1-f44.google.com with SMTP id 46e09a7af769-7180d9d0dcbso1126600a34.3
+        for <dklassen@remtechindustries.com>; Fri, 22 Nov 2024 11:11:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=advancedstainless.ca; s=google; t=1732302711; x=1732907511; darn=remtechindustries.com;
+        h=to:subject:message-id:date:thread-index:mime-version:in-reply-to
+         :references:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=hytwqnhv2h4kioV1wE/f4TO3vkJF87M6guW5vpGf5U4=;
+        b=RON0hE6xrZuAOh5dDD9ozboB4MsOh1vtHc/ES4KrW4xOcnvjoUAaJwQyKQUC9BkzbE
+         VP4RiZtV8Fw2x3WqHv3mPCIa3GHpwTzJ7NVyqBlxoZpb7H2d6cnk8B+hxo8ww4jHlUJd
+         9gxW+Zuna0uunKhFgc3pR2fLnXtoCs2Lcug6s=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1732302711; x=1732907511;
+        h=to:subject:message-id:date:thread-index:mime-version:in-reply-to
+         :references:from:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=hytwqnhv2h4kioV1wE/f4TO3vkJF87M6guW5vpGf5U4=;
+        b=icSfkvEjFCpDBGgNAcfuPPiqifa5iTjvBqOOv6k2E9yvuVs84+2fQZ8kpnlpm0BPij
+         EgxzES+dnoZDfj7zi84WksREe6YeBm8HGO9KP5NSYqjpFx3XmYSbJ228Ry494+JFSdEm
+         KPxFGfknsSH80sXRGUM5MdoO2BIinHDjmeL1LPX3IRoNU5rOwiK2TDpG040tSeKepCZC
+         wgRoTeqPP3n0Qf+mMHfedhvfIZLiN9CHcl1LcwuVrb+ehLfQ/iMU6HVTZowUkPoIpINN
+         +D0ye+JXHYLJCn2xV6PAAdQa3zrmfzmbmjKizcDyu9lk95awcWBMNLqn+8nBj66agRl6
+         Ls2A==
+X-Gm-Message-State: AOJu0YxJicBTAfyFg7XXUuLAcruYw9vKOOG5HXcv3FtSvz/HOH3prW7b
+	Izw2ekU8lHgXQmWGYlLnrAdM56xAiDVMMaeR+DDI+AEHwglAH3k0Ndigsd/J9yQvshhTBp6g0e8
+	YL7JONOnbEOdm5785B2sdIzfsnk2TREhk/kvD7bfN9nPusrrGFzk=
+X-Gm-Gg: ASbGncsBAqyQcXxS1kLJOQLdFVYN9miA8GUPZsGAbpQ4wF2rAEFccW9Q3X9JcrYJwAn
+	X+zaY0FNGrYBsIuWYjIEUDzoahREdHAk=
+X-Google-Smtp-Source: AGHT+IHJOeYHjndiHKXRo5Z9aTOs8zr3ZaA/TNQFcOTqzfzQX7zLeDQwKLW57bbaGHonHSa7+yAfJFz4Jl+OCs/IjDY=
+X-Received: by 2002:a05:6830:631b:b0:718:e18:4310 with SMTP id
+ 46e09a7af769-71c04b8b722mr4321050a34.10.1732302711164; Fri, 22 Nov 2024
+ 11:11:51 -0800 (PST)
+From: Ron Zacharias <ron.zacharias@advancedstainless.ca>
+References: <YT3PR01MB1100726DD3428A83C8A7CE4CAC0232@YT3PR01MB11007.CANPRD01.PROD.OUTLOOK.COM>
+In-Reply-To: <YT3PR01MB1100726DD3428A83C8A7CE4CAC0232@YT3PR01MB11007.CANPRD01.PROD.OUTLOOK.COM>
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQK8jAGdlfkAHToF9HsVP8rbZohNVrEBDJcA
+Date: Fri, 22 Nov 2024 14:11:49 -0500
+Message-ID: <172ed612842f181e36d4da8a5008b87d@mail.gmail.com>
+Subject: RE: Request for use of quote
+To: Dmitri Klassen <dklassen@remtechindustries.com>
+Content-Type: multipart/alternative; boundary="000000000000be29530627852768"
+Return-Path: ron.zacharias@advancedstainless.ca
+X-MS-Exchange-Organization-ExpirationStartTime: 22 Nov 2024 19:11:52.0024
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 5c921fa4-eee7-4f05-ed4f-08dd0b2985a1
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 08020390-40da-4da5-b230-af0cf191e38e:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic:
+ TO1PEPF00005346:EE_|YT2PR01MB8790:EE_|YT3PR01MB11007:EE_
+X-MS-Exchange-Organization-AuthSource:
+ TO1PEPF00005346.CANPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 5c921fa4-eee7-4f05-ed4f-08dd0b2985a1
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam:
+ BCL:0;ARA:13230040|12012899012|43022699015|7053199007|8096899003;
+X-Forefront-Antispam-Report:
+ CIP:209.85.210.44;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail-ot1-f44.google.com;PTR:mail-ot1-f44.google.com;CAT:NONE;SFS:(13230040)(12012899012)(43022699015)(7053199007)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Nov 2024 19:11:51.9868
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5c921fa4-eee7-4f05-ed4f-08dd0b2985a1
+X-MS-Exchange-CrossTenant-Id: 08020390-40da-4da5-b230-af0cf191e38e
+X-MS-Exchange-CrossTenant-AuthSource:
+ TO1PEPF00005346.CANPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: YT2PR01MB8790
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.0861615
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8182.013
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?b2dkMWV2TVZDUGViTURBVmxrKzl4V1V0VW9sRzVFMHlsQVIrelRmdVhZR3lj?=
+ =?utf-8?B?dzVNc1JjZVhpWi9nMGludVB4YzR3Tk05ajl3aWtJRVVtZEtKN0ZOQmFTZnhH?=
+ =?utf-8?B?K3QzWjhlZjdPNVcvcmVlQmNLWGdrR2hkVGFQTUIyNUUwQzlFSW1MeWt0WVlN?=
+ =?utf-8?B?WklVMlpqb0k4OGIyS2c1VHViQkt0YmcxR01VMHNIeVJBNGViemxOWGMyaVhl?=
+ =?utf-8?B?dU1pZ0NmVVNrQXpaUHE3eTluUk14R1FLRHllbGZrMUlXNGo1d0gvbGlDaENW?=
+ =?utf-8?B?cFdRNE5UbXQ5S2tkMlgvQ0l4Y28zamZDMnQwU3ZMZk5iK2dmczg5WkdxVUpB?=
+ =?utf-8?B?M1ljRVFiQVNNKzM4QUF1VHNicnF6MzdxRWtVUi9idENiMGYrenY4bnFJVmRV?=
+ =?utf-8?B?TWNKRHhjeThpZXF0ck10TGExZ0NFNmc1RHdSMDdYQjdqSjNNN1FnQXZQKytT?=
+ =?utf-8?B?dllVM2w4bzhTYXpJSkNOaE1oYUFvbHBhZkE1ZXYrcnEvZGppNnlERllRY3U0?=
+ =?utf-8?B?cEk0OXhuNk04aHU3NXRKMlMvOE9oL0NvU05wMUN0YXp4c0wwMUhmUTBZNFlK?=
+ =?utf-8?B?UWxZQkZTZmtxdzdNeE5lZndrSE5TMTZ0MUtYSWdnRGNaMEhORERVS2ovSUxL?=
+ =?utf-8?B?UVJJbGlXZDRHK0RYVVEyU2NzazlrSlhrZkx3bXYvd01zQ0Y5NzM3aGV1eWJj?=
+ =?utf-8?B?YVRJVWFzZlZCWmJGY3NGRFE2Z1JLdk9GNGszK2dmZTVzUUhzWWpIbWV0UWI5?=
+ =?utf-8?B?SllNdVQ4aXJobmxKNEp2bm04MjhwOTF1OTIzcjN6NEZQK0VMOFlOd0h2TVpy?=
+ =?utf-8?B?L2g3SUhZNS8zNnlaNCtwRHUwa0F4MWJiUm9SYW82Y2NLVkRYR29Ed00vMmsw?=
+ =?utf-8?B?NjhwNkxwUEpPMllUSm5tSEhSbSswZ0ltTVh0RmYxUDU1RzlzTGNTMldaOXhr?=
+ =?utf-8?B?bGJVd3Y4QzZsMTJOZFVXZzQxT1VINk9LbHhsaTI4am0rVm1Xc3B0M1VxdTlP?=
+ =?utf-8?B?Z2FNUTEvVnczSTBrRUoxOWIyK3d5UU1YcTNMbDlJVFk3TUd3TldqMkt4Mnhq?=
+ =?utf-8?B?d05wSmxmcmJTSkwzcHdTb21CWG1PRGsydjdEbUdEL3NYZ2pnOW8wTmJsanJZ?=
+ =?utf-8?B?QVFwU2IyMUh5OFVSU2szUm1LdFNlMXo0L3RacWxpeUxWWjYwQ1FHYmo4Yk0x?=
+ =?utf-8?B?NWk5S2xUaDBSTTJJdWJ1L2I3VzMxcFBnSU05VlpJMXY5cWNHSktjeDBVM1Zz?=
+ =?utf-8?B?VWNHUzBMWXJGbFprS1grWDFIQXVEVTNpUk90cUtJUjVVOWduSitLS2xONFla?=
+ =?utf-8?B?bEJWTWhRQ292by8yQWFMeFRaUGdMcmRYaE03YXVrUmwxTER3UTYrTElHUnd6?=
+ =?utf-8?B?S1h0U21pT3A4UDdVNmpWTlcvY29Fd3l3Y0p5VWo4VzF4ZWEyRzcxVitEc1VY?=
+ =?utf-8?B?TzRCNGNtci9weCtDSUFXL2dIRWhUK0Jqa2tsYXYxODh5SCtVWGtxRlJIWmJH?=
+ =?utf-8?B?NUhkSVpnRlZhMFE5aGVybWNsd1VhazJ0QVdOV2E3NHdYVGNLTko0NlZZN3Nh?=
+ =?utf-8?B?UlY2N0cwRTk3Vm12UU1TR2F3TzBFcVJYNzFzZ044aU5sbWQ0QXdpZVN2eGN5?=
+ =?utf-8?B?UUlYbktPRzJTb1VoSWNRTjZaWEF1bXlvV1VpQzZOY1FMUHBZbjNSMm9hMTg2?=
+ =?utf-8?B?Y1ZJSUp4NFFoaWd2TTZFM1A5dmxhTzVLQStyYk5wVWJVRi8rY1NDS05Dc1VK?=
+ =?utf-8?B?STloQmUydEhOOThvb0RpTmEwQk9PUnFvc1VyOFVoTWFWdG9QWDRWaXFqUDEw?=
+ =?utf-8?B?MlAxWHkxUzc0SnN1Ri9KRGNpbkxOQjVOMEdaa2JMRFFnQWJHNE1HZEJaUHds?=
+ =?utf-8?B?L3RGL0hCWWlIYjlmTTloZFRlSG1aZXdNQkkzTFpsa2dlS1BGOFc2MGlnNkhV?=
+ =?utf-8?B?WVRyQkIyWDlTTTJvdE8xYnVnZCtaUmhmUytJV1pRQ3djajJnc3FzVDl4NTNQ?=
+ =?utf-8?B?MGZqWE1xU2VKOG04VUNSTjM2WFBUS09iRWhlYlNZbndqZmM4d2JxYkl1Qlgy?=
+ =?utf-8?B?eHBQTCtSWEtoVG95STdmdEFrVmhpRlRiZHY1OG11VG16Y2JpeXM4RlpJL1Jx?=
+ =?utf-8?B?K2RmVVV1OVFSTmtJTHNvZGJFSkxTNHZCM3JtNC95SEdFbjE4UGJrNGJtQjZK?=
+ =?utf-8?B?UnRlV3plTGRyZlZxa0ZpcUQ4REhEbTNQcmhaOVluU3FUZTdkVys3Mzd4d3hD?=
+ =?utf-8?B?SEJlVGJNZC9aTTdGeUgxRnNGZDBjRWxURGc5RTRMUXdpWE1LaTFKQS8xVjk0?=
+ =?utf-8?B?QXlTNzY4MlE0cS9lWFNJM0pXUFUxd3NMMWY5SGNKVndIVkkrWEQ1ZExFYmdY?=
+ =?utf-8?B?TTdTR2RLNHk2Mnd0Z3lSU1VoM05ObHBtQm9kREN4KyswRzJicWgzeHhBRUpB?=
+ =?utf-8?B?bTRTMG16RitJQ2FwbVE9PQ==?=
+MIME-Version: 1.0
+
+--000000000000be29530627852768
+Content-Type: text/plain; charset="UTF-8"
+
+For sure,
+
+Thanks
+
+
+
+*From:* 'Dmitri Klassen' via info <info@advancedstainless.ca>
+*Sent:* November 22, 2024 2:10 PM
+*To:* info@advancedstainless.ca
+*Subject:* Request for use of quote
+
+
+
+Hello Ron,
+
+
+
+RemTech is undergoing a website update, and we are looking to include
+customer testimonials in the new website. While looking through the results
+of past customer satisfaction surveys, I found that in 2020, you submitted
+an entry that included the text "There is not a supplier that has the
+service that RemTech does. They far out perform any of our other
+suppliers." I am requesting your permission to use this quote in our
+upcoming website alongside your name and company name. Please let me know
+if this would be acceptable or if you have any questions.
+
+
+
+Thank you for your consideration,
+
+
+
+*Dmitri Klassen *|  *REM-TECH INDUSTRIES INC.*
+
+Quality Assurance
+69 White Street,  Aylmer, Ontario  N5H 2R9
+
+*P:* 519.773.3459  |*  F:* 519.773.7914  |  *E:*
+dklassen@remtechindustries.com  |  *W:* www.remtechindustries.com
+<https://remtechindustries.com>
+
+This email and any attachments are only for use by the intended
+recipient(s) and may contain legally privileged, confidential, proprietary
+or otherwise private information.  Any unauthorized use, reproduction,
+dissemination, distribution or other disclosure of the contents of this
+e-mail or its attachments is strictly prohibited.  If you have received
+this email in error, please notify the sender immediately and delete the
+original.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+--000000000000be29530627852768
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><m=
+eta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)"><sty=
+le><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Franklin Gothic Medium Cond";
+	panose-1:2 11 6 6 3 4 2 2 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+span.EmailStyle19
+	{mso-style-type:personal-reply;
+	font-family:"Aptos",serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style></head><body lang=3D"EN-CA" link=3D"blue" vlink=3D"purple" style=
+=3D"word-wrap:break-word"><div class=3D"WordSection1"><p class=3D"MsoNormal=
+"><span style=3D"font-size:11.0pt">For sure, </span></p><p class=3D"MsoNorm=
+al"><span style=3D"font-size:11.0pt">Thanks</span></p><p class=3D"MsoNormal=
+"><span style=3D"font-size:11.0pt">&nbsp;</span></p><div><div style=3D"bord=
+er:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0cm 0cm 0cm"><p class=
+=3D"MsoNormal"><b><span lang=3D"EN-US" style=3D"font-size:11.0pt;font-famil=
+y:&quot;Calibri&quot;,sans-serif">From:</span></b><span lang=3D"EN-US" styl=
+e=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"> 'Dmitri =
+Klassen' via info &lt;<a href=3D"mailto:info@advancedstainless.ca">info@adv=
+ancedstainless.ca</a>&gt; <br><b>Sent:</b> November 22, 2024 2:10 PM<br><b>=
+To:</b> <a href=3D"mailto:info@advancedstainless.ca">info@advancedstainless=
+.ca</a><br><b>Subject:</b> Request for use of quote</span></p></div></div><=
+p class=3D"MsoNormal">&nbsp;</p><p class=3D"MsoNormal"><span style=3D"color=
+:black">Hello Ron,</span> </p><div><p class=3D"MsoNormal"><span style=3D"co=
+lor:black">&nbsp;</span></p></div><div><p class=3D"MsoNormal"><span style=
+=3D"color:black">RemTech is undergoing a website update, and we are looking=
+ to include customer testimonials in the new website. While looking through=
+ the results of past customer satisfaction surveys, I found that in 2020, y=
+ou submitted an entry that included the text &quot;There is not a supplier =
+that has the service that RemTech does. They far out perform any of our oth=
+er suppliers.&quot; I am requesting your permission to use this quote in ou=
+r upcoming website alongside your name and company name. Please let me know=
+ if this would be acceptable or if you have any questions.</span></p></div>=
+<div><p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;</span></p></=
+div><div><p class=3D"MsoNormal"><span style=3D"color:black">Thank you for y=
+our consideration,</span></p></div><div><p class=3D"MsoNormal"><span style=
+=3D"color:black">&nbsp;</span></p></div><div id=3D"Signature"><p><b><span s=
+tyle=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#1f=
+497d">Dmitri Klassen </span></b><span style=3D"font-size:10.0pt;font-family=
+:&quot;Arial&quot;,sans-serif;color:#1f497d">|&nbsp; </span><b><span style=
+=3D"font-size:11.0pt;color:#242424">REM-TECH INDUSTRIES INC.</span></b><b><=
+span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;col=
+or:#393939">&nbsp;&nbsp;</span></b></p><p style=3D"margin-bottom:7.5pt;back=
+ground:white"><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;=
+,sans-serif;color:#1f497d">Quality Assurance</span><span style=3D"font-size=
+:10.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#393939"><br></span>=
+<span style=3D"font-size:11.0pt;color:#242424">69 White Street, &nbsp;Aylme=
+r, Ontario&nbsp; N5H 2R9&nbsp;</span></p><p style=3D"background:white"><b><=
+span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;col=
+or:#1f497d">P:</span></b><span style=3D"font-size:10.0pt;font-family:&quot;=
+Arial&quot;,sans-serif;color:#1f497d">&nbsp;519.773.3459&nbsp; |<b>&nbsp; F=
+:</b>&nbsp;519.773.7914&nbsp; |&nbsp; <b>E:</b>&nbsp;</span><span style=3D"=
+font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#393939"><a=
+ href=3D"mailto:dklassen@remtechindustries.com" title=3D"mailto:dklassen@re=
+mtechindustries.com">dklassen@remtechindustries.com</a></span><span style=
+=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#1f497d=
+">&nbsp; |&nbsp; <b>W:</b>&nbsp;</span><span style=3D"font-size:10.0pt;font=
+-family:&quot;Franklin Gothic Medium Cond&quot;,sans-serif;color:#428bca"><=
+a href=3D"https://remtechindustries.com" title=3D"https://remtechindustries=
+.com">www.remtechindustries.com</a></span></p><p style=3D"margin-bottom:7.5=
+pt;background:white"><span style=3D"font-size:11.0pt;color:#242424">This em=
+ail and any attachments are only for use by the intended recipient(s) and m=
+ay contain legally privileged, confidential, proprietary or otherwise priva=
+te information.&nbsp; Any unauthorized use, reproduction, dissemination, di=
+stribution or other disclosure of the contents of this e-mail or its attach=
+ments is strictly prohibited.&nbsp; If you have received this email in erro=
+r, please notify the sender immediately and delete the original.</span></p>=
+<p style=3D"margin-bottom:7.5pt;background:white"><span style=3D"font-size:=
+11.0pt;color:#242424">-----------------------------------------------------=
+------------------------------------------------------------------</span></=
+p><p style=3D"background:white"><span style=3D"font-size:11.0pt;color:#2424=
+24">&nbsp;</span></p></div></div></body></html>
+
+--000000000000be29530627852768--

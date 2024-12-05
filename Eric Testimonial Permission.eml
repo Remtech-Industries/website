@@ -1,0 +1,527 @@
+Received: from YQXPR01MB5480.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:c01:2e::9)
+ by YT3PR01MB11007.CANPRD01.PROD.OUTLOOK.COM with HTTPS; Wed, 4 Dec 2024
+ 19:22:48 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=GelSfFJTztrxS9yvh0XV9rUq74CBjQvn4CGy8hN1Yar/qrrs5kRP+Cq1epaUw4UU3VoFXsKpZ1GKPhOsFZkzK2mo7Uo/lolIG6CFCSrhYW/u9WPyKVEu4+8L3CMdTs1n6FhZTD6bSAR3y8YZOpLRU5dQu4cJnm3k2O4CbEZNngj19FEtCWY/uGIf1ZFhk7DMMrfcxaqj0f4MmH/7GAHg6emT9ao48HOc3vpBF0phYDwUvtyrD6aKI8//4E23EJav9SeEiSj+YBT6gFKa2Y8VjNwS/tRVk0flHabY34up/YgwpIjVlyrtQQFfTk69r4xOPM5UzhR9HN7F74F0b3nzJg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=S8w9Dmnq64CDAoaYzG9rJAtibDRXVQJqxHm9ki3VfV4=;
+ b=xpOskSxqHWD4PXSKDcf5z7+MpaGoO4W/xFYxJW3rtDLJpL1TpKAJ2LpUU9meIrjlvKXMN+69tyVYiLBxJyVSxui5O1Wraim2KAhXF/zAWGNPmMrLugdAngulrJ0aUr4cu735a/o1XqnQPlru3I9DWDYQI5YHrTt+CfrBIsjIObhU0CHnivM4fGzlXGS2VUSbgMC5ePYjJjTp+P5+wF+j4Dax+lUlwSrYTi3/jVeZ14SVketpFAMBmUmn+Lxfv0ymRTDkRDNUyMYQ+qqK8s3dcnrEL1G4SXa8li6HuNoRgxXSJTjfFnojlfxESd4+EbEIDPYX5OzZzOjoV/kMQmFTgA==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 40.107.200.50) smtp.rcpttodomain=remtechindustries.com
+ smtp.mailfrom=flowserve.com; dmarc=pass (p=reject sp=reject pct=100)
+ action=none header.from=flowserve.com; dkim=pass (signature was verified)
+ header.d=flowserve.com; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=flowserve.com] dkim=[1,1,header.d=flowserve.com]
+ dmarc=[1,1,header.from=flowserve.com])
+Received: from YT4PR01CA0404.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:b01:108::20)
+ by YQXPR01MB5480.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:c01:2e::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8230.12; Wed, 4 Dec
+ 2024 19:22:46 +0000
+Received: from YT2PEPF000001CD.CANPRD01.PROD.OUTLOOK.COM
+ (2603:10b6:b01:108:cafe::4c) by YT4PR01CA0404.outlook.office365.com
+ (2603:10b6:b01:108::20) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8207.22 via Frontend Transport; Wed,
+ 4 Dec 2024 19:22:45 +0000
+Authentication-Results: spf=pass (sender IP is 40.107.200.50)
+ smtp.mailfrom=flowserve.com; dkim=pass (signature was verified)
+ header.d=flowserve.com;dmarc=pass action=none
+ header.from=flowserve.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of flowserve.com designates
+ 40.107.200.50 as permitted sender) receiver=protection.outlook.com;
+ client-ip=40.107.200.50; helo=CH5PR02CU005.outbound.protection.outlook.com;
+ pr=C
+Received: from CH5PR02CU005.outbound.protection.outlook.com (40.107.200.50) by
+ YT2PEPF000001CD.mail.protection.outlook.com (10.167.241.36) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8230.7
+ via Frontend Transport; Wed, 4 Dec 2024 19:22:44 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=qqbW/XnTZtOluDp903U1uw/JSZEvtOQ+lplUE+2cpYBzB2jbuIz5Y4zRGUoobGzrkBRLLuSy9fKtsoLOvnFrXn4TLi6qZAKlJCOy9SnntxWb8N9HNvmIVE7fZoost7M/8UhdvCl4YIQMdIA2h60Bk2rcP2qf9l1NkHn1LdjWeUDNikLUG3TZain1aPaWWSBhfylUIZcvYvmybGnxsBKKSwT21qHVBgYWDZxq+M04JtSAWS5/TWwVjn7njjN0pV5jKer8xrD7MeDa8qLDAvfCHa/McjL1r0zaSLU86dGeTXknPqHIYxcyh9VHbYoVCHLpEwB88ZmLrM3gmtqfuMML/A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=S8w9Dmnq64CDAoaYzG9rJAtibDRXVQJqxHm9ki3VfV4=;
+ b=F7P9RVAnamGBi5dCDRiP8pLci30fV2g9agIfdLlwPh6GKfsNZ4ivoHP6EL4bT4xdcugBL+Q1Ku3DBhXzruiSF8FJgPMC9yclWAflEREjGOb3SW6A+hA7LbwI2pr0meNxUVsdqy5r3JkRx3wquxw0Ap2oTo5U9ifDLSMhu/4VjCp/sInwljUFyNBLBRE7dBXlOOq6jMcnuh9JvnpbBbwZuAyOwoi6bIe6AUQH7r7Biiznf+fBzi/GnR9cwrsTmR82tb7hDfhVspuy9NmMzH9PbNp+7vSWzQccv8amjUQUW8NcfSXM5Bcm2Fx0KeBV1Lwwe9tn26lDoRlLTt/xu4vHXA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=flowserve.com; dmarc=pass action=none
+ header.from=flowserve.com; dkim=pass header.d=flowserve.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=flowserve.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=S8w9Dmnq64CDAoaYzG9rJAtibDRXVQJqxHm9ki3VfV4=;
+ b=exeZGOku5vwu0K6Xa/F6Rd7qJW2WAYkXQ25fPXqpKtWi8gQc1rbKxVuNr1MGtqQSDmg9Vup82+tn3+KyZPHXA6nSNYznAif2YUliRMUrMztcSEQAo0NPxI0zk3UdHqUH7puDI3z/1/Sz24qnhAT1IZyTZL4oZF0Dl+pAd0HnPo5e6HR+bQEpWQ82zSq6MW+zRKBkO5cNs2RgMHl3EgFCc+2YDKM5xheM1keIpynSefg1cTzCLAJvxVbG/11uS87Khr7rZY8Idjpr2vekuF+XEzuBIO21eNxiJ/oRnCOqmEpmNkqezrnzk5EWEm4nRlIrj6lB/x4Mn+nPbl/eMYU0Yw==
+Received: from SA2PR03MB5945.namprd03.prod.outlook.com (2603:10b6:806:11c::18)
+ by PH0PR03MB7040.namprd03.prod.outlook.com (2603:10b6:510:294::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8207.18; Wed, 4 Dec
+ 2024 19:22:42 +0000
+Received: from SA2PR03MB5945.namprd03.prod.outlook.com
+ ([fe80::98f6:b0db:3fd7:1218]) by SA2PR03MB5945.namprd03.prod.outlook.com
+ ([fe80::98f6:b0db:3fd7:1218%2]) with mapi id 15.20.8207.017; Wed, 4 Dec 2024
+ 19:22:42 +0000
+From: "Gerber, Eric" <EGerber@flowserve.com>
+To: Dmitri Klassen <dklassen@remtechindustries.com>
+Subject: RE: [External] Request For Use Of Testimonial
+Thread-Topic: [External] Request For Use Of Testimonial
+Thread-Index: AQHbRnsher+kd5ghTkWwMHjdMR0ssLLWdokQ
+Date: Wed, 4 Dec 2024 19:22:42 +0000
+Message-ID:
+ <SA2PR03MB59454C91DDA0B7F0AD13DE01B0372@SA2PR03MB5945.namprd03.prod.outlook.com>
+References:
+ <YT3PR01MB11007C28277C68B9662502D47C0372@YT3PR01MB11007.CANPRD01.PROD.OUTLOOK.COM>
+In-Reply-To:
+ <YT3PR01MB11007C28277C68B9662502D47C0372@YT3PR01MB11007.CANPRD01.PROD.OUTLOOK.COM>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=flowserve.com;
+x-ms-traffictypediagnostic:
+ SA2PR03MB5945:EE_|PH0PR03MB7040:EE_|YT2PEPF000001CD:EE_|YQXPR01MB5480:EE_|YT3PR01MB11007:EE_
+X-MS-Office365-Filtering-Correlation-Id: 3949ade2-cfc8-465e-ec1d-08dd149907e0
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|1800799024|376014|366016|8096899003|7053199007|38070700018;
+X-Microsoft-Antispam-Message-Info-Original:
+ =?us-ascii?Q?82S2jDG27barzO1gj+3vLaXXYzWqfTzHx8ruugHpy8AEBgPfpQb+Xlfm0W12?=
+ =?us-ascii?Q?EXYHC3uT208NHWkJ/wmPB+Tc+JxTOfEO1w7nkJmb8vy1R9WH0NTo3gMXYMfB?=
+ =?us-ascii?Q?0p/oCUraoxrqI19N12PNAbe7oIKE2V5uPR7SyAT4pdsa7QXq9iQup4I14pcn?=
+ =?us-ascii?Q?fhtEoIy/WswnGTFPZMTEZD4bC7K/RWmAMFyIVrzqYjQt/5Vxo3J3Rp9ycnqv?=
+ =?us-ascii?Q?qV81jGkIAEuTWuT7yy3vbcKQ08QafEdkT27SLH13Jt9Nlvvwd4dh/wCM9fNi?=
+ =?us-ascii?Q?lCM/s6htvPhcoYyve0ZYhUxtQAS5QYL+/OMooLh0O7yjEfA664JUSRcZAvgM?=
+ =?us-ascii?Q?NxA4UWjUZ52qETlwZXl05NFDZr80poZtv731StjD4cV4jxJGnKpmQFqY8vN2?=
+ =?us-ascii?Q?MAZqGj+PvMeGIJWYAAq2XksOwl3ntjYEllWcA1SS/IC13iC168rTaHau5Gwg?=
+ =?us-ascii?Q?nU2Oc/hl9XhC8oKcww8SXReybarWkksJVDo4Zw51UoK0764vi0zQ5pUa9j8v?=
+ =?us-ascii?Q?adV6swSl0La8djy5KmPdE0B/vmSXkHApumZwMH/dW7cEUaUK8w7yvvh9EzkH?=
+ =?us-ascii?Q?lKSEnPIY1LX7jx/RUCeyNChjQlKGZzKVHjE1MKuXr03lkoPWNsI95d8rG1Mi?=
+ =?us-ascii?Q?GcjybfVnR6WYF21YjpuyGZ93NnO4V9Y0NGvfVrMTS721bQ1QulbMGqpmPLEk?=
+ =?us-ascii?Q?sB5H0ybbpzxAz/r443b3XcaY7jd3iGdQT+Ie4PfN3vDeRoaO6PBAZ0EqadMz?=
+ =?us-ascii?Q?uFRZSNAMQ7+Msl1bppghxPv9dy8DkDsWdzFpAPG5HFH2y5WlGZ15oj0txtKy?=
+ =?us-ascii?Q?h9z+IHwS96cjWtlaSkokkk/vVy4B5tmnOfzNEENDZ4ecfs/wg3Fa2UBHqrkv?=
+ =?us-ascii?Q?JYxyRGzN0DagajuutySYl/W4nJZeZHPFclYj40Wm/+cPjIFMD6ZnGX4tjpig?=
+ =?us-ascii?Q?Jk1oWzyOlZ/Kb98OGnQsfQE+8wDL62CTW7N76W4HTAtfhEfeIFkjCJgbGWwH?=
+ =?us-ascii?Q?8Ze15JRcd3wIacQeTypNFOwM41QPrPfruYi8K30bhMExMEdliNhMwp/o1h6J?=
+ =?us-ascii?Q?63UzaniQiGIrmzMEQCe8b0DZRuN1McvuHuQhDxVsIH7V3qiodlFDok1zZfaU?=
+ =?us-ascii?Q?x5Wus0BU+ClxldddV2sd98sQnbnSWuop/f4uWY3oavZaerHOL7IJZCBIRPh4?=
+ =?us-ascii?Q?WgOntg33jqnKiXQ/jtNTQL3r01ifuj1h714Nh6tW5Jv3OAgojRsLMDC8dQRy?=
+ =?us-ascii?Q?KCMsbnX7bP8sLvUd8FW0tbFB/wof1zrY+pKUvqYkPv9hVL1VfcopXs1C3gY0?=
+ =?us-ascii?Q?Kx09VCjq6fbAUubotOjoEyG/oifJdHm63lLrUgmj24FC/xUUc3h0o4nSj/G5?=
+ =?us-ascii?Q?nPVWYxUGztsjdRvt2haWTGRnv6+l?=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SA2PR03MB5945.namprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(8096899003)(7053199007)(38070700018);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-Original-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-Original-0:
+ =?us-ascii?Q?J55r4e6qSDreAJS87szeAOzobEiWl+xvoYo+CbSFnHxluILxRn7WWtlIlXeU?=
+ =?us-ascii?Q?aV1ky36/ZtxxcgLsxdZ5bHlcp6WC095CNbPMXjdFyl1AzMmh1eu1EwiakOiV?=
+ =?us-ascii?Q?MrrTM2SWEn20ndlkgfuz6YjMvAvCJqjGgbhaEaiS8oHpk5uWROsSPiIi+zta?=
+ =?us-ascii?Q?wS7YLeFxGfLtjnp4yoD7iKLgzbfNzm+AO1i1/XhEkjZZpjZhKoAcrG9mYH1r?=
+ =?us-ascii?Q?X8mtvO7G4W+rL2HZBSEpBNf4Df2cyozJHSEorRBRhuBwcS1eOY8WUoCzzMLh?=
+ =?us-ascii?Q?QPGhFfQ6vhPw30coKvueT3x6uMuwk4VZku7qhWtlUlt9+bN7iCsABpqvX1O9?=
+ =?us-ascii?Q?ku+u4p+c01ZvgBWAV40Hkc6rFMCLyJrqqAzh1WvkwjazbE6KqhHx0EGrYRZ+?=
+ =?us-ascii?Q?pMnELAvO9bMYaS23wOejNZtPfaGSFSboYWZCh4c2XHzuxKyUl74ksfA7WxT1?=
+ =?us-ascii?Q?mIu2uL6uYDZZW3wAUndxWsp4dQoSDP1fVFdnLTKXr4Kid3MFHTTJgPQd9HfW?=
+ =?us-ascii?Q?4uELU8SEIeBPED+/Aj0fCdU+4FHlOGBlFOq8Y5LyWyFcfaJb8OdGUGbvtoac?=
+ =?us-ascii?Q?/1K2k04sbKcbZQjF08URJMciqXduJzDGlkn7xjJqb1wesVWj+xOrWknelxkD?=
+ =?us-ascii?Q?WY1jICR17YRuJJDjKRvsnVRBxXSC3LOkQOx163S2WvxLvJno7jU0I7PBiIoe?=
+ =?us-ascii?Q?HtDu/s78e4ck8LrQwKkOA0bo4SNWcy2iTIQ5pQ2+74FMhBlRrfUSzMjdzNej?=
+ =?us-ascii?Q?Tl1QpqQUok963P3CVl3u9pOU/DyaT8ujGx/35EqfLKlRLRkjFURDSpBCyyAj?=
+ =?us-ascii?Q?LnjOOcSS4rQ/h0WuMHLgzr/LDfcqoxLdAAbs1ClO3HEvs3WIJXAurMYfWCpo?=
+ =?us-ascii?Q?wyQminSvoo5s9D3rUBUCxP8t8n2F0RhYestz15zUfds6L8qP8LRisU2l9vBP?=
+ =?us-ascii?Q?WqezhaOPFaBBw/QKzJBvFzFcifjo0ArvTm2OCqjtZKvrTnGpUyKZvhwKpaYy?=
+ =?us-ascii?Q?HBslbOi2CEacvdlNowMKsDXWVn2MZkrloSmlxXBYWzTZMOptWXwIHGnD+2jY?=
+ =?us-ascii?Q?OLj4zwKIjqP+MlVwNE8heP8ANiybMfo3kgBdRU06KijLOz8ixLf3ZqIXhsaW?=
+ =?us-ascii?Q?YHSrzFcp+NykRwvFIJ4YhGQR911SuDYg6LdZAcONAQDbZRE6yt/O0vlfefSP?=
+ =?us-ascii?Q?xfkGBiYSiP9F1fKo+siZWefFwcClCPRaL7RWjaN81pmlJtVrOgeEjW4D7xSO?=
+ =?us-ascii?Q?5sOFYQd7xxSYfVc/WiUuVdCFTMuWP4r2LIsAPKl7PTRyO+8V9co0rMSzx7SA?=
+ =?us-ascii?Q?FQFCWb6BAXWhThElndi8bkNtnr4ogiSJ1mEC1+Wip3NFOlHAEYt/oZ5NFTjc?=
+ =?us-ascii?Q?f9RrBmjlT92/y+2ReZd4IoGzp1sTpJrVyBJrG4nEH9FY5KcRuKS0dcPIdy2b?=
+ =?us-ascii?Q?xTvuX9TcxwT5q65HR15rucOibNcns6pJerTf41mPky2HQe+98kz5LUd8M8hC?=
+ =?us-ascii?Q?FM6dQ+DfeOKTXMadhrWyJgpjtWPYX31EWHj1/5GHxlTxjrYE9EXa+xWMPpl9?=
+ =?us-ascii?Q?f7uiugdOk7SQQAQxxcZiEmno/mjkNp4VIPGk5JAf?=
+Content-Type: multipart/alternative;
+	boundary="_000_SA2PR03MB59454C91DDA0B7F0AD13DE01B0372SA2PR03MB5945namp_"
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR03MB7040
+X-OrganizationHeadersPreserved: PH0PR03MB7040.namprd03.prod.outlook.com
+Return-Path: EGerber@flowserve.com
+X-MS-Exchange-Organization-ExpirationStartTime: 04 Dec 2024 19:22:45.1211
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 3949ade2-cfc8-465e-ec1d-08dd149907e0
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 08020390-40da-4da5-b230-af0cf191e38e:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-CrossPremisesHeadersFiltered: YT2PEPF000001CD.CANPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ YT2PEPF000001CD.CANPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted:
+ YT2PEPF000001CD.CANPRD01.PROD.OUTLOOK.COM
+X-MS-PublicTrafficType: Email
+X-MS-Exchange-Organization-AuthSource:
+ YT2PEPF000001CD.CANPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+ 52160bb8-3318-4c27-9c63-08dd14990610
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam:
+ BCL:0;ARA:13230040|35042699022|12012899012|8096899003|7053199007;
+X-Forefront-Antispam-Report:
+ CIP:40.107.200.50;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CH5PR02CU005.outbound.protection.outlook.com;PTR:mail-northcentralusazon11012050.outbound.protection.outlook.com;CAT:NONE;SFS:(13230040)(35042699022)(12012899012)(8096899003)(7053199007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Dec 2024 19:22:44.9492
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3949ade2-cfc8-465e-ec1d-08dd149907e0
+X-MS-Exchange-CrossTenant-Id: 08020390-40da-4da5-b230-af0cf191e38e
+X-MS-Exchange-CrossTenant-AuthSource:
+ YT2PEPF000001CD.CANPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: YQXPR01MB5480
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.1906880
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8230.010
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?Windows-1252?Q?fFdn65TZwVQh/0cKRO6SEFQdVKECMgzIilsdPjcvfcklIlTckAjKE/hf?=
+ =?Windows-1252?Q?W7pKepwAKPFk0nh9lD8JbXyPqSkjDkZA2MqUT4pWLKJ6Nh5OGi3sDylC?=
+ =?Windows-1252?Q?jsqcuKn6+kAPdF7z/+e7MAxL7meg2wbGg2XYc2FY+vzq23KfQwoQrRGd?=
+ =?Windows-1252?Q?8z90Fs33zeunDobfFS2GcU/LproXucia6qtmL93jg3g6NYj5mMznm5YV?=
+ =?Windows-1252?Q?mz0rv7d/xkeyq+Y8VvBowfsX0kd3sUVYa3re0NmRflVRzxoiMiqgMlxb?=
+ =?Windows-1252?Q?x3qZaKjV3pGl8723eiDvn/F+fkUJlS0QUxPEDbRApZGk6oTa/33h0peI?=
+ =?Windows-1252?Q?GjDOjj5Nxt/GnJ9IxHNH1H4yHh5xNNwGpGFg642tm1DFFLca1myOBUcg?=
+ =?Windows-1252?Q?U+t8BzyGS58y0iv5w5fj/duopZUmoAVlZSpZ+IB7fD6nY7W8SLnK++nh?=
+ =?Windows-1252?Q?g8mNx9/K0xLDbQu1do5sRYnSaLytDz9KWXoxD8GkY/+E27Y4pnln+iJ+?=
+ =?Windows-1252?Q?oBHHBXTJ4f3sUZahOhTZbUNd1ogaY8/8FlE9HfF1+DeniQic3cpHKG7a?=
+ =?Windows-1252?Q?0kydOCq0qIJtg/NsJPG1KqM/Hk8SUfStCcUfJ49FojSJerCBxVgv6bv3?=
+ =?Windows-1252?Q?26rPpVpSKA5HY13PJotqCmFHXIkpAJzDa7y28KZjyYjkA79a3oM3XrW2?=
+ =?Windows-1252?Q?OtRV0c3mMhx1oeTwSpRObSJ4qQqRqgy+jx68ODRlB93OxM/aryuCQAhZ?=
+ =?Windows-1252?Q?EZUbakaoNSBOhUeZw2xszP3/fS46e7IAwZ5mTABIsjm30CeC1zCjmp3P?=
+ =?Windows-1252?Q?NS1Y6X+/GnNIAIg9FHnty1O/BTXuM0i1KPHgWtYad8e/OnGrmGlhg8Sm?=
+ =?Windows-1252?Q?PdD9ije0y6gjuPasO5wA+mDYCSkvXIel2Pe2vdFDRgjxyXLTh4rviTEq?=
+ =?Windows-1252?Q?muXUHB4VAlLNvJTgjm1HDaMmMz9t5PEUO5qo0/X0Xq7XUSA+/8gB0ZdE?=
+ =?Windows-1252?Q?miXc3nKAmhNoGjx/hGwzmX2QUttlH6rNwdXjx+dhWMypAlIUfciGuJ9u?=
+ =?Windows-1252?Q?jxzEQnE/Fscvbd00sV/vOqkuQ6uQ7w4gPvu1VZDv14HzTFfxmD4QekFF?=
+ =?Windows-1252?Q?CG9cPRNw0XtU7V6UX9JSzoxkUb+DaVOrx0xXIPVdtjsOkw00YFOxSCG+?=
+ =?Windows-1252?Q?04bDgMyUs034PrRYtIY9q1GDm2tyGy1hVg8I4TS7374auyBJDOv6xZIw?=
+ =?Windows-1252?Q?2S1lA+Dupws0IXNcQU0UEEOI2vpNG7OqPpYj5ki6FWW+1eqIalLmlNwx?=
+ =?Windows-1252?Q?7YNmqoNdC6afgoR1HqJWo/S+kZuCwA7Ujo//uY59wSwJ88kAUjv0QFnQ?=
+ =?Windows-1252?Q?/l8JDSpZfp4AAHIcPARS5EXLMA4xwFBy7OnNVvSgKri4zsJs3WMZWaak?=
+ =?Windows-1252?Q?4bFvja+gBnwmkSrmScm1MM3OexhORqN6UUKbCKCaHvXpwtCcBERVHS/A?=
+ =?Windows-1252?Q?3VBw/elKwlnAiCzfXyEH8pBNrM0YumeQgzdBw1D3PuTw/UCz/dBhRc5r?=
+ =?Windows-1252?Q?huQRgvot2V4tv/1nPKCXSPn5shcK1Y17NariAgmG4RQ9YK0iq4EOQufp?=
+ =?Windows-1252?Q?go9f+LsOH83mQ0/kUL3dqDfg0++D06+VASY+6EdytVWC6oo3fXSfn4W+?=
+ =?Windows-1252?Q?jEXoM+ak+8YDFKNhjELAQ0JQEO7M0vYrIbXAWHFyhTOVYrtz20t2nbKI?=
+ =?Windows-1252?Q?8Ku1bG2Tf0vpX4nGxZqtKMr59L+U33yd1/G1iPpDGljCPM8m/37dNqIl?=
+ =?Windows-1252?Q?z+Kei3tc2IWO06MikBioT00qvD4VTmKxZd1hm8rfJTLqnM0RI5CndmV9?=
+ =?Windows-1252?Q?+ltPP8h9vg5+GatVZ/UeEa3i2berW0+9UL9N+Ki1NxXyuGv+i3TKmUxl?=
+ =?Windows-1252?Q?ltxq1NWx7hSBD24KbQ++NDNc7ZmGn0yHw/hO6pi9ETLCqGr1wt+eDYWE?=
+ =?Windows-1252?Q?T2NeL4ww?=
+MIME-Version: 1.0
+
+--_000_SA2PR03MB59454C91DDA0B7F0AD13DE01B0372SA2PR03MB5945namp_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Dmitri,
+
+Yes, you can definitely use the quote along with my name and company.
+
+Thanks,
+
+Eric Gerber | Flowserve
+Buyer - O-Rings
+2100 Factory Street
+Kalamazoo, MI 49001
+Office - 269-226-6257
+E-mail - egerber@flowserve.com
+
+NOTICE: The information contained in this email and any attachment(s) there=
+to is confidential and may contain attorney-client privileged communication=
+s or proprietary information. If you are not the intended recipient, you ar=
+e hereby notified that any dissemination, distribution, or copying of this =
+communication is strictly prohibited. If you have received this communicati=
+on in error, please notify the sender immediately and delete the email from=
+ your computer system without retaining any copies.
+
+Please note, Flowserve will not purchase any finished or unfinished goods a=
+nd services with origins in sanctioned countries under Flowserve policy whi=
+ch currently include, but may not be limited to, Cuba, Iran, North Korea, S=
+yria, Russia, and the Donetsk, Luhansk, and Crimea regions of Ukraine.
+
+From: Dmitri Klassen <dklassen@remtechindustries.com>
+Sent: Wednesday, December 4, 2024 1:35 PM
+To: Gerber, Eric <EGerber@flowserve.com>
+Subject: [External] Request For Use Of Testimonial
+
+CAUTION: This email originated from outside of Flowserve. Do not click link=
+s or open attachments unless you can confirm the sender and know the conten=
+t is safe.
+Hello Eric,
+
+RemTech is undergoing a website update, and we are looking to include custo=
+mer testimonials in the new website. While looking through the results of p=
+ast customer satisfaction surveys, I found that in 2019, you submitted an e=
+ntry that included: "You have the best response time for quotes, open order=
+ updates, and general inquiries. I appreciate everything you do!" I am requ=
+esting your permission to use this quote in our upcoming website alongside =
+your name and company name. Please let me know if this would be acceptable =
+or if you have any questions.
+
+Thank you for your consideration,
+
+
+Dmitri Klassen |  REM-TECH INDUSTRIES INC.
+
+Quality Assurance
+69 White Street,  Aylmer, Ontario  N5H 2R9
+
+P: 519.773.3459  |  F: 519.773.7914  |  E: dklassen@remtechindustries.com<m=
+ailto:dklassen@remtechindustries.com>  |  W: www.remtechindustries.com<http=
+s://remtechindustries.com>
+
+This email and any attachments are only for use by the intended recipient(s=
+) and may contain legally privileged, confidential, proprietary or otherwis=
+e private information.  Any unauthorized use, reproduction, dissemination, =
+distribution or other disclosure of the contents of this e-mail or its atta=
+chments is strictly prohibited.  If you have received this email in error, =
+please notify the sender immediately and delete the original.
+
+---------------------------------------------------------------------------=
+--------------------------------------------
+
+
+
+--_000_SA2PR03MB59454C91DDA0B7F0AD13DE01B0372SA2PR03MB5945namp_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Franklin Gothic Medium Cond";}
+@font-face
+	{font-family:"Open Sans";}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+span.EmailStyle20
+	{mso-style-type:personal-reply;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"blue" vlink=3D"purple" style=3D"word-wrap:brea=
+k-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Hi Dmitri,<o:p></o:=
+p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Yes, you can defini=
+tely use the quote along with my name and company.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt">Thanks,<o:p></o:p><=
+/span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;color:#1F497D"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,sans-serif;color:#1F497D">Eric Gerber |
+</span></b><b><span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot=
+;,sans-serif;color:red">Flowserve</span></b><span style=3D"font-size:10.0pt=
+;color:#1F497D"><br>
+</span><b><span style=3D"font-size:9.0pt;font-family:&quot;Tahoma&quot;,san=
+s-serif;color:#1F497D">Buyer &#8211; O-Rings</span></b><span style=3D"font-=
+size:10.0pt;color:#1F497D"><br>
+</span><span style=3D"font-size:9.0pt;color:#1F497D">2100 Factory Street<o:=
+p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.0pt;color:#1F497D">Kalama=
+zoo, MI 49001<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.0pt;color:#1F497D">Office=
+ &#8211; 269-226-6257<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.0pt;color:#1F497D">E-mail=
+ &#8211; </span>
+<span style=3D"font-size:11.0pt"><a href=3D"egerber@flowserve.com"><span st=
+yle=3D"font-size:9.0pt;color:#0563C1">egerber@flowserve.com</span></a></spa=
+n><span style=3D"font-size:9.0pt;color:#1F497D"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:8.0pt"><o:p>&nbsp;</o:p></s=
+pan></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:8.0pt;font-family:&quot;Ari=
+al&quot;,sans-serif;color:gray">NOTICE: The information contained in this e=
+mail and any attachment(s) thereto is confidential and may contain attorney=
+-client privileged communications or proprietary
+ information. If you are not the intended recipient, you are hereby notifie=
+d that any dissemination, distribution, or copying of this communication is=
+ strictly prohibited. If you have received this communication in error, ple=
+ase notify the sender immediately
+ and delete the email from your computer system without retaining any copie=
+s.<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-left:.5in"><span style=3D"font-size:=
+8.0pt;font-family:&quot;Arial&quot;,sans-serif;color:gray"><o:p>&nbsp;</o:p=
+></span></p>
+<p class=3D"MsoNormal"><i><span style=3D"font-size:8.0pt;font-family:&quot;=
+Arial&quot;,sans-serif;color:gray">Please note, Flowserve will not purchase=
+ any finished or unfinished goods and services with origins in sanctioned c=
+ountries under Flowserve policy which currently
+ include, but may not be limited to, Cuba, Iran, North Korea, Syria, Russia=
+, and the Donetsk, Luhansk, and Crimea regions of Ukraine.<o:p></o:p></span=
+></i></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<div>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0pt;=
+font-family:&quot;Calibri&quot;,sans-serif"> Dmitri Klassen &lt;dklassen@re=
+mtechindustries.com&gt;
+<br>
+<b>Sent:</b> Wednesday, December 4, 2024 1:35 PM<br>
+<b>To:</b> Gerber, Eric &lt;EGerber@flowserve.com&gt;<br>
+<b>Subject:</b> [External] Request For Use Of Testimonial<o:p></o:p></span>=
+</p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"border:solid black 1.0pt;background:#FFFCC2;padding:4.5pt 4.5p=
+t 4.5pt 4.5pt">
+<p class=3D"MsoNormal"><strong><span style=3D"font-size:10.0pt;font-family:=
+&quot;Arial&quot;,sans-serif;color:red">CAUTION:</span></strong><span style=
+=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif;color:maroon"=
+> This email originated from outside of Flowserve. Do not
+ click links or open attachments unless you can confirm the sender and know=
+ the content is safe.<o:p></o:p></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">Hello Eric,</span> <o:p>=
+</o:p></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black"><o:p>&nbsp;</o:p></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">RemTech is undergoing a =
+website update, and we are looking to include customer testimonials in the =
+new website. While looking through the results of past customer satisfactio=
+n surveys, I found that in 2019, you
+ submitted an entry that included: &quot;You have the best response time fo=
+r quotes, open order updates, and general inquiries. I appreciate everythin=
+g you do!&quot; I am requesting your permission to use this quote in our up=
+coming website alongside your name and company
+ name. Please let me know if this would be acceptable or if you have any qu=
+estions.<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black"><o:p>&nbsp;</o:p></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">Thank you for your consi=
+deration,<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black"><o:p>&nbsp;</o:p></span>=
+</p>
+</div>
+<div id=3D"Signature">
+<p><b><span style=3D"font-size:10.0pt;font-family:&quot;Open Sans&quot;,san=
+s-serif;color:#1F497D">Dmitri Klassen
+</span></b><span style=3D"font-size:10.0pt;font-family:&quot;Open Sans&quot=
+;,sans-serif;color:#1F497D">|&nbsp;
+</span><b><span style=3D"font-size:11.0pt;color:#242424">REM-TECH INDUSTRIE=
+S INC.</span></b><b><span style=3D"font-size:10.0pt;font-family:&quot;Open =
+Sans&quot;,sans-serif;color:#393939">&nbsp;&nbsp;</span></b><o:p></o:p></p>
+<p style=3D"margin-bottom:7.5pt;background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Open Sans&quot;,sans-serif;color:#1F497D">Quality =
+Assurance</span><span style=3D"font-size:10.0pt;font-family:&quot;Open Sans=
+&quot;,sans-serif;color:#393939"><br>
+</span><span style=3D"font-size:11.0pt;color:#242424">69 White Street, &nbs=
+p;Aylmer, Ontario&nbsp; N5H 2R9&nbsp;</span><o:p></o:p></p>
+<p style=3D"background:white"><b><span style=3D"font-size:10.0pt;font-famil=
+y:&quot;Open Sans&quot;,sans-serif;color:#1F497D">P:</span></b><span style=
+=3D"font-size:10.0pt;font-family:&quot;Open Sans&quot;,sans-serif;color:#1F=
+497D">&nbsp;519.773.3459&nbsp; |<b>&nbsp; F:</b>&nbsp;519.773.7914&nbsp; |&=
+nbsp;
+<b>E:</b>&nbsp;</span><span style=3D"font-size:10.0pt;font-family:&quot;Ope=
+n Sans&quot;,sans-serif;color:#393939"><a href=3D"mailto:dklassen@remtechin=
+dustries.com" title=3D"mailto:dklassen@remtechindustries.com">dklassen@remt=
+echindustries.com</a></span><span style=3D"font-size:10.0pt;font-family:&qu=
+ot;Open Sans&quot;,sans-serif;color:#1F497D">&nbsp;
+ |&nbsp; <b>W:</b>&nbsp;</span><span style=3D"font-size:10.0pt;font-family:=
+&quot;Franklin Gothic Medium Cond&quot;,sans-serif;color:#428BCA"><a href=
+=3D"https://remtechindustries.com" title=3D"https://remtechindustries.com">=
+www.remtechindustries.com</a></span><o:p></o:p></p>
+<p style=3D"margin-bottom:7.5pt;background:white"><span style=3D"font-size:=
+11.0pt;color:#242424">This email and any attachments are only for use by th=
+e intended recipient(s) and may contain legally privileged, confidential, p=
+roprietary or otherwise private information.&nbsp;
+ Any unauthorized use, reproduction, dissemination, distribution or other d=
+isclosure of the contents of this e-mail or its attachments is strictly pro=
+hibited.&nbsp; If you have received this email in error, please notify the =
+sender immediately and delete the original.</span><o:p></o:p></p>
+<p style=3D"margin-bottom:7.5pt;background:white"><span style=3D"font-size:=
+11.0pt;color:#242424">-----------------------------------------------------=
+------------------------------------------------------------------</span><o=
+:p></o:p></p>
+<p style=3D"background:white"><span style=3D"font-size:11.0pt;color:#242424=
+">&nbsp;</span><o:p></o:p></p>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+--_000_SA2PR03MB59454C91DDA0B7F0AD13DE01B0372SA2PR03MB5945namp_--
