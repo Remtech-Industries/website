@@ -30,9 +30,9 @@
             </div>
             <div class="bg-red-700 flex justify-center">
                 <div class="flex flex-col text-gray-50 py-16 xl:py-24 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
-                    <span class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora mb-4 lg:mb-8">""</span>
-                    <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- </span>
-                    <span>()</span>
+                    <span class="text-xl/tight md:text-2xl/tight lg:text-3xl/tight xl:text-4xl/tight 2xl:text-5xl/tight sora mb-4 lg:mb-8">"I can't compare anyone to Remtech. They are the absolute best vendor to deal with. Anytime we have a hot job, they pull through and get everything on time. I am always worried about giving them too much to do with little lead time, but it is no problem for them. They are excellent."</span>
+                    <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Mina Bahadori</span>
+                    <span>(Flowserve)</span>
                 </div>
             </div>
             <div class="flex justify-center">
