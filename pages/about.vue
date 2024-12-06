@@ -87,670 +87,429 @@ useSeoMeta({
 let menuIsOpen = ref(false)
 const employees = [
     {
-        // imageSrc: '/images/gallery-personnel/willy-siemens-1.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/willy-siemens-1.jpg',
         name: 'Willy Siemens',
         role: 'Office Manager'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/jonny-froese-2.jpg',
+    //     name: 'Jonny Froese',
+    //     role: 'Scheduler'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/jonny-froese-2.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Jonny Froese',
-        role: 'Scheduler'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/abraham-klassen-8.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/abraham-klassen-8.jpg',
         name: 'Abraham Klassen',
         role: 'Technical Specialist'
     },
     {
-        // imageSrc: '/images/gallery-personnel/jacob-fehr-9.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Jacob Fehr',
-        role: ''
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/alvino-penner-12.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/alvino-penner-12.jpg',
         name: 'Alvino Penner',
         role: 'Project Specialist'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/aldo-rempel-23.jpg',
+    //     name: 'Aldo Rempel',
+    //     role: 'Lathe Supervisor'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/aldo-rempel-23.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Aldo Rempel',
-        role: 'Lathe Supervisor'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/jeff-froese-24.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/jeff-froese-24.jpg',
         name: 'Jeff Froese',
         role: 'Quality Manager'
     },
     {
-        // imageSrc: '/images/gallery-personnel/peter-schmitt-28.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/peter-schmitt-28.jpg',
         name: 'Peter Schmitt',
         role: 'Grinding Team Leader'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/diana-ham-30.jpg',
+    //     name: 'Diana Ham',
+    //     role: 'Accounting Manager'
+    // },
+    // {
+    //     imageSrc: '/images/gallery-personnel/skylar-churchill-33.jpg',
+    //     name: 'Skylar Churchill',
+    //     role: 'Lathe Supervisor'
+    // },
+    // {
+    //     imageSrc: '/images/gallery-personnel/edward-thiessen-36.jpg',
+    //     name: 'Edward Thiessen',
+    //     role: 'Thermal Spray Technician'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/diana-ham-30.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Diana Ham',
-        role: 'Accounting Manager'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/skylar-churchill-33.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Skylar Churchill',
-        role: 'Lathe Supervisor'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/edward-thiessen-36.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Edward Thiessen',
-        role: 'Thermal Spray Technician'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/isaak-thiessen-41.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/isaak-thiessen-41.jpg',
         name: 'Isaak Thiessen',
         role: 'Quoting'
     },
     {
-        // imageSrc: '/images/gallery-personnel/abraham-neufeld-42.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/abraham-neufeld-42.jpg',
         name: 'Abraham Neufeld',
         role: 'Thermal Spray Supervisor'
     },
     {
-        // imageSrc: '/images/gallery-personnel/abraham-letkeman-43.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Abraham Letkeman',
-        role: 'Lapper Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/ernesto-peters-47.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/ernesto-peters-47.jpg',
         name: 'Ernesto Peters',
         role: 'CNC Mill Programmer'
     },
     {
-        // imageSrc: '/images/gallery-personnel/greg-wiebe-49.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/greg-wiebe-49.jpg',
         name: 'Greg Wiebe',
         role: 'CNC Mill Programmer'
     },
     {
-        // imageSrc: '/images/gallery-personnel/peter-neufeld-50.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/peter-neufeld-50.jpg',
         name: 'Peter Neufeld',
         role: 'CNC Lathe Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/elma-wiebe-52.jpg',
+    //     name: 'Elma Wiebe',
+    //     role: 'Documentation Coordinator'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/elma-wiebe-52.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Elma Wiebe',
-        role: 'Documentation Coordinator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/michael-neufeld-53.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/michael-neufeld-53.jpg',
         name: 'Michael Neufeld',
         role: 'Thermal Spray Technician'
     },
     {
-        // imageSrc: '/images/gallery-personnel/henry-loewen-55.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/henry-loewen-55.jpg',
         name: 'Henry Loewen',
         role: 'Saw Supervisor'
     },
     {
-        // imageSrc: '/images/gallery-personnel/peter-thiessen-60.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/peter-thiessen-60.jpg',
         name: 'Peter Thiessen',
         role: 'Mill Supervisor'
     },
     {
-        // imageSrc: '/images/gallery-personnel/jake-thiessen-61.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/jake-thiessen-61.jpg',
         name: 'Jake Thiessen',
         role: 'Deburring Technician'
     },
     {
-        // imageSrc: '/images/gallery-personnel/eddy-wiebe-63.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Eddy Wiebe',
-        role: 'Planning'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/ralph-brix-64.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/ralph-brix-64.jpg',
         name: 'Ralph Brix',
         role: 'Industrial Engineer'
     },
     {
-        // imageSrc: '/images/gallery-personnel/david-friesen-65.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/david-friesen-65.jpg',
         name: 'David Friesen',
         role: 'CNC Mill Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/johan-neusteter-72.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/johan-neusteter-72.jpg',
         name: 'Johan Neusteter',
         role: 'Software Developer'
     },
     {
-        // imageSrc: '/images/gallery-personnel/david-teichroeb-74.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/david-teichroeb-74.jpg',
         name: 'David Teichroeb',
         role: 'Maintenance Technician'
     },
     {
-        // imageSrc: '/images/gallery-personnel/diedrich-thiessen-79.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/diedrich-thiessen-79.jpg',
         name: 'Diedrich Thiessen',
         role: 'CNC Mill Programmer'
     },
     {
-        // imageSrc: '/images/gallery-personnel/steven-neustaeter-80.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/steven-neustaeter-80.jpg',
         name: 'Steven Neustaeter',
         role: 'Deburring Team Leader'
     },
     {
-        // imageSrc: '/images/gallery-personnel/joel-dyck-81.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/joel-dyck-81.jpg',
         name: 'Joel Dyck',
         role: 'CNC Lathe Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/michael-redekop-85.jpg',
+    //     name: 'Michael Redekop',
+    //     role: 'CNC Mill Operator'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/michael-redekop-85.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Michael Redekop',
-        role: 'CNC Mill Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/joe-fehr-88.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/joe-fehr-88.jpg',
         name: 'Joe Fehr',
         role: 'CNC Lathe Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/frank-teichroeb-90.jpg',
+    //     name: 'Frank Teichroeb',
+    //     role: 'Maintenance Technician'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/alfredo-schmitt-89.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Alfredo Schmitt',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/frank-teichroeb-90.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Frank Teichroeb',
-        role: 'Maintenance Technician'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/david-dyck-95.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/david-dyck-95.jpg',
         name: 'David Dyck',
         role: 'Deburring Technician'
     },
     {
-        // imageSrc: '/images/gallery-personnel/michael-dyck-96.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/michael-dyck-96.jpg',
         name: 'Michael Dyck',
         role: 'CNC Mill Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/abe-wiebe-97.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/abe-wiebe-97.jpg',
         name: 'Abe Wiebe',
         role: 'CNC Lathe Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/cornelius-klassen-101.jpg',
+    //     name: 'Cornelius Klassen',
+    //     role: 'Quality Inspector'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/willie-wiebe-98.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Willie Wiebe',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/cornelius-klassen-101.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Cornelius Klassen',
-        role: 'Quality Inspector'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/rudy-thiessen-102.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/rudy-thiessen-102.jpg',
         name: 'Rudy Thiessen',
         role: 'CNC Lathe Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/abraham-friesen-106.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/abraham-friesen-106.jpg',
         name: 'Abraham Friesen',
         role: 'CNC Lathe Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/joey-thiessen-108.jpg',
+    //     name: 'Joey Thiessen',
+    //     role: 'CNC Mill Programmer'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/joey-thiessen-108.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Joey Thiessen',
-        role: 'CNC Mill Programmer'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/aaron-letkeman-109.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Aaron Letkeman',
-        role: 'Deburring Technician'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/cornelius-wiebe-110.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Cornelius Wiebe',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/isaak-peters-111.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/isaak-peters-111.jpg',
         name: 'Isaak Peters',
         role: 'CNC Mill Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/andrew-knelsen-112.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Andrew Knelsen',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/michael-thiessen-113.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/michael-thiessen-113.jpg',
         name: 'Michael Thiessen',
         role: 'CNC Mill Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/jacob-friesen-117.jpg',
+    //     name: 'Jacob Friesen',
+    //     role: ''
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/willy-dyck-115.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Willy Dyck',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/peter-friesen-116.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Peter Friesen',
-        role: 'Grinder Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/jacob-friesen-117.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Jacob Friesen',
-        role: ''
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/michael-friesen-118.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Michael Friesen',
-        role: 'Saw Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/annie-bueckert-119.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/annie-bueckert-119.jpg',
         name: 'Annie Bueckert',
         role: 'Quality Inspector'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/andrew-knelsen-125.jpg',
+    //     name: 'Andrew Knelsen',
+    //     role: 'CNC Lathe Operator'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/andrew-knelsen-125.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Andrew Knelsen',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/maria-unger-126.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/maria-unger-126.jpg',
         name: 'Maria Unger',
         role: 'Janitor'
     },
     {
-        // imageSrc: '/images/gallery-personnel/henry-suderman-128.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/henry-suderman-128.jpg',
         name: 'Henry Suderman',
         role: 'CNC Lathe Programmer'
     },
     {
-        // imageSrc: '/images/gallery-personnel/trevor-thiessen-132.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/trevor-thiessen-132.jpg',
         name: 'Trevor Thiessen',
         role: 'Software Developer'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/michael-hamm-142.jpg',
+    //     name: 'Michael Hamm',
+    //     role: 'CNC Lathe Operator'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/michael-hamm-142.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Michael Hamm',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/kyle-hanenburg-143.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/kyle-hanenburg-143.jpg',
         name: 'Kyle Hanenburg',
         role: 'CNC Mill Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/jordan-giesbrecht-144.jpg',
+    //     name: 'Jordan Giesbrecht',
+    //     role: 'CNC Lathe Operator'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/jordan-giesbrecht-144.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Jordan Giesbrecht',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/daniel-hamm-145.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/daniel-hamm-145.jpg',
         name: 'Daniel Hamm',
         role: 'CNC Lathe Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/george-neustaeter-146.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'George Neustaeter',
-        role: 'Saw Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/toby-rempel-147.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/toby-rempel-147.jpg',
         name: 'Toby Rempel',
         role: 'Quality Inspector'
     },
     {
-        // imageSrc: '/images/gallery-personnel/jake-penner-150.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/jake-penner-150.jpg',
         name: 'Jake Penner',
         role: 'Alloys Division Manager'
     },
     {
-        // imageSrc: '/images/gallery-personnel/lisa-klassen-151.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/lisa-klassen-151.jpg',
         name: 'Lisa Klassen',
         role: 'Purchaser'
     },
     {
-        // imageSrc: '/images/gallery-personnel/aiden-guenther-152.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/aiden-guenther-152.jpg',
         name: 'Aiden Guenther',
         role: 'CNC Mill Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/kathryn-dyck-153.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Kathryn Dyck',
-        role: 'Shipper'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/kaden-thiessen-154.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Kaden Thiessen',
-        role: 'Deburring Technician'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/david-teichroeb-155.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/david-teichroeb-155.jpg',
         name: 'David Teichroeb',
         role: 'CNC Lathe Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/susie-sawatzky-156.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/susie-sawatzky-156.jpg',
         name: 'Susie Sawatzky',
         role: 'Order Entry Specialist'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/henry-klassen-157.jpg',
+    //     name: 'Henry Klassen',
+    //     role: 'Deburring Technician'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/henry-klassen-157.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Henry Klassen',
-        role: 'Deburring Technician'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/kyle-cook-158.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/kyle-cook-158.jpg',
         name: 'Kyle Cook',
         role: 'CNC Mill Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/michael-wiebe-159.jpg',
+    //     name: 'Michael Wiebe',
+    //     role: 'CNC Lathe Operator'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/michael-wiebe-159.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Michael Wiebe',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/mary-froese-162.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/mary-froese-162.jpg',
         name: 'Mary Froese',
         role: 'Order Entry Specialist'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/ron-jones-165.jpg',
+    //     name: 'Ron Jones',
+    //     role: 'CNC Lathe Operator'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/ron-jones-165.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Ron Jones',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/william-dyck-166.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'William Dyck',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/dave-teichroeb-168.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/dave-teichroeb-168.jpg',
         name: 'Dave Teichroeb',
         role: 'CNC Lathe Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/herman-neufeld-169.jpg',
+    //     name: 'Herman Neufeld',
+    //     role: 'Maintenance Technician'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/herman-neufeld-169.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Herman Neufeld',
-        role: 'Maintenance Technician'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/austin-reddekopp-170.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/austin-reddekopp-170.jpg',
         name: 'Austin Reddekopp',
         role: 'CNC Mill Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/nellie-giesbrecht-171.jpg',
+    //     name: 'Nellie Giesbrecht',
+    //     role: 'Accountant'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/nellie-giesbrecht-171.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Nellie Giesbrecht',
-        role: 'Accountant'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/cody-wilson-172.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/cody-wilson-172.jpg',
         name: 'Cody Wilson',
         role: 'CNC Lathe Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/adam-evison-173.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/adam-evison-173.jpg',
         name: 'Adam Evison',
         role: 'Thermal Spray Technician'
     },
     {
-        // imageSrc: '/images/gallery-personnel/bowen-thiessen-174.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/bowen-thiessen-174.jpg',
         name: 'Bowen Thiessen',
         role: 'Grinder Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/chris-durdle-175.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Chris Durdle',
-        role: 'Gauge Calibration Manager'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/erwin-thiessen-176.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Erwin Thiessen',
-        role: 'Quality Inspector'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/chris-hendel-177.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Chris Hendel',
-        role: 'CNC Mill Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/peter-neufeld-178.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/peter-neufeld-178.jpg',
         name: 'Peter Neufeld',
         role: 'CNC Lathe Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/ian-dyken-181.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Ian Dyken',
+        imageSrc: '/images/gallery-personnel/ian-van-dyken-181.jpg',
+        name: 'Ian Van Dyken',
         role: 'CNC Mill Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/andrew-wiebe-183.jpg',
+    //     name: 'Andrew Wiebe',
+    //     role: 'CNC Lathe Operator'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/steven-enns-182.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Steven Enns',
-        role: 'CAD Drafter'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/andrew-wiebe-183.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Andrew Wiebe',
-        role: 'CNC Lathe Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/joey-knelsen-185.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/joey-knelsen-185.jpg',
         name: 'Joey Knelsen',
         role: 'CNC Lathe Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/johnny-wall-188.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/johnny-wall-188.jpg',
         name: 'Johnny Wall',
         role: 'CNC Lathe Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/richard-wall-189.jpg',
+    //     name: 'Richard Wall',
+    //     role: 'Maintenance Technician'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/richard-wall-189.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Richard Wall',
-        role: 'Maintenance Technician'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/jacob-neufeld-191.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/jacob-neufeld-191.jpg',
         name: 'Jacob Neufeld',
         role: 'CNC Mill Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/arnold-friesen-192.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/arnold-friesen-192.jpg',
         name: 'Arnold Friesen',
         role: 'Material Prepper'
     },
     {
-        // imageSrc: '/images/gallery-personnel/henry-penner-193.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/henry-penner-193.jpg',
         name: 'Henry Penner',
         role: 'Grinder Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/aaron-froese-194.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Aaron Froese',
-        role: ''
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/morgan-siemens-195.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Morgan Siemens',
-        role: ''
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/leroy-schmitt-196.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Leroy Schmitt',
-        role: ''
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/aurelia-friesen-198.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/aurelia-friesen-198.jpg',
         name: 'Aurelia Friesen',
         role: 'Order Entry Specialist'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/brady-dyck-207.jpg',
+    //     name: 'Brady Dyck',
+    //     role: 'Lapper Operator'
+    // },
+    // {
+    //     imageSrc: '/images/gallery-personnel/dmitri-klassen-208.jpg',
+    //     name: 'Dmitri Klassen',
+    //     role: 'Quality Associate'
+    // },
+    // {
+    //     imageSrc: '/images/gallery-personnel/carina-siemens-209.jpg',
+    //     name: 'Carina Siemens',
+    //     role: 'Shipper'
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/brady-dyck-207.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Brady Dyck',
-        role: 'Lapper Operator'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/dmitri-klassen-208.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Dmitri Klassen',
-        role: 'Quality Associate'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/carina-siemens-209.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Carina Siemens',
-        role: 'Shipper'
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/jesse-hiebert-210.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/jesse-hiebert-210.jpg',
         name: 'Jesse Hiebert',
         role: 'CNC Mill Operator'
     },
+    // {
+    //     imageSrc: '/images/gallery-personnel/coby-friesen-213.jpg',
+    //     name: 'Coby Friesen',
+    //     role: ''
+    // },
     {
-        // imageSrc: '/images/gallery-personnel/justyn-thiessen-211.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Justyn Thiessen',
-        role: ''
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/dannie-kuepfer-212.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Dannie Kuepfer',
-        role: ''
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/coby-friesen-213.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Coby Friesen',
-        role: ''
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/isaak-bergen-214.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/isaak-bergen-214.jpg',
         name: 'Isaak Bergen',
         role: 'Grinder Operator'
     },
     {
-        // imageSrc: '/images/gallery-personnel/samuel-friesen-215.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
+        imageSrc: '/images/gallery-personnel/samuel-friesen-215.jpg',
         name: 'Samuel Friesen',
         role: 'Thermal Spray Technician'
     },
-    {
-        // imageSrc: '/images/gallery-personnel/evan-teichroeb-216.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Evan Teichroeb',
-        role: ''
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/nathan-dyck-217.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Nathan Dyck',
-        role: ''
-    },
-    {
-        // imageSrc: '/images/gallery-personnel/jake-hamm-218.jpg',
-        imageSrc: '/images/gallery-personnel/ben-rempel.png',
-        name: 'Jake Hamm',
-        role: ''
-    }
+    // {
+    //     imageSrc: '/images/gallery-personnel/jake-hamm-218.jpg',
+    //     name: 'Jake Hamm',
+    //     role: ''
+    // }
 ]
 </script>
