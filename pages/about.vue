@@ -91,11 +91,11 @@ const employees = [
         name: 'Willy Siemens',
         role: 'Office Manager'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/jonny-froese-2.jpg',
-    //     name: 'Jonny Froese',
-    //     role: 'Scheduler'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/jonny-froese-2.jpg',
+        name: 'Jonny Froese',
+        role: 'Scheduler'
+    },
     {
         imageSrc: '/images/gallery-personnel/abraham-klassen-8.jpg',
         name: 'Abraham Klassen',
@@ -121,16 +121,16 @@ const employees = [
         name: 'Peter Schmitt',
         role: 'Grinding Team Leader'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/diana-ham-30.jpg',
-    //     name: 'Diana Ham',
-    //     role: 'Accounting Manager'
-    // },
-    // {
-    //     imageSrc: '/images/gallery-personnel/skylar-churchill-33.jpg',
-    //     name: 'Skylar Churchill',
-    //     role: 'Lathe Supervisor'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/diana-ham-30.jpg',
+        name: 'Diana Ham',
+        role: 'Accounting Manager'
+    },
+    {
+        imageSrc: '/images/gallery-personnel/skylar-churchill-33.jpg',
+        name: 'Skylar Churchill',
+        role: 'Lathe Supervisor'
+    },
     // {
     //     imageSrc: '/images/gallery-personnel/edward-thiessen-36.jpg',
     //     name: 'Edward Thiessen',
@@ -161,11 +161,11 @@ const employees = [
         name: 'Peter Neufeld',
         role: 'CNC Lathe Operator'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/elma-wiebe-52.jpg',
-    //     name: 'Elma Wiebe',
-    //     role: 'Documentation Coordinator'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/elma-wiebe-52.jpg',
+        name: 'Elma Wiebe',
+        role: 'Documentation Coordinator'
+    },
     {
         imageSrc: '/images/gallery-personnel/michael-neufeld-53.jpg',
         name: 'Michael Neufeld',
@@ -231,11 +231,11 @@ const employees = [
         name: 'Joe Fehr',
         role: 'CNC Lathe Operator'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/frank-teichroeb-90.jpg',
-    //     name: 'Frank Teichroeb',
-    //     role: 'Maintenance Technician'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/frank-teichroeb-90.jpg',
+        name: 'Frank Teichroeb',
+        role: 'Maintenance Technician'
+    },
     {
         imageSrc: '/images/gallery-personnel/david-dyck-95.jpg',
         name: 'David Dyck',
@@ -251,11 +251,11 @@ const employees = [
         name: 'Abe Wiebe',
         role: 'CNC Lathe Operator'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/cornelius-klassen-101.jpg',
-    //     name: 'Cornelius Klassen',
-    //     role: 'Quality Inspector'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/cornelius-klassen-101.jpg',
+        name: 'Cornelius Klassen',
+        role: 'Quality Inspector'
+    },
     {
         imageSrc: '/images/gallery-personnel/rudy-thiessen-102.jpg',
         name: 'Rudy Thiessen',
@@ -361,11 +361,11 @@ const employees = [
         name: 'Susie Sawatzky',
         role: 'Order Entry Specialist'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/henry-klassen-157.jpg',
-    //     name: 'Henry Klassen',
-    //     role: 'Deburring Technician'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/henry-klassen-157.jpg',
+        name: 'Henry Klassen',
+        role: 'Deburring Technician'
+    },
     {
         imageSrc: '/images/gallery-personnel/kyle-cook-158.jpg',
         name: 'Kyle Cook',
@@ -381,11 +381,11 @@ const employees = [
         name: 'Mary Froese',
         role: 'Order Entry Specialist'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/ron-jones-165.jpg',
-    //     name: 'Ron Jones',
-    //     role: 'CNC Lathe Operator'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/ron-jones-165.jpg',
+        name: 'Ron Jones',
+        role: 'CNC Lathe Operator'
+    },
     {
         imageSrc: '/images/gallery-personnel/dave-teichroeb-168.jpg',
         name: 'Dave Teichroeb',
@@ -401,11 +401,11 @@ const employees = [
         name: 'Austin Reddekopp',
         role: 'CNC Mill Operator'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/nellie-giesbrecht-171.jpg',
-    //     name: 'Nellie Giesbrecht',
-    //     role: 'Accountant'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/nellie-giesbrecht-171.jpg',
+        name: 'Nellie Giesbrecht',
+        role: 'Accountant'
+    },
     {
         imageSrc: '/images/gallery-personnel/cody-wilson-172.jpg',
         name: 'Cody Wilson',
@@ -420,6 +420,11 @@ const employees = [
         imageSrc: '/images/gallery-personnel/bowen-thiessen-174.jpg',
         name: 'Bowen Thiessen',
         role: 'Grinder Operator'
+    },
+    {
+        imageSrc: '/images/gallery-personnel/chris-durdle-175.jpg',
+        name: 'Chris Durdle',
+        role: 'Gauge Calibration Manager'
     },
     {
         imageSrc: '/images/gallery-personnel/peter-neufeld-178.jpg',
@@ -446,11 +451,11 @@ const employees = [
         name: 'Johnny Wall',
         role: 'CNC Lathe Operator'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/richard-wall-189.jpg',
-    //     name: 'Richard Wall',
-    //     role: 'Maintenance Technician'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/richard-wall-189.jpg',
+        name: 'Richard Wall',
+        role: 'Maintenance Technician'
+    },
     {
         imageSrc: '/images/gallery-personnel/jacob-neufeld-191.jpg',
         name: 'Jacob Neufeld',
@@ -476,11 +481,11 @@ const employees = [
     //     name: 'Brady Dyck',
     //     role: 'Lapper Operator'
     // },
-    // {
-    //     imageSrc: '/images/gallery-personnel/dmitri-klassen-208.jpg',
-    //     name: 'Dmitri Klassen',
-    //     role: 'Quality Associate'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/dmitri-klassen-208.jpg',
+        name: 'Dmitri Klassen',
+        role: 'Quality Associate'
+    },
     // {
     //     imageSrc: '/images/gallery-personnel/carina-siemens-209.jpg',
     //     name: 'Carina Siemens',
