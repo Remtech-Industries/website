@@ -89,7 +89,7 @@ const employees = [
     {
         imageSrc: '/images/gallery-personnel/william-siemens-1.jpg',
         name: 'William Siemens',
-        role: 'Office Manager'
+        role: 'Sales/Quoting'
     },
     {
         imageSrc: '/images/gallery-personnel/jonny-froese-2.jpg',
