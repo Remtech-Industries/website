@@ -24,7 +24,7 @@
             </div>
             <div class="bg-red-700 flex justify-center">
                 <div class="flex flex-col text-gray-50 pt-16 xl:pt-24 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
-                    <h2 class="text-4xl/tight md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight sora mb-4 lg:mb-8">Our People</h2>
+                    <h2 class="text-4xl/tight md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight sora mb-4 lg:mb-8">Meet the Experts</h2>
                     <div class="sm:flex items-center mb-12">
                         <img src="/images/gallery-personnel/ben-rempel.jpg" alt="Ben Rempel" class="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16 2xl:mr-24">
                         <div class="sm:w-2/3">
