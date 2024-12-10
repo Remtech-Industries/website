@@ -159,7 +159,7 @@ const employees = [
     {
         imageSrc: '/images/gallery-personnel/peter-neufeld-50.jpg',
         name: 'Peter Neufeld',
-        role: 'CNC Lathe Operator'
+        role: 'Deburring Technician'
     },
     {
         imageSrc: '/images/gallery-personnel/elma-wiebe-52.jpg',
@@ -194,7 +194,7 @@ const employees = [
     {
         imageSrc: '/images/gallery-personnel/david-friesen-65.jpg',
         name: 'David Friesen',
-        role: 'CNC Mill Operator'
+        role: 'CNC Lathe Operator'
     },
     {
         imageSrc: '/images/gallery-personnel/johan-neusteter-72.jpg',
@@ -249,7 +249,7 @@ const employees = [
     {
         imageSrc: '/images/gallery-personnel/abe-wiebe-97.jpg',
         name: 'Abe Wiebe',
-        role: 'CNC Lathe Operator'
+        role: 'CNC Lathe Programmer'
     },
     {
         imageSrc: '/images/gallery-personnel/cornelius-klassen-101.jpg',
@@ -364,7 +364,7 @@ const employees = [
     {
         imageSrc: '/images/gallery-personnel/henry-klassen-157.jpg',
         name: 'Henry Klassen',
-        role: 'Deburring Technician'
+        role: 'CNC Lathe Operator'
     },
     {
         imageSrc: '/images/gallery-personnel/kyle-cook-158.jpg',
@@ -389,7 +389,7 @@ const employees = [
     {
         imageSrc: '/images/gallery-personnel/dave-teichroeb-168.jpg',
         name: 'Dave Teichroeb',
-        role: 'CNC Lathe Operator'
+        role: 'Thermal Spray Technician'
     },
     // {
     //     imageSrc: '/images/gallery-personnel/herman-neufeld-169.jpg',
@@ -434,7 +434,7 @@ const employees = [
     {
         imageSrc: '/images/gallery-personnel/ian-van-dyken-181.jpg',
         name: 'Ian Van Dyken',
-        role: 'CNC Mill Operator'
+        role: 'CNC Lathe Operator'
     },
     // {
     //     imageSrc: '/images/gallery-personnel/andrew-wiebe-183.jpg',
@@ -504,7 +504,7 @@ const employees = [
     {
         imageSrc: '/images/gallery-personnel/isaak-bergen-214.jpg',
         name: 'Isaak Bergen',
-        role: 'Grinder Operator'
+        role: 'Manual Lathe Operator'
     },
     {
         imageSrc: '/images/gallery-personnel/samuel-friesen-215.jpg',
