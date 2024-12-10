@@ -106,11 +106,11 @@ const employees = [
         name: 'Alvino Penner',
         role: 'Project Specialist'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/aldo-rempel-23.jpg',
-    //     name: 'Aldo Rempel',
-    //     role: 'Lathe Supervisor'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/aldo-rempel-23.jpg',
+        name: 'Aldo Rempel',
+        role: 'Lathe Supervisor'
+    },
     {
         imageSrc: '/images/gallery-personnel/jeff-froese-24.jpg',
         name: 'Jeff Froese',
@@ -131,11 +131,11 @@ const employees = [
         name: 'Skylar Churchill',
         role: 'Lathe Supervisor'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/edward-thiessen-36.jpg',
-    //     name: 'Edward Thiessen',
-    //     role: 'Thermal Spray Technician'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/edward-thiessen-36.jpg',
+        name: 'Edward Thiessen',
+        role: 'Thermal Spray Technician'
+    },
     {
         imageSrc: '/images/gallery-personnel/isaak-thiessen-41.jpg',
         name: 'Isaak Thiessen',
@@ -266,11 +266,11 @@ const employees = [
         name: 'Abraham Friesen',
         role: 'CNC Lathe Operator'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/joey-thiessen-108.jpg',
-    //     name: 'Joey Thiessen',
-    //     role: 'CNC Mill Programmer'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/joey-thiessen-108.jpg',
+        name: 'Joey Thiessen',
+        role: 'CNC Mill Programmer'
+    },
     {
         imageSrc: '/images/gallery-personnel/isaak-peters-111.jpg',
         name: 'Isaak Peters',
@@ -291,11 +291,11 @@ const employees = [
         name: 'Annie Bueckert',
         role: 'Quality Inspector'
     },
-    // {
-    //     imageSrc: '/images/gallery-personnel/andrew-knelsen-125.jpg',
-    //     name: 'Andrew Knelsen',
-    //     role: 'CNC Lathe Operator'
-    // },
+    {
+        imageSrc: '/images/gallery-personnel/andrew-knelsen-125.jpg',
+        name: 'Andrew Knelsen',
+        role: 'CNC Lathe Operator'
+    },
     {
         imageSrc: '/images/gallery-personnel/maria-unger-126.jpg',
         name: 'Maria Unger',
