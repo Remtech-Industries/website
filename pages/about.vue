@@ -30,7 +30,7 @@
                         <div class="sm:w-2/3">
                             <h3 class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora">Ben Rempel</h3>
                             <p class="md:text-lg/tight lg:text-xl/tight xl:text-2xl/tight 2xl:text-3xl/tight mb-4">General Manager</p>
-                            <p>"At RemTech, we built this company with one goal in mind: to help our clients solve their toughest manufacturing challenges with precision and integrity. It's not just about making parts—it's about creating solutions that make a lasting impact."</p>
+                            <p>"[placeholder] At RemTech, we built this company with one goal in mind: to help our clients solve their toughest manufacturing challenges with precision and integrity. It's not just about making parts—it's about creating solutions that make a lasting impact."</p>
                         </div>
                     </div>
                     <div class="sm:flex items-center mb-12">
@@ -38,7 +38,7 @@
                         <div class="sm:w-2/3">
                             <h3 class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora">Peter Rempel</h3>
                             <p class="md:text-lg/tight lg:text-xl/tight xl:text-2xl/tight 2xl:text-3xl/tight mb-4">Production Manager</p>
-                            <p>"Our success comes from our commitment to precision and quality. Whether it's a complex part or a simple one, we approach every project with the same attention to detail and dedication to getting it right the first time."</p>
+                            <p>"[placeholder] Our success comes from our commitment to precision and quality. Whether it's a complex part or a simple one, we approach every project with the same attention to detail and dedication to getting it right the first time."</p>
                         </div>
                     </div>
                 </div>
