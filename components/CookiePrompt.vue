@@ -14,6 +14,10 @@ const consent = useCookie('consent', {
     maxAge: 34560000
 })
 const open = ref(!consent.value)
+watch(consent, (n, o) => {
+  console.dir(n)
+  console.dir(o)
+})
 
 function acceptAll() {
   const { gtag } = useGtag()
