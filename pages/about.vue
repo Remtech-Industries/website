@@ -87,8 +87,8 @@ useSeoMeta({
 let menuIsOpen = ref(false)
 const employees = [
     {
-        imageSrc: '/images/gallery-personnel/willy-siemens-1.jpg',
-        name: 'Willy Siemens',
+        imageSrc: '/images/gallery-personnel/william-siemens-1.jpg',
+        name: 'William Siemens',
         role: 'Office Manager'
     },
     {
