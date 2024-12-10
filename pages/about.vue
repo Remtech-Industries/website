@@ -26,7 +26,7 @@
                 <div class="flex flex-col text-gray-50 pt-16 xl:pt-24 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
                     <h2 class="text-4xl/tight md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight sora mb-4 lg:mb-8">Our People</h2>
                     <div class="sm:flex items-center mb-12">
-                        <img src="/images/gallery-personnel/ben-rempel.png" alt="Ben Rempel" class="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16 2xl:mr-24">
+                        <img src="/images/gallery-personnel/ben-rempel.jpg" alt="Ben Rempel" class="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16 2xl:mr-24">
                         <div class="sm:w-2/3">
                             <h3 class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora">Ben Rempel</h3>
                             <p class="md:text-lg/tight lg:text-xl/tight xl:text-2xl/tight 2xl:text-3xl/tight mb-4">General Manager</p>
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="sm:flex items-center mb-12">
-                        <img src="/images/gallery-personnel/peter-rempel.png" alt="Peter Rempel" class="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16 2xl:mr-24">
+                        <img src="/images/gallery-personnel/peter-rempel.jpg" alt="Peter Rempel" class="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16 2xl:mr-24">
                         <div class="sm:w-2/3">
                             <h3 class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora">Peter Rempel</h3>
                             <p class="md:text-lg/tight lg:text-xl/tight xl:text-2xl/tight 2xl:text-3xl/tight mb-4">Production Manager</p>
