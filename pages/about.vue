@@ -94,7 +94,7 @@ const employees = [
     {
         imageSrc: '/images/gallery-personnel/jonny-froese-2.jpg',
         name: 'Jonny Froese',
-        role: 'Scheduler'
+        role: 'Shop Manager/Scheduler'
     },
     {
         imageSrc: '/images/gallery-personnel/abraham-klassen-8.jpg',
