@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="w-full">
-          <div class="overflow-x-auto px-4 md:px-8 lg:px-12 xl:px-16 mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24" ref="table">
+          <div class="overflow-x-auto px-4 md:px-8 lg:px-12 xl:px-16 mb-2 md:mb-4 lg:mb-6 xl:mb-8" ref="table">
             <table class="min-w-full text-nowrap print:text-wrap text-left text-xs xl:text-sm 2xl:text-base mb-2 md:mb-4 lg:mb-6 xl:mb-8">
               <tbody>
                 <template v-for="(machineGroup, i) in machineGroups">
@@ -35,6 +35,7 @@
             </table>
           </div>
         </div>
+        <p class="text-xs mb-8 md:mb-12 lg:mb-16 xl:mb-18 2xl:mb-24 px-4 md:px-8 lg:px-12 xl:px-16">* Dimensions are approximate and may vary depending on the features of the part.</p>
       </div>
       <Footer />
     </div>
@@ -109,13 +110,13 @@ const machineGroups = [
         text: 'Description'
       },
       {
-        text: 'Max. Capacity'
+        text: 'Max. Capacity *'
       },
       {
-        text: 'Max. Capacity (L)'
+        text: 'Max. Capacity (L) *'
       },
       {
-        text: 'Max'
+        text: 'Max *'
       }
     ],
     machines: [
@@ -133,10 +134,10 @@ const machineGroups = [
           text: '34" Ø',
         },
         { 
-          text: '80"',
+          text: '120"',
         },
         { 
-          text: '4" Ø Thru Spindle'
+          text: '6.4" Draw Tube Bore'
         }
       ],
       [ 
@@ -170,13 +171,13 @@ const machineGroups = [
           text: 'Up to 5 Axis(swing diameter 31")',
         },
         { 
-          text: 'X Axis 64"',
+          text: 'X Axis 83"',
         },
         { 
-          text: 'Y Axis 32"',
+          text: 'Y Axis 47"',
         },
         { 
-          text: 'Z Axis 30"'
+          text: 'Z Axis 37"'
         }
       ],
       [ 
@@ -318,6 +319,26 @@ const machineGroups = [
         { 
           text: '-'
         }
+      ],
+      [
+        {
+          text: 'EDM'
+        },
+        {
+          text: '1'
+        },
+        {
+          text: 'Wire EDM'
+        },
+        {
+          text: '25.5" Wide'
+        },
+        {
+          text: '17.5" Deep'
+        },
+        {
+          text: '16" High'
+        }
       ]
     ]
   },
@@ -333,13 +354,13 @@ const machineGroups = [
         text: 'Description'
       },
       {
-        text: 'Max. Capacity'
+        text: 'Max. Capacity *'
       },
       {
-        text: 'Max. Capacity (L)'
+        text: 'Max. Capacity (L) *'
       },
       {
-        text: 'Max'
+        text: 'Max *'
       }
     ],
     machines: [
@@ -417,7 +438,7 @@ const machineGroups = [
         text: 'Description'
       },
       {
-        text: 'Max',
+        text: 'Max *',
         span: 3
       }
     ],
@@ -480,7 +501,7 @@ const machineGroups = [
         span: 2
       },
       {
-        text: 'Max',
+        text: 'Max *',
         span: 2
       }
     ],
