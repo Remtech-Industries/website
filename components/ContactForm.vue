@@ -31,10 +31,10 @@
         <input type="email" name="Email" class="w-full form-bg px-4 py-3" maxlength="255" required />
       </label>
       <label>
-        <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Your Project Details <span class="text-xs">(required)</span></span>
+        <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Your Requirements <span class="text-xs">(required)</span></span>
         <textarea name="Project Details" class="w-full form-bg px-4 py-3 block" maxlength="65535" required></textarea>
       </label>
-      <label>
+      <label v-if="!props.disableupload">
         <span class="text-sm md:text-base block mt-4 xl:mt-6 mb-1">Project/Drawing File <span class="text-xs">(8mb, 3 files max.)</span></span>
         <span class="block relative">
           <input @change="handleFileUpload" type="file" class="w-full form-bg px-4 py-3 h-24" name="FileUpload0" multiple />
@@ -58,7 +58,7 @@ const form = useTemplateRef('form')
 const successMessage = useTemplateRef('successMessage')
 const errorMessage = useTemplateRef('errorMessage')
 const fileUploadLabel = ref('Drag files here or click to upload.')
-const props = defineProps(['headinglevel'])
+const props = defineProps(['headinglevel', 'disableupload'])
 const route = useRoute().fullPath
 let files = []
 

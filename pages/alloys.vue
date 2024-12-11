@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="bg-blue-900 md:w-2/5 flex flex-col justify-center items-stretch text-gray-50 py-8 lg:py-12 xl:py-16 px-4 lg:px-6 xl:px-8">
-                        <ContactForm class="form-blue" />
+                        <ContactForm class="form-blue" :disableupload="true" />
                     </div>
                 </div>
                 <Footer />
