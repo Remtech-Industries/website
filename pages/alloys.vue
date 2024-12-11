@@ -10,7 +10,7 @@
             </div>
         </div>
         <div v-show="!menuIsOpen">
-            <div class="flex justify-center bg-drawing-3">
+            <div class="flex justify-center">
                 <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
                     <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-8 lg:mb-12 xl:mb-16">Find the Perfect Alloy for Your Next Project</h2>
                     <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Superior Stainless Steels and Specialty Alloys for Demanding Applications</h3>
@@ -18,7 +18,7 @@
                     <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Engineered for Performance</h3>
                     <p class="mb-8 lg:mb-12 xl:mb-16">From naval to energy, our high-performance alloys thrive in challenging conditions, extending component lifespan and ensuring reliability. We source hard-to-find alloys, cut to your needs and deliver quickly, ensuring the right material for every project.</p>
                     <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Why Rem-Tech Industries?</h3>
-                    <p class="mb-4 lg:mb-6 xl:mb-8">Our extensive inventory and expert team provide custom-sized, fully traceable alloys for your critical applications. We ensure seamless service and fast delivery to keep your projects on track.</p>
+                    <p class="mb-4 lg:mb-6 xl:mb-8">We stock a wide range of large diameter round bar products, allowing us to delivery as quickly as possible. Our extensive inventory and expert team provide custom-sized, fully traceable alloys for your critical applications. We ensure seamless service and fast delivery to keep your projects on track.</p>
                     <h4 class="font-bold">Custom-Sized Materials</h4>
                     <p class="mb-4 lg:mb-6 xl:mb-8">Get the exact dimensions you need for your projects, reducing waste and machining time.</p>
                     <h4 class="font-bold">Extensive Selection</h4>
@@ -110,7 +110,7 @@ const faqs = [
     },
     {
         q: 'How quickly can you deliver materials?',
-        a: 'We offer fast delivery options to meet tight deadlines. Lead times vary depending on material availability and customization needs, but we work to provide the fastest possible turnaround.'
+        a: 'We offer fast delivery options to meet tight deadlines. We can have our stock material cut, OD/ID prepped, and shipped in just a few days. We also source many material grades and sizes very quickly.'
     },
     {
         q: 'How do I choose the right alloy for my application?',

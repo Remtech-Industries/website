@@ -21,6 +21,7 @@
     <form @submit.prevent="handleFormSubmit" name="contactForm" method="post" enctype="multipart/form-data" v-show="error === false && success === false" ref="form" data-netlify="true" tabindex="-1">
       <component :is="props.headinglevel ?? 'h3'" class="text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-6">Get a Free Quote</component>
       <input type="hidden" name="form-name" value="contactForm">
+      <input type="hidden" name="page" :value="route">
       <label>
         <span class="text-sm md:text-base block mb-1">Your Name <span class="text-xs">(required)</span></span>
         <input type="text" name="Name" class="w-full form-bg px-4 py-3" maxlength="255" required />
@@ -58,6 +59,7 @@ const successMessage = useTemplateRef('successMessage')
 const errorMessage = useTemplateRef('errorMessage')
 const fileUploadLabel = ref('Drag files here or click to upload.')
 const props = defineProps(['headinglevel'])
+const route = useRoute().fullPath
 let files = []
 
 function handleFileUpload(e) {
