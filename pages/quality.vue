@@ -6,7 +6,7 @@
                 <h1 class="text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl block sora mb-8 sm:my-16 lg:my-24 2xl:my-36">
                     Quality You Can Trust, Every Time
                 </h1>
-                <p class="sm:w-2/3 lg:w-1/2">At RemTech, quality isn't just a promise—it's the foundation of everything we do. From precision machining to complex projects in the nuclear industry, our commitment to excellence ensures that you receive the highest level of reliability and accuracy, every time.</p>
+                <p class="sm:w-2/3 lg:w-1/2">At Rem-Tech, quality isn't just a promise—it's the foundation of everything we do. From precision machining to complex projects in the nuclear industry, our commitment to excellence ensures that you receive the highest level of reliability and accuracy, every time.</p>
             </div>
         </div>
         <div v-show="!menuIsOpen">
@@ -30,7 +30,7 @@
                         <li>An array of standard gauges including calipers, micrometers, bore gauges, thread gauges, measuring pins, and more.</li>
                     </ul>
                     <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Quality Documents</h3>
-                    <p class="mb-4 lg:mb-6 xl:mb-8">At RemTech, quality drives everything we do. We're dedicated to continual improvement and meeting customer needs with precision and efficiency. Read our full quality documents:</p>
+                    <p class="mb-4 lg:mb-6 xl:mb-8">At Rem-Tech, quality drives everything we do. We're dedicated to continual improvement and meeting customer needs with precision and efficiency. Read our full quality documents:</p>
                     <ul class="bullet-list">
                         <li><a href="/documents/iso-certification.pdf" target="_blank" class="underline">ISO 9001:2015 Certificate</a></li>
                         <li><a href="/documents/quality-policy.pdf" target="_blank" class="underline">Quality Policy</a></li>
@@ -64,8 +64,8 @@
 useSeoMeta({
     title: 'Quality',
     ogTitle: 'Quality',
-    description: 'Quality you can trust, every time. At RemTech, quality isn\'t just a promise—it\'s the foundation of everything we do. From precision machining to complex projects in the nuclear industry, our commitment to excellence ensures that you receive the highest level of reliability and accuracy, every time.',
-    ogDescription: 'Quality you can trust, every time. At RemTech, quality isn\'t just a promise—it\'s the foundation of everything we do. From precision machining to complex projects in the nuclear industry, our commitment to excellence ensures that you receive the highest level of reliability and accuracy, every time.',
+    description: 'Quality you can trust, every time. At Rem-Tech, quality isn\'t just a promise—it\'s the foundation of everything we do. From precision machining to complex projects in the nuclear industry, our commitment to excellence ensures that you receive the highest level of reliability and accuracy, every time.',
+    ogDescription: 'Quality you can trust, every time. At Rem-Tech, quality isn\'t just a promise—it\'s the foundation of everything we do. From precision machining to complex projects in the nuclear industry, our commitment to excellence ensures that you receive the highest level of reliability and accuracy, every time.',
     ogImage: '/images/og/quality.png',
     twitterImage: '/images/og/quality.png'
 })

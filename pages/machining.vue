@@ -13,7 +13,7 @@
             <div class="flex justify-center bg-drawing-1">
                 <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
                     <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-8 lg:mb-12 xl:mb-16">Key Machining Capabilities</h2>
-                    <p class="mb-4 lg:mb-6 xl:mb-8">For over 25 years, RemTech has delivered fast, high-precision machining to industries like manufacturing, pharmaceutical, oil & gas, nuclear, and more. Our expertise spans components like sleeves, shafts, pump rings, and seal faces.</p>
+                    <p class="mb-4 lg:mb-6 xl:mb-8">For over 25 years, Rem-Tech has delivered fast, high-precision machining to industries like manufacturing, pharmaceutical, oil & gas, nuclear, and more. Our expertise spans components like sleeves, shafts, pump rings, and seal faces.</p>
                     <p class="mb-4 lg:mb-6 xl:mb-8">We specialize in rapid-turnaround CNC and manual machining of super alloys and hard-to-machine materials like Stainless Steel, Super Duplex, Titanium, Inconel, and Hastelloy.</p>
                     <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">CNC Turning</h3>
                     <p class="mb-8 lg:mb-12 xl:mb-16">Our advanced CNC lathes deliver precision cylindrical parts with tight tolerances. Specializing in low-volume production, we handle complex geometries and materials with ease.</p>
@@ -30,7 +30,7 @@
             </div>
             <div class="bg-red-700 flex justify-center">
                 <div class="flex flex-col text-gray-50 py-16 xl:py-24 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16">
-                    <span class="text-xl/tight md:text-2xl/tight lg:text-3xl/tight xl:text-4xl/tight 2xl:text-5xl/tight sora mb-4 lg:mb-8">"I can't compare anyone to Remtech. They are the absolute best vendor to deal with. Anytime we have a hot job, they pull through and get everything on time. I am always worried about giving them too much to do with little lead time, but it is no problem for them. They are excellent."</span>
+                    <span class="text-xl/tight md:text-2xl/tight lg:text-3xl/tight xl:text-4xl/tight 2xl:text-5xl/tight sora mb-4 lg:mb-8">"I can't compare anyone to Rem-Tech. They are the absolute best vendor to deal with. Anytime we have a hot job, they pull through and get everything on time. I am always worried about giving them too much to do with little lead time, but it is no problem for them. They are excellent."</span>
                     <span class="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">- Mina Bahadori</span>
                     <span>(Flowserve)</span>
                 </div>
@@ -114,8 +114,8 @@
 useSeoMeta({
     title: 'Machining',
     ogTitle: 'Machining',
-    description: 'Your manufacturing partners. RemTech delivers machining, thermal spray, and alloys with unmatched expertise and reliability.',
-    ogDescription: 'Your manufacturing partners. RemTech delivers machining, thermal spray, and alloys with unmatched expertise and reliability.',
+    description: 'Your manufacturing partners. Rem-Tech delivers machining, thermal spray, and alloys with unmatched expertise and reliability.',
+    ogDescription: 'Your manufacturing partners. Rem-Tech delivers machining, thermal spray, and alloys with unmatched expertise and reliability.',
     ogImage: '/images/og/machining.png',
     twitterImage: '/images/og/machining.png'
 })

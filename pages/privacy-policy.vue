@@ -4,7 +4,7 @@
         <div class="flex justify-center" v-show="!menuIsOpen">
             <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-4 lg:mb-6 xl:mb-8">Privacy Policy</h1>
-                <p class="mb-8 lg:mb-12 xl:mb-16">At RemTech Industries, we are committed to protecting the privacy and security of the personal information of our customers, employees, and website visitors. This Privacy Policy outlines how we collect, use, disclose, and protect personal information in compliance with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and any applicable provincial legislation.</p>
+                <p class="mb-8 lg:mb-12 xl:mb-16">At Rem-Tech Industries, we are committed to protecting the privacy and security of the personal information of our customers, employees, and website visitors. This Privacy Policy outlines how we collect, use, disclose, and protect personal information in compliance with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and any applicable provincial legislation.</p>
                 <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">1. Collection of Personal Information</h2>
                 <p class="mb-4 lg:mb-6 xl:mb-8">We collect personal information only when it is necessary for our business activities or to provide services to you. The types of personal information we may collect include:</p>
                 <ul class="mb-4 lg:mb-6 xl:mb-8 bullet-list">
@@ -54,7 +54,7 @@
                 <p class="mb-8 lg:mb-12 xl:mb-16">Our website and services are not directed at children under the age of 13, and we do not knowingly collect personal information from children. If we become aware that we have inadvertently collected personal information from a child, we will take immediate steps to delete the information from our records.</p>
                 <h2 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">11. Contact Information</h2>
                 <p class="mb-4 lg:mb-6 xl:mb-8">If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal information, please contact us at:</p>
-                <p class="mb-4 lg:mb-6 xl:mb-8">RemTech Industries<br>69 White Street,<br>Aylmer,<br>ON N5H 2R9</p>
+                <p class="mb-4 lg:mb-6 xl:mb-8">Rem-Tech Industries<br>69 White Street,<br>Aylmer,<br>ON N5H 2R9</p>
                 <p class="mb-4 lg:mb-6 xl:mb-8">Phone: <a href="tel:+15197733459" class="underline">+1 (519) 773-3459</a><br>Email: <a href="mailto:rfq@remtechindustries.com" class="underline">rfq@remtechindustries.com</a></p>
                 <p class="mb-8 lg:mb-12 xl:mb-16">This Privacy Policy was last updated on October 22, 2024.</p>
             </div>
@@ -67,8 +67,8 @@
 useSeoMeta({
     title: 'Privacy Policy',
     ogTitle: 'Privacy Policy',
-    description: 'At RemTech Industries, we are committed to protecting the privacy and security of the personal information of our customers, employees, and website visitors. This Privacy Policy outlines how we collect, use, disclose, and protect personal information in compliance with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and any applicable provincial legislation.',
-    ogDescription: 'At RemTech Industries, we are committed to protecting the privacy and security of the personal information of our customers, employees, and website visitors. This Privacy Policy outlines how we collect, use, disclose, and protect personal information in compliance with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and any applicable provincial legislation.',
+    description: 'At Rem-Tech Industries, we are committed to protecting the privacy and security of the personal information of our customers, employees, and website visitors. This Privacy Policy outlines how we collect, use, disclose, and protect personal information in compliance with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and any applicable provincial legislation.',
+    ogDescription: 'At Rem-Tech Industries, we are committed to protecting the privacy and security of the personal information of our customers, employees, and website visitors. This Privacy Policy outlines how we collect, use, disclose, and protect personal information in compliance with Canadian privacy laws, including the Personal Information Protection and Electronic Documents Act (PIPEDA) and any applicable provincial legislation.',
     ogImage: '/images/og/privacy-policy.png',
     twitterImage: '/images/og/privacy-policy.png'
 })

@@ -56,7 +56,7 @@ export default defineNuxtConfig({
           href: '/site.webmanifest'
         }
       ],
-      titleTemplate: '%s | RemTech Industries',
+      titleTemplate: '%s | Rem-Tech Industries',
       meta: [
         {
             hid: 'og:image:type',

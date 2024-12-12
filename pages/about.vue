@@ -1,6 +1,6 @@
 <template>
     <div :class="{ 'max-h-0': menuIsOpen, 'overflow-hidden': menuIsOpen }">
-        <div class="relative h-svh bg-remtech-red text-gray-50">
+        <div class="relative h-svh bg-rem-tech-red text-gray-50">
             <Header @open="menuIsOpen = true" @close="menuIsOpen = false" menuclass="bg-red-700 text-gray-50" />
             <div class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16" v-show="!menuIsOpen">
                 <h1 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl block sora mb-2 lg:mb-4 xl:mb-6">
@@ -12,7 +12,7 @@
         <div v-show="!menuIsOpen">
             <div class="flex justify-center">
                 <div class="max-w-screen-2xl px-4 md:px-8 lg:px-12 xl:px-16 py-16 md:py-24 lg:py-32 xl:py-36 2xl:py-48">
-                    <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-8 lg:mb-12 xl:mb-16">About RemTech</h2>
+                    <h2 class="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl sora mb-8 lg:mb-12 xl:mb-16">About Rem-Tech</h2>
                     <p class="mb-8 lg:mb-12 xl:mb-16">At Rem-Tech Industries, we specialize in delivering high-performance materials and precision-engineered solutions that enhance the lifespan and reliability of your critical components. Our expertise spans from thermal spray coatings to custom machining to stainless steels and specialty alloys, offering unmatched quality and tailored solutions to protect your equipment from wear, corrosion, and extreme conditions.</p>
                     <h3 class="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-4 lg:mb-6 xl:mb-8">Solving Challenges, Creating Impact</h3>
                     <p class="mb-8 lg:mb-12 xl:mb-16">We understand the challenges you face in demanding industries. Our mission is simple: to be your trusted partner, providing innovative solutions that not only solve your immediate problems but help you achieve long-term success. Whether it's sourcing rare alloys or providing advanced coating technologies, we turn obstacles into opportunities.</p>
@@ -30,7 +30,7 @@
                         <div class="sm:w-2/3">
                             <h3 class="text-2xl/tight md:text-3xl/tight lg:text-4xl/tight xl:text-5xl/tight 2xl:text-6xl/tight sora">Ben Rempel</h3>
                             <p class="md:text-lg/tight lg:text-xl/tight xl:text-2xl/tight 2xl:text-3xl/tight mb-4">General Manager</p>
-                            <p>"[placeholder] At RemTech, we built this company with one goal in mind: to help our clients solve their toughest manufacturing challenges with precision and integrity. It's not just about making parts—it's about creating solutions that make a lasting impact."</p>
+                            <p>"[placeholder] At Rem-Tech, we built this company with one goal in mind: to help our clients solve their toughest manufacturing challenges with precision and integrity. It's not just about making parts—it's about creating solutions that make a lasting impact."</p>
                         </div>
                     </div>
                     <div class="sm:flex items-center mb-12">

@@ -46,8 +46,8 @@
 useSeoMeta({
     title: 'Machinery Capabilities Datasheet',
     ogTitle: 'Machinery Capabilities Datasheet',
-    description: 'For over 25 years, RemTech has delivered fast, high-precision machining to industries like manufacturing, pharmaceutical, oil & gas, nuclear, and more. Our expertise spans components like sleeves, shafts, pump rings, and seal faces. We specialize in rapid-turnaround CNC and manual machining of super alloys and hard-to-machine materials like Stainless Steel, Super Duplex, Titanium, Inconel, and Hastelloy.',
-    ogDescription: 'For over 25 years, RemTech has delivered fast, high-precision machining to industries like manufacturing, pharmaceutical, oil & gas, nuclear, and more. Our expertise spans components like sleeves, shafts, pump rings, and seal faces. We specialize in rapid-turnaround CNC and manual machining of super alloys and hard-to-machine materials like Stainless Steel, Super Duplex, Titanium, Inconel, and Hastelloy.',
+    description: 'For over 25 years, Rem-Tech has delivered fast, high-precision machining to industries like manufacturing, pharmaceutical, oil & gas, nuclear, and more. Our expertise spans components like sleeves, shafts, pump rings, and seal faces. We specialize in rapid-turnaround CNC and manual machining of super alloys and hard-to-machine materials like Stainless Steel, Super Duplex, Titanium, Inconel, and Hastelloy.',
+    ogDescription: 'For over 25 years, Rem-Tech has delivered fast, high-precision machining to industries like manufacturing, pharmaceutical, oil & gas, nuclear, and more. Our expertise spans components like sleeves, shafts, pump rings, and seal faces. We specialize in rapid-turnaround CNC and manual machining of super alloys and hard-to-machine materials like Stainless Steel, Super Duplex, Titanium, Inconel, and Hastelloy.',
     ogImage: '/images/og/machinery-capabilities-datasheet.png',
     twitterImage: '/images/og/machinery-capabilities-datasheet.png'
 })

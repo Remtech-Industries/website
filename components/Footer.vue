@@ -6,6 +6,6 @@
             <li class="mb-2 sm:mb-0 mx-2 lg:px-6 xl:px-8"><NuxtLink to="/cookie-policy">Cookie Policy</NuxtLink></li>
             <li class="mb-2 sm:mb-0 mx-2 lg:px-6 xl:px-8"><NuxtLink to="/sitemap">Sitemap</NuxtLink></li>
         </ul>
-        <p class="mx-2 md:px-4 lg:px-6 xl:px-8">© RemTech Industries Inc.</p>
+        <p class="mx-2 md:px-4 lg:px-6 xl:px-8">© Rem-Tech Industries Inc.</p>
     </footer>
 </template>

@@ -28,8 +28,8 @@
 useSeoMeta({
     title: 'Sitemap',
     ogTitle: 'Sitemap',
-    description: 'RemTech\'s website sitemap.',
-    ogDescription: 'RemTech\'s website sitemap.',
+    description: 'Rem-Tech\'s website sitemap.',
+    ogDescription: 'Rem-Tech\'s website sitemap.',
     ogImage: '/images/og/sitemap.png',
     twitterImage: '/images/og/sitemap.png'
 })
